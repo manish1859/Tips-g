@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog Tabs Styled</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f5f7fb;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* Tabs alignment left */
+    .blog-tabs {
+      margin: 20px 0;
+    }
+
+    .blog-tabs .nav-tabs {
+      border: none;
+    }
+
+    .blog-tabs .nav-link {
+      color: #1a3a8b;
+      font-weight: 600;
+      padding: 10px 15px;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+
+    .blog-tabs .nav-link.active {
+      background-color: #1a3a8b;
+      color: #fff;
+    }
+
+    /* Blog card */
+    .blog-card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+
+    .blog-card-header {
+      height: 100px;
+      background: linear-gradient(135deg, #1a3a8b, #185adb);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    .blog-card-body {
+      padding: 20px;
+    }
+
+    .blog-badge {
+      background-color: orange;
+      color: white;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    .blog-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #1a3a8b;
+      margin-bottom: 10px;
+    }
+
+    .blog-text {
+      font-size: 14px;
+      color: #4B5563;
+      margin-bottom: 15px;
+    }
+
+    .blog-meta {
+      font-size: 12px;
+      color: #888;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .blog-readmore {
+      display: block;
+      background-color: #1a3a8b;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container py-4">
+
+  <!-- Tabs -->
+  <div class="blog-tabs">
+    <ul class="nav nav-tabs" id="blogTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab">All Posts</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="career-tab" data-bs-toggle="tab" data-bs-target="#career" type="button" role="tab">Career Tips</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="cyber-tab" data-bs-toggle="tab" data-bs-target="#cyber" type="button" role="tab">Cyber Security</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="student-tab" data-bs-toggle="tab" data-bs-target="#student" type="button" role="tab">Student Success</button>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Tab content -->
+  <div class="tab-content pt-4" id="blogTabContent">
+
+    <!-- All Posts Tab -->
+    <div class="tab-pane fade show active" id="all" role="tabpanel">
+      <div class="row">
+        <!-- Blog 1 -->
+        <div class="col-md-4">
+          <div class="blog-card">
+            <div class="blog-card-header">To</div>
+            <div class="blog-card-body">
+              <span class="blog-badge">Career Tips</span>
+              <div class="blog-title">Top 5 Career Opportunities After IT Training in Kotputli</div>
+              <div class="blog-text">Discover the most promising career paths after completing IT training at TIPSG Kotputli.</div>
+              <div class="blog-meta">
+                <span>TIPSG Career Team</span>
+                <span>Oct 1, 2025 • 5 min</span>
+              </div>
+            </div>
+            <a href="#" class="blog-readmore">Read More →</a>
+          </div>
+        </div>
+
+        <!-- Blog 2 -->
+        <div class="col-md-4">
+          <div class="blog-card">
+            <div class="blog-card-header">Wh</div>
+            <div class="blog-card-body">
+              <span class="blog-badge">Cyber Security</span>
+              <div class="blog-title">Why Cyber Security is the Future Career in India</div>
+              <div class="blog-text">Cyber threats are rising. Learn why cyber security is in demand and what roles are booming.</div>
+              <div class="blog-meta">
+                <span>Security Expert</span>
+                <span>Oct 1, 2025 • 7 min</span>
+              </div>
+            </div>
+            <a href="#" class="blog-readmore">Read More →</a>
+          </div>
+        </div>
+
+        <!-- Blog 3 -->
+        <div class="col-md-4">
+          <div class="blog-card">
+            <div class="blog-card-header">Ho</div>
+            <div class="blog-card-body">
+              <span class="blog-badge">Student Success</span>
+              <div class="blog-title">How to Build a Strong Portfolio as an IT Student</div>
+              <div class="blog-text">Tips for creating a portfolio that helps you land your dream job after completing your course.</div>
+              <div class="blog-meta">
+                <span>TIPSG Faculty</span>
+                <span>Oct 1, 2025 • 6 min</span>
+              </div>
+            </div>
+            <a href="#" class="blog-readmore">Read More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Career Tips Only -->
+    <div class="tab-pane fade" id="career" role="tabpanel">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="blog-card">
+            <div class="blog-card-header">To</div>
+            <div class="blog-card-body">
+              <span class="blog-badge">Career Tips</span>
+              <div class="blog-title">Top 5 Career Opportunities After IT Training in Kotputli</div>
+              <div class="blog-text">Discover the most promising career paths after completing IT training at TIPSG Kotputli.</div>
+              <div class="blog-meta">
+                <span>TIPSG Career Team</span>
+                <span>Oct 1, 2025 • 5 min</span>
+              </div>
+            </div>
+            <a href="#" class="blog-readmore">Read More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cyber Security Only -->
+    <div class="tab-pane fade" id="cyber" role="tabpanel">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="blog-card">
+            <div class="blog-card-header">Wh</div>
+            <div class="blog-card-body">
+              <span class="blog-badge">Cyber Security</span>
+              <div class="blog-title">Why Cyber Security is the Future Career in India</div>
+              <div class="blog-text">Cyber threats are rising. Learn why cyber security is in demand and what roles are booming.</div>
+              <div class="blog-meta">
+                <span>Security Expert</span>
+                <span>Oct 1, 2025 • 7 min</span>
+              </div>
+            </div>
+            <a href="#" class="blog-readmore">Read More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Student Success Only -->
+    <div class="tab-pane fade" id="student" role="tabpanel">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="blog-card">
+            <div class="blog-card-header">Ho</div>
+            <div class="blog-card-body">
+              <span class="blog-badge">Student Success</span>
+              <div class="blog-title">How to Build a Strong Portfolio as an IT Student</div>
+              <div class="blog-text">Tips for creating a portfolio that helps you land your dream job after completing your course.</div>
+              <div class="blog-meta">
+                <span>TIPSG Faculty</span>
+                <span>Oct 1, 2025 • 6 min</span>
+              </div>
+            </div>
+            <a href="#" class="blog-readmore">Read More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
