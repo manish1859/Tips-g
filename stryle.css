@@ -1,6 +1,9 @@
 * {
   font-family: "Poppins", sans-serif;
 }
+.Add-navbar{
+  justify-content: space-between;
+}
 
 .Add-navbar .nav-link {
   font-weight: 500;
