@@ -1,20 +1,1159 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="stryle.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="stryle.css">
 </head>
+
 <body>
+
+<!-- Navbar -->
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-white shadow-sm Add-navbar">
+  <div class="container" style="gap: 10px;">
+    <!-- Brand -->
+    <a class="navbar-brand d-flex align-items-center" href="#" onclick="setActive(this,'home')">
+      <div class="Add-logo d-flex align-items-center justify-content-center ">
+        <i class="fas fa-graduation-cap"></i>
+      </div>
+      <div>
+        <strong class="Add-brand-text">TIPSG</strong><br>
+        <small class="text-muted">Kotputli</small>
+      </div>
+    </a>
+
+    <!-- Toggler (Offcanvas) -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Desktop Menu -->
+    <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex">
+      <ul class="navbar-nav align-items-lg-center" id="mainMenu">
+        
+        <li class="nav-item"><a class="nav-link active" href="#home" onclick="setActive(this,'home')"><i class="fas fa-home me-1"></i> Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about" onclick="setActive(this,'About_us')"><i class="fas fa-graduation-cap me-1"></i> About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="#courses" onclick="setActive(this,'Courses')"><i class="fas fa-book-open me-1"></i> Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="#placements" onclick="setActive(this,'Placements')"><i class="fas fa-award me-1"></i> Placements</a></li>
+        <li class="nav-item"><a class="nav-link" href="#admissions" onclick="setActive(this,'Admissions')"><i class="fas fa-user-friends me-1"></i> Admissions</a></li>
+        <li class="nav-item"><a class="nav-link" href="#gallery" onclick="setActive(this,'Gallery')"><i class="far fa-image me-1"></i> Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="#events" onclick="setActive(this,'Events')"><i class="far fa-calendar-alt me-1"></i> Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="#blog" onclick="setActive(this,'Blog')"><i class="far fa-newspaper me-1"></i> Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact" onclick="setActive(this,'Contact')"><i class="far fa-envelope me-1"></i> Contact</a></li>
+        <li class="nav-item ms-lg-3">
+          <a class="Add-btn-enroll" href="#Admission" onclick="setActive(this,'Admission')">Enroll Now</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Offcanvas (Mobile) -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="navMenu">
+  <div class="offcanvas-header">
+    <h5>Menu</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav" id="offMenu">
+      <li class="nav-item"><a class="nav-link active" href="#home" data-bs-dismiss="offcanvas" onclick="setActive(this,'home')"><i class="fas fa-home me-1"></i> Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="#about" data-bs-dismiss="offcanvas" onclick="setActive(this,'About_us')"><i class="fas fa-graduation-cap me-1"></i> About Us</a></li>
+      <li class="nav-item"><a class="nav-link" href="#courses" data-bs-dismiss="offcanvas" onclick="setActive(this,'Courses')"><i class="fas fa-book-open me-1"></i> Courses</a></li>
+      <li class="nav-item"><a class="nav-link" href="#placements" data-bs-dismiss="offcanvas" onclick="setActive(this,'Placements')"><i class="fas fa-award me-1"></i> Placements</a></li>
+      <li class="nav-item"><a class="nav-link" href="#admissions" data-bs-dismiss="offcanvas" onclick="setActive(this,'Admissions')"><i class="fas fa-user-friends me-1"></i> Admissions</a></li>
+      <li class="nav-item"><a class="nav-link" href="#gallery" data-bs-dismiss="offcanvas" onclick="setActive(this,'Gallery')"><i class="far fa-image me-1"></i> Gallery</a></li>
+      <li class="nav-item"><a class="nav-link" href="#events" data-bs-dismiss="offcanvas" onclick="setActive(this,'Events')"><i class="far fa-calendar-alt me-1"></i> Events</a></li>
+      <li class="nav-item"><a class="nav-link" href="#blog" data-bs-dismiss="offcanvas" onclick="setActive(this,'Blog')"><i class="far fa-newspaper me-1"></i> Blog</a></li>
+      <li class="nav-item"><a class="nav-link" href="#contact" data-bs-dismiss="offcanvas" onclick="setActive(this,'Contact')"><i class="far fa-envelope me-1"></i> Contact</a></li>
+      <li class="nav-item mt-3">
+        <a class="Add-btn-enroll" href="#Admission" data-bs-dismiss="offcanvas" onclick="setActive(this,'Admission')">Enroll Now</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- JS for Active Highlight -->
+
+
+
+
+
+  <!-- About -->
+  <section id="About_us" style="display: none;">
+    <div class="container-fluid   aboutcontainer">
+
+      <div class="abouthead text-center">
+
+        <h1 class="abouth1"><b>About TIPSG Kotputli</b></h1>
+        <p>Pioneering IT education in Kotputli - District's first comprehensive training and <br
+            class="d-none d-md-block"> placement center
+          transforming dreams into reality</p>
+
+      </div>
+
+    </div>
+
+    <div class="container mt-5 mb-5">
+      <div class="row g-4">
+        <div class="col-lg-6 col-md-12 col-sm-12 h-100 about-img-wrapper animate-left">
+          <img src="img/About1.jpg" alt="our story" class="img-fluid rounded h-100">
+          <div class="about-badge">
+            <h3>2020</h3>
+            <p>Established</p>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-12 col-sm-12 aboutstory animate-right pt-2">
+          <h2>Our Story</h2>
+          <p>TIPSG (Technology Institute for Professional Skill Growth) was founded with a vision to bridge
+            the gap between academic education and industry requirements in Kotputli.</p>
+          <p>As the district's first comprehensive IT training center, we recognized the need for quality
+            technical education that goes beyond traditional classroom learning. Our approach combines
+            theoretical knowledge with extensive practical training, ensuring students are job-ready from
+            day one.</p>
+          <p>Today, we stand proud as a leading institution that has trained over 500 students and placed 300+
+            professionals in reputed IT companies across India. Our commitment to excellence and student
+            success drives everything we do.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container-fluid aboutcard mt-5 mb-5">
+      <div class="row g-4 aboutcardrow">
+        <div class="col-lg-6 col-md-12 aboutcardbody">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-body">
+              <div class="d-inline-flex justify-content-center align-items-center bg-primary text-white rounded-3 mb-3"
+                style="width:55px; height:55px;">
+                <i class="fas fa-bullseye fs-4"></i>
+              </div>
+              <h5 class="card-title fw-bold text-primary">Our Mission</h5>
+              <p class="card-text ">
+                To empower students with industry-relevant skills through world-class training,
+                practical experience, and guaranteed placement opportunities. We aim to create
+                a skilled workforce that drives India's digital transformation.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-12 aboutcardbody">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-body">
+              <div class="d-inline-flex justify-content-center align-items-center  text-white rounded-3 mb-3"
+                style="width:55px; height:55px; background-color: #ea580c;">
+                <i class="fas fa-eye fs-4"> </i>
+              </div>
+              <h5 class="card-title fw-bold text-primary">Our Vision</h5>
+              <p class="card-text text-muted">
+                To become the most trusted and sought-after IT training institute in Rajasthan,
+                known for excellence in education, industry partnerships, and student success stories.
+                We envision a future where every Kotputli student has access to world-class IT
+                education.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="container aboutTips">
+      <h2>Why Choose TIPSG?</h2>
+      <p>What makes us the preferred choice for IT education</p>
+
+
+    </div>
+    <div class="container my-5">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6 col-sm-12 aboutTipscard">
+          <div class="aboutTips-card">
+            <div class="aboutTips-icon bg-blue">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <h5 class="aboutTips-title">District's First</h5>
+            <p class="aboutTips-text">
+              Kotputli's pioneering IT training and placement center with a proven track record
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 aboutTipscard">
+          <div class="aboutTips-card">
+            <div class="aboutTips-icon bg-orange">
+              <i class="fa-solid fa-user-group"></i>
+            </div>
+            <h5 class="aboutTips-title">Expert Faculty</h5>
+            <p class="aboutTips-text">
+              Learn from industry professionals with 10+ years of real-world experience
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 aboutTipscard">
+          <div class="aboutTips-card">
+            <div class="aboutTips-icon " style="background-color: #9333ea;">
+              <i class="fa-solid fa-sparkles"></i>
+            </div>
+            <h5 class="aboutTips-title">Modern Labs</h5>
+            <p class="aboutTips-text">
+              State-of-the-art infrastructure with latest technology and tools
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 aboutTipscard">
+          <div class="aboutTips-card">
+            <div class="aboutTips-icon bg-green">
+              <i class="fa-regular fa-heart"></i>
+            </div>
+            <h5 class="aboutTips-title">100% Practical</h5>
+            <p class="aboutTips-text">
+              Hands-on training with real projects and live industry scenarios
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 aboutTipscard">
+          <div class="aboutTips-card">
+            <div class="aboutTips-icon bg-blue">
+              <i class="fas fa-bullseye fs-4"></i>
+            </div>
+            <h5 class="aboutTips-title">Placement Support</h5>
+            <p class="aboutTips-text">
+              Dedicated placement cell with connections to 50+ hiring partners
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 aboutTipscard">
+          <div class="aboutTips-card">
+            <div class="aboutTips-icon bg-blue">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <h5 class="aboutTips-title">Certified Programs</h5>
+            <p class="aboutTips-text">
+              Industry-recognized certifications that boost your career prospects
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container-fluid aboutdirecter">
+      <div class="container text-center text-white">
+        <div class="director-icon mx-auto mb-4">
+          <i class="fa-solid fa-user-group"></i>
+        </div>
+
+        <h2 class="mb-4">Director's Message</h2>
+        <div class="aboutdirecterhead bg-opacity-10 bg-light  p-4 rounded-4 mx-auto">
+          <p class="mb-4">
+            "Welcome to TIPSG Kotputli! Our journey began with a simple dream - to make quality IT education accessible
+            to every student in our district. Today, I'm proud to see our students working in leading companies, living
+            their dreams, and making us proud."
+          </p>
+          <p class="mb-4">
+            "We don't just teach technology; we build careers, shape futures, and create opportunities. Every student
+            who walks through our doors is a potential success story waiting to be written. Join us, and let's write
+            your success story together."
+          </p>
+          <hr class="border-light">
+          <strong style="color: white; font-size: 27px;">Founder & Director</strong><br>
+          <span style="color: #DBEAFE;"> TIPSG Kotputli</span>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+  </section>
+
+  <!-- courses -->
+  <section id="Courses" style="display:none;">
+    <div class="container-fluid   coursescontainer">
+
+      <div class="courseshead text-center">
+
+        <h1 class="coursesh1"><b>Our Courses</b></h1>
+        <p>Industry-relevant programs designed to launch your IT career with 100% practical training and placement
+          support</p>
+
+      </div>
+
+    </div>
+
+    <div class="bg-light">
+      <div class="container bg-light py-5">
+        <!-- Nav Tabs -->
+        <ul class="nav nav-tabs mb-4" id="courseTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button"
+              role="tab">All COURSE</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="development-tab" data-bs-toggle="tab" data-bs-target="#development"
+              type="button" role="tab">Development</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="security-tab" data-bs-toggle="tab" data-bs-target="#security" type="button"
+              role="tab">Security</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="data-tab" data-bs-toggle="tab" data-bs-target="#data" type="button"
+              role="tab">Data Science</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="digital-tab" data-bs-toggle="tab" data-bs-target="#digital" type="button"
+              role="tab">Digital</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="Design-tab" data-bs-toggle="tab" data-bs-target="#Design" type="button"
+              role="tab">Design</button>
+          </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="courseTabsContent">
+
+          <!-- All Courses -->
+          <div class="tab-pane fade show active" id="all" role="tabpanel">
+            <div class="row g-4">
+
+              <!-- Full Stack Development -->
+              <div class="col-md-4">
+                <div class="card course-card position-relative">
+                  <div class="card-top">Fu</div>
+                  <div class="card-header-badge">Development</div>
+                  <div class="card-body">
+                    <h5 class="card-title">Full Stack Development</h5>
+                    <p style="font-weight: 300; font-size: 16px; color: #4B5563;">Master frontend and backend
+                      development with modern
+                      tools.</p>
+                    <p><i class="far fa-clock"></i> <b> Duration:</b> Months</p>
+                    <p class="text-success"> <i class="fa-solid fa-indian-rupee-sign"></i> <strong>₹45,000</strong></p>
+                    <h6><span style="color: #377dd8;"><i class="fa-solid fa-book-open"></i></span> Key Modules:</h6>
+                    <ul>
+                      <li style="font-weight: 300;" style="font-size: 18px; ">HTML, CSS, JavaScript</li>
+                      <li style="font-weight: 300;">React.js & Node.js</li>
+                      <li style="font-weight: 300;">MongoDB & Express</li>
+                      <li style=" color: #377dd8;">+3 more modules</li>
+                    </ul>
+                    <div class="career-box">
+                      <i class="fas fa-bullseye" style="color:#377dd8;"></i>
+                      <strong> Career Scope:</strong><br>
+                      <span style="font-weight: 300;"> Full Stack Developer, MERN Stack Developer </span>
+                    </div>
+                    <a href="#" class="btn btn-dark-blue mt-3 w-100">Apply Now</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cyber Security -->
+              <div class="col-md-4">
+                <div class="card course-card position-relative">
+                  <div class="card-top">Cy</div>
+                  <div class="card-header-badge">Security</div>
+                  <div class="card-body">
+                    <h5 class="card-title">Cyber Security</h5>
+                    <p style="font-weight: 300;  color: #4B5563;">Learn to protect systems and networks from cyber
+                      threats.</p>
+                    <p><i class="far fa-clock"></i><b> Duration:</b> 4 Months</p>
+                    <p class="text-success"><i class="fa-solid fa-indian-rupee-sign"></i><strong>₹40,000</strong></p>
+                    <h6><span style="color: #377dd8;"><i class="fa-solid fa-book-open"></i></span> Key Modules:</h6>
+                    <ul>
+                      <li style="font-weight: 300;">Network Security</li>
+                      <li style="font-weight: 300;">Ethical Hacking</li>
+                      <li style="font-weight: 300;">Penetration Testing</li>
+                      <li style="font-weight: 300; color: #377dd8;">+3 more modules</li>
+                    </ul>
+                    <div class="career-box">
+                      <i class="fas fa-bullseye" style="color:#377dd8;"></i>
+                      <strong>Career Scope:</strong><br>
+                      <span style="font-weight: 300;"> Cyber Security Analyst, Ethical Hacker, Security Consultant, SOC
+                        Analyst</span>
+                    </div>
+                    <a href="#" class="btn btn-dark-blue mt-3 w-100">Apply Now</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Data Science -->
+              <div class="col-md-4">
+                <div class="card course-card position-relative">
+                  <div class="card-top">Da</div>
+                  <div class="card-header-badge">Data Science</div>
+                  <div class="card-body">
+                    <h5 class="card-title">Data Science & AI</h5>
+                    <p style="font-weight: 300;  color: #4B5563;">Dive into ML and AI. Work with real datasets and
+                      predictive models.</p>
+                    <p><i class="far fa-clock"></i> <b> Duration:</b> 6 Months</p>
+                    <p class="text-success"><i class="fa-solid fa-indian-rupee-sign"></i><strong>₹50,000</strong></p>
+                    <h6><span style="color: #377dd8;"><i class="fa-solid fa-book-open"></i></span> Key Modules:</h6>
+                    <ul>
+                      <li style="font-weight: 300;">Python Programming</li>
+                      <li style="font-weight: 300;">Data Analysis & Pandas</li>
+                      <li style="font-weight: 300;">Machine Learning</li>
+                      <li style="font-weight: 300; color: #377dd8;">+3 more modules</li>
+                    </ul>
+                    <div class="career-box">
+                      <strong>Career Scope:</strong><br>
+                      <span style="font-weight: 300;"> Data Scientist, ML Engineer, AI Specialist, Data Analyst</span>
+                    </div>
+                    <a href="#" class="btn btn-dark-blue mt-3 w-100">Apply Now</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- App Devlopment -->
+              <div class="col-md-4">
+                <div class="card course-card position-relative h-100 w-100">
+                  <div class="card-top">Ap</div>
+                  <div class="card-header-badge">Development</div>
+                  <div class="card-body">
+                    <h5 class="card-title">App Development</h5>
+                    <p style="font-weight: 300; color: #4B5563;">
+                      Build native mobile applications for Android and iOS platforms using modern development
+                      frameworks.
+                    </p>
+                    <p><i class="far fa-clock"></i><b> Duration:</b> 5 Months</p>
+                    <p class="text-success"><i class="fa-solid fa-indian-rupee-sign"></i><strong>₹38,000</strong></p>
+                    <h6><span style="color: #377dd8;"><i class="fa-solid fa-book-open"></i></span> Key Modules:</h6>
+                    <ul>
+                      <li style="font-weight: 300;">React Native</li>
+                      <li style="font-weight: 300;">Flutter</li>
+                      <li style="font-weight: 300;">Firebase</li>
+                      <li style="color: #377dd8;">+3 more modules</li>
+                    </ul>
+                    <div class="career-box">
+                      <i class="fas fa-bullseye" style="color:#377dd8;"></i>
+                      <strong> Career Scope:</strong><br>
+                      <span style="font-weight: 300;">Mobile App Developer, Android Developer, iOS Developer,
+                        Cross-platform Developer</span>
+                    </div>
+                    <a href="#" class="btn btn-dark-blue mt-3 w-100">Apply Now</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- digital -->
+              <div class="col-md-4">
+                <div class="card course-card position-relative h-100 w-100">
+                  <div class="card-top">Di</div>
+                  <div class="card-header-badge">Marketing</div>
+                  <div class="card-body">
+                    <h5 class="card-title">Digital Marketing</h5>
+                    <p style="font-weight: 300; color: #4B5563;">
+                      Master online marketing strategies including SEO, social media, and content marketing to grow
+                      businesses digitally. </p>
+                    <p><i class="far fa-clock"></i><b> Duration:</b> 3 Months</p>
+                    <p class="text-success"><i class="fa-solid fa-indian-rupee-sign"></i><strong>₹25,000</strong></p>
+                    <h6><span style="color: #377dd8;"><i class="fa-solid fa-book-open"></i></span> Key Modules:</h6>
+                    <ul>
+                      <li style="font-weight: 300;">SEO & SEM</li>
+                      <li style="font-weight: 300;">Social Media Marketing</li>
+                      <li style="font-weight: 300;">Content Marketing</li>
+                      <li style="color: #377dd8;">+3 more modules</li>
+                    </ul>
+                    <div class="career-box">
+                      <i class="fas fa-bullseye" style="color:#377dd8;"></i>
+                      <strong> Career Scope:</strong><br>
+                      <span style="font-weight: 300;">Digital Marketing Manager, SEO Specialist, Social Media Manager,
+                        Content Strategist</span>
+                    </div>
+                    <a href="#" class="btn btn-dark-blue mt-3 w-100">Apply Now</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Design -->
+              <div class="col-md-4">
+                <div class="card course-card position-relative h-100 w-100">
+                  <div class="card-top">Di</div>
+                  <div class="card-header-badge">Design</div>
+                  <div class="card-body">
+                    <h5 class="card-title">Graphic Designing</h5>
+                    <p style="font-weight: 300; color: #4B5563;">
+                      Learn professional design tools and techniques to create stunning visuals, logos, and branding
+                      materials.
+                    <p><i class="far fa-clock"></i><b> Duration:</b> 3 Months</p>
+                    <p class="text-success"><i class="fa-solid fa-indian-rupee-sign"></i><strong>₹20,000</strong></p>
+                    <h6> <span style="color: #377dd8;"><i class="fa-solid fa-book-open"></i></span> Key Modules:</h6>
+                    <ul>
+                      <li style="font-weight: 300;">Adobe Photoshop</li>
+                      <li style="font-weight: 300;">Adobe Illustrator</li>
+                      <li style="font-weight: 300;">
+                        CorelDRAW</li>
+                      <li style="color: #377dd8;">+3 more modules</li>
+                    </ul>
+                    <div class="career-box">
+                      <i class="fas fa-bullseye" style="color:#377dd8;"></i>
+                      <strong> Career Scope:</strong><br>
+                      <span style="font-weight: 300;">Graphic Designer, UI Designer, Brand Designer, Freelance
+                        Designer</span>
+                    </div>
+                    <a href="#" class="btn btn-dark-blue mt-3 w-100">Apply Now</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Development Tab -->
+          <div class="tab-pane fade" id="development" role="tabpanel">
+            <div class="row g-4 align-items-stretch">
+
+              <!-- Full Stack Development -->
+              <div class="col-md-4 d-flex">
+                <div class="card course-card position-relative h-100 w-100">
+                  <div class="card-top">Fu</div>
+                  <div class="card-header-badge">Development</div>
+                  <div class="card-body">
+                    <h5 class="card-title">Full Stack Development</h5>
+                    <p style="font-weight: 300; color: #4B5563;">Master frontend and backend development with modern
+                      tools.</p>
+                    <p><i class="far fa-clock"></i> <b> Duration:</b> 6 Months</p>
+                    <p class="text-success"><i class="fa-solid fa-indian-rupee-sign"></i><strong>₹45,000</strong></p>
+                    <h6><span style="color: #377dd8;"><i class="fa-solid fa-book-open"></i></span> Key Modules:</h6>
+                    <ul>
+                      <li style="font-weight: 300;">HTML, CSS, JavaScript</li>
+                      <li style="font-weight: 300;">React.js & Node.js</li>
+                      <li style="font-weight: 300;">MongoDB & Express</li>
+                      <li style="color: #377dd8;">+3 more modules</li>
+                    </ul>
+                    <div class="career-box">
+                      <i class="fas fa-bullseye" style="color:#377dd8;"></i>
+                      <strong> Career Scope:</strong><br>
+                      <span style="font-weight: 300;">Full Stack Developer, MERN Stack Developer</span>
+                    </div>
+                    <a href="#" class="btn btn-dark-blue mt-3 w-100">Apply Now</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- App Development -->
+              <div class="col-md-4 d-flex">
+                <div class="card course-card position-relative h-100 w-100">
+                  <div class="card-top">Ap</div>
+                  <div class="card-header-badge">Development</div>
+                  <div class="card-body">
+                    <h5 class="card-title">App Development</h5>
+                    <p style="font-weight: 300; color: #4B5563;">
+                      Build native mobile applications for Android and iOS platforms using modern development
+                      frameworks.
+                    </p>
+                    <p><i class="far fa-clock"></i><b> Duration:</b> 5 Months</p>
+                    <p class="text-success"><i class="fa-solid fa-indian-rupee-sign"></i><strong>₹38,000</strong></p>
+                    <h6><span style="color: #377dd8;"><i class="fa-solid fa-book-open"></i></span> Key Modules:</h6>
+                    <ul>
+                      <li style="font-weight: 300;">React Native</li>
+                      <li style="font-weight: 300;">Flutter</li>
+                      <li style="font-weight: 300;">Firebase</li>
+                      <li style="color: #377dd8;">+3 more modules</li>
+                    </ul>
+                    <div class="career-box">
+                      <i class="fas fa-bullseye" style="color:#377dd8;"></i>
+                      <strong> Career Scope:</strong><br>
+                      <span style="font-weight: 300;">Mobile App Developer, Android Developer, iOS Developer,
+                        Cross-platform Developer</span>
+                    </div>
+                    <a href="#" class="btn btn-dark-blue mt-3 w-100">Apply Now</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!-- Security Tab -->
+          <div class="tab-pane fade" id="security" role="tabpanel">
+            <div class="row g-4">
+              <div class="col-md-4">
+                <div class="card course-card position-relative">
+                  <div class="card-top">Cy</div>
+                  <div class="card-header-badge">Security</div>
+                  <div class="card-body">
+                    <h5 class="card-title">Cyber Security</h5>
+                    <p style="font-weight: 300;  color: #4B5563;">Learn to protect systems and networks from cyber
+                      threats.</p>
+                    <p><i class="far fa-clock"></i><b> Duration:</b> 4 Months</p>
+                    <p class="text-success"><i class="fa-solid fa-indian-rupee-sign"></i><strong>₹40,000</strong></p>
+                    <h6><span style="color: #377dd8;"><i class="fa-solid fa-book-open"></i></span> Key Modules:</h6>
+                    <ul>
+                      <li style="font-weight: 300;">Network Security</li>
+                      <li style="font-weight: 300;">Ethical Hacking</li>
+                      <li style="font-weight: 300;">Penetration Testing</li>
+                      <li style="font-weight: 300; color: #377dd8;">+3 more modules</li>
+                    </ul>
+                    <div class="career-box">
+                      <strong>Career Scope:</strong><br>
+                      <span style="font-weight: 300;"> Cyber Security Analyst, Ethical Hacker</span>
+                    </div>
+                    <a href="#" class="btn btn-dark-blue mt-3 w-100">Apply Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data Science Tab -->
+          <div class="tab-pane fade" id="data" role="tabpanel">
+            <div class="row g-4">
+              <div class="col-md-4">
+                <div class="card course-card position-relative">
+                  <div class="card-top">Da</div>
+                  <div class="card-header-badge">Data Science</div>
+                  <div class="card-body">
+                    <h5 class="card-title">Data Science & AI</h5>
+                    <p style="font-weight: 300;  color: #4B5563;">Dive into ML and AI. Work with real datasets and
+                      predictive models.</p>
+                    <p><i class="far fa-clock"></i> <b> Duration:</b> 6 Months</p>
+                    <p class="text-success"><i class="fa-solid fa-indian-rupee-sign"></i><strong>₹50,000</strong></p>
+                    <h6><span style="color: #377dd8;"><i class="fa-solid fa-book-open"></i></span> Key Modules:</h6>
+                    <ul>
+                      <li style="font-weight: 300;">Python Programming</li>
+                      <li style="font-weight: 300;">Data Analysis & Pandas</li>
+                      <li style="font-weight: 300;">Machine Learning</li>
+                      <li style="font-weight: 300; color: #377dd8;">+3 more modules</li>
+                    </ul>
+                    <div class="career-box">
+                      <strong>Career Scope:</strong><br>
+                      <span style="font-weight: 300;"> Data Scientist, ML Engineer, AI Specialist</span>
+                    </div>
+                    <a href="#" class="btn btn-dark-blue mt-3 w-100">Apply Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Digital markrting -->
+          <div class="tab-pane fade" id="digital" role="tabpanel">
+            <div class="row g-4">
+              <div class="col-md-4">
+                <div class="card course-card position-relative h-100 w-100">
+                  <div class="card-top">Di</div>
+                  <div class="card-header-badge">Marketing</div>
+                  <div class="card-body">
+                    <h5 class="card-title">Digital Marketing</h5>
+                    <p style="font-weight: 300; color: #4B5563;">
+                      Master online marketing strategies including SEO, social media, and content marketing to grow
+                      businesses digitally. </p>
+                    <p><i class="far fa-clock"></i><b> Duration:</b> 3 Months</p>
+                    <p class="text-success"><i class="fa-solid fa-indian-rupee-sign"></i><strong>₹25,000</strong></p>
+                    <h6><span style="color: #377dd8;"><i class="fa-solid fa-book-open"></i></span> Key Modules:</h6>
+                    <ul>
+                      <li style="font-weight: 300;">SEO & SEM</li>
+                      <li style="font-weight: 300;">Social Media Marketing</li>
+                      <li style="font-weight: 300;">Content Marketing</li>
+                      <li style="color: #377dd8;">+3 more modules</li>
+                    </ul>
+                    <div class="career-box">
+                      <i class="fas fa-bullseye" style="color:#377dd8;"></i>
+                      <strong> Career Scope:</strong><br>
+                      <span style="font-weight: 300;">Digital Marketing Manager, SEO Specialist, Social Media Manager,
+                        Content Strategist</span>
+                    </div>
+                    <a href="#" class="btn btn-dark-blue mt-3 w-100">Apply Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- design -->
+
+          <div class="tab-pane fade" id="Design" role="tabpanel">
+            <div class="row g-4">
+              <div class="col-md-4">
+                <div class="card course-card position-relative h-100 w-100">
+                  <div class="card-top">Di</div>
+                  <div class="card-header-badge">Design</div>
+                  <div class="card-body">
+                    <h5 class="card-title">Graphic Designing</h5>
+                    <p style="font-weight: 300; color: #4B5563;">
+                      Learn professional design tools and techniques to create stunning visuals, logos, and branding
+                      materials.
+                    <p><i class="far fa-clock"></i><b> Duration:</b> 3 Months</p>
+                    <p class="text-success"><i class="fa-solid fa-indian-rupee-sign"></i><strong>₹20,000</strong></p>
+                    <h6><span style="color: #377dd8;"><i class="fa-solid fa-book-open"></i></span> Key Modules:</h6>
+                    <ul>
+                      <li style="font-weight: 300;">Adobe Photoshop</li>
+                      <li style="font-weight: 300;">Adobe Illustrator</li>
+                      <li style="font-weight: 300;">
+                        CorelDRAW</li>
+                      <li style="color: #377dd8;">+3 more modules</li>
+                    </ul>
+                    <div class="career-box">
+                      <i class="fas fa-bullseye" style="color:#377dd8;"></i>
+                      <strong> Career Scope:</strong><br>
+                      <span style="font-weight: 300;">Graphic Designer, UI Designer, Brand Designer, Freelance
+                        Designer</span>
+                    </div>
+                    <a href="#" class="btn btn-dark-blue mt-3 w-100">Apply Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+  </section>
+
+  <!-- placement -->
+  <section id="Placements" style="display: none;">
+    <div class="container-fluid   placcontainer">
+
+      <div class="plachead text-center">
+
+        <h1 class="plach1"><b>Student Placements at TIPSG Kotputli
+          </b></h1>
+        <p
+          style="color: white; text-align: center;max-width: 800px;display: flex;justify-content: center;align-items: center;">
+          Pioneering IT education in Kotputli - District's first comprehensive training and placement center
+          transforming dreams into reality</p>
+
+      </div>
+
+    </div>
+    <div class="container plac-stats py-5">
+      <div class="row text-center g-4">
+        <!-- Card 1 -->
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="plac-card1 p-4">
+            <div class="plac-icon bg-primary">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <h3 class="plac-number">300+</h3>
+            <p class="plac-text">Students Placed in IT Jobs Kotputli</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="plac-card1 p-4">
+            <div class="plac-icon bg-orange">
+              <i class="fa-regular fa-building"></i>
+            </div>
+            <h3 class="plac-number">50+</h3>
+            <p class="plac-text">Hiring Partners & Companies</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="plac-card1 p-4">
+            <div class="plac-icon bg-success">
+              <i class="fa-solid fa-arrow-trend-up"></i>
+            </div>
+            <h3 class="plac-number">₹5.5 LPA</h3>
+            <p class="plac-text">Highest Package Offered</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div style="background-color: #f1f6fd;">
+      <div class="container py-5">
+        <!-- Heading -->
+        <div class="text-center mb-5">
+          <h2 style="color: #1E3A8A;font-weight: 700;">Career After IT Training in Kotputli</h2>
+          <p style="color: #4B5563; font-weight: 300; font-size: 16px;">
+            Real students, real success stories. Join TIPSG Kotputli and transform your career with <br
+              class="d-none d-md-block">
+            our IT training and guaranteed placement support.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Card 1 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card plac-card h-100">
+              <div class="plac-card-top">
+
+                <div class="plac-avatar">AM</div>
+              </div>
+              <div class="card-body">
+                <h5 class="fw-bold">Amit Kumar</h5>
+                <p><i class="bi bi-mortarboard text-primary"></i><span
+                    style="color: #4B5563; font-size: 14px; font-weight: 300;"> <strong>Course:</strong> Data Science &
+                    AI </span></p>
+                <p class=" mb-1"><i class="bi bi-building me-2 text-danger"></i> <span
+                    style="color: #4B5563; font-size: 13px; font-weight: 300;"><b>Wipro</b></span></p>
+                <p><i class="fa-solid fa-award me-2" style="color: #9333ea; font-size: 15px;"></i>
+                  <span style="font-weight: 300;color: #4B5563;font-size: 13px;">Data Anylist</span>
+                </p>
+                <p class="plac-salary"><i class="bi bi-currency-rupee"></i>5,50,000 LPA</p>
+                <div class="plac-quote">
+                  "From zero coding knowledge to landing a job at Wipro - TIPSG made it possible!"
+                </div>
+                <small class="text-muted d-block mt-3">Placed on: November 2024</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card plac-card h-100">
+              <div class="plac-card-top">
+
+                <div class="plac-avatar">VI</div>
+              </div>
+              <div class="card-body">
+                <h5 class="fw-bold">Vikash Singh</h5>
+                <p><i class="bi bi-mortarboard text-primary"></i><span
+                    style="color: #4B5563; font-size: 14px; font-weight: 300;"> <strong>Course:</strong> App Development
+                  </span></p>
+                <p class=" mb-1"><i class="bi bi-building me-2 text-danger"></i> <span
+                    style="color: #4B5563; font-size: 13px; font-weight: 300;"><b>Tech Mahindra</b></span></p>
+                <p><i class="fa-solid fa-award me-2" style="color: #9333ea; font-size: 15px;"></i>
+                  <span style="font-weight: 300;color: #4B5563;font-size: 13px;">Mobile Developer</span>
+                </p>
+                <p class="plac-salary"><i class="bi bi-currency-rupee"></i>4,80,000 LPA</p>
+                <div class="plac-quote">
+                  "The best IT training institute in Kotputli. Great infrastructure and supportive faculty."
+                </div>
+                <small class="text-muted d-block mt-3">Placed on: November 2024</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card plac-card h-100">
+              <div class="plac-card-top">
+
+                <div class="plac-avatar">RA</div>
+              </div>
+              <div class="card-body">
+                <h5 class="fw-bold">Rahul Sharma</h5>
+                <p><i class="bi bi-mortarboard text-primary"></i><span
+                    style="color: #4B5563; font-size: 14px; font-weight: 300;"> <strong>Course:</strong> Full Stack
+                    Development </span></p>
+                <p class=" mb-1"><i class="bi bi-building me-2 text-danger"></i> <span
+                    style="color: #4B5563; font-size: 13px; font-weight: 300;"><b>TCS</b></span></p>
+                <p><i class="fa-solid fa-award me-2" style="color: #9333ea; font-size: 15px;"></i>
+                  <span style="font-weight: 300;color: #4B5563;font-size: 13px;">Software Developer</span>
+                </p>
+                <p class="plac-salary"><i class="bi bi-currency-rupee"></i>4,50,000 LPA</p>
+                <div class="plac-quote">
+                  "From zero coding knowledge to landing a job at Wipro - TIPSG made it possible!"
+                </div>
+                <small class="text-muted d-block mt-3">Placed on: November 2024</small>
+              </div>
+            </div>
+          </div>
+          <!-- Card4 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card plac-card h-100">
+              <div class="plac-card-top">
+
+                <div class="plac-avatar">PR</div>
+              </div>
+              <div class="card-body">
+                <h5 class="fw-bold">Priya Verma</h5>
+                <p><i class="bi bi-mortarboard text-primary"></i><span
+                    style="color: #4B5563; font-size: 14px; font-weight: 300;"> <strong>Course:</strong> Cyber Security
+                  </span></p>
+                <p class=" mb-1"><i class="bi bi-building me-2 text-danger"></i> <span
+                    style="color: #4B5563; font-size: 13px; font-weight: 300;"><b>Infosys</b></span></p>
+                <p><i class="fa-solid fa-award me-2" style="color: #9333ea; font-size: 15px;"></i>
+                  <span style="font-weight: 300;color: #4B5563;font-size: 13px;">Security Analyst</span>
+                </p>
+                <p class="plac-salary"><i class="bi bi-currency-rupee"></i>₹5,00,000 LPA</p>
+                <div class="plac-quote">
+                  "Best decision of my life! The instructors are industry experts and placement support is outstanding."
+                </div>
+                <small class="text-muted d-block mt-3">Placed on: November 2024</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card plac-card h-100">
+              <div class="plac-card-top">
+
+                <div class="plac-avatar">SN</div>
+              </div>
+              <div class="card-body">
+                <h5 class="fw-bold">Sneha Patel</h5>
+                <p><i class="bi bi-mortarboard text-primary"></i><span
+                    style="color: #4B5563; font-size: 14px; font-weight: 300;"> <strong>Course:</strong> Digital
+                    Marketing </span></p>
+                <p class=" mb-1"><i class="bi bi-building me-2 text-danger"></i> <span
+                    style="color: #4B5563; font-size: 13px; font-weight: 300;"><b>Digital Marketing Agency</b></span>
+                </p>
+                <p><i class="fa-solid fa-award me-2" style="color: #9333ea; font-size: 15px;"></i>
+                  <span style="font-weight: 300;color: #4B5563;font-size: 13px;">Marketing Executive</span>
+                </p>
+                <p class="plac-salary"><i class="bi bi-currency-rupee"></i>₹3,50,000 LPA</p>
+                <div class="plac-quote">
+                  "Practical projects and real campaigns helped me build a strong portfolio. Got placed within 2 weeks!"
+                </div>
+                <small class="text-muted d-block mt-3">Placed on: November 2024</small>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container placcom py-5">
+      <h2>Our Placement Partner Companies</h2>
+      <h5>Leading IT companies hire from TIPSG Kotputli</h5>
+
+      <div class="row g-4 justify-content-center pt-5">
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="company-card">TCS</div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="company-card">Infosys</div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="company-card">Wipro</div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="company-card">Tech<br>Mahindra</div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="company-card">HCL</div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="company-card">Accenture</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid plactoday">
+      <h2>Start Your Career Journey Today</h2>
+      <p> Join TIPSG Kotputli and become our next success story. Enroll in IT training courses with 100% <br
+          class="d-none d-md-block"> placement support in Kotputli.</p>
+      <a href="#"> Apply for IT Training in Kotputli </a>
+    </div>
+
+
+  </section>
+
+  <!-- Admission -->
+  <section id="Admissions" style="display: none;">
+    <div class="container-fluid   Addcontainer">
+
+      <div class="Addhead text-center">
+
+        <h1 class="Addh1"><b>Admissions at TIPSG Kotputli
+          </b></h1>
+        <p style="color: white; text-align: center; ">Apply online for computer courses in Kotputli at TIPSG. Simple
+          admission process, EMI <br class="d-none d-md-block"> fee structure, limited seats available. Enroll in IT
+          training Kotputli today!</p>
+
+      </div>
+
+    </div>
+
+    <div class="container Add-section py-5">
+      <div class="text-center mb-5">
+        <h2 class="Add-title">Simple Admission Process</h2>
+        <p class="Add-subtitle">Get admitted in just 3 easy steps</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Step 1 -->
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="Add-card text-center p-4 h-100">
+            <div class="Add-icon mb-3">
+              <i class="bi bi-clipboard-check"></i>
+            </div>
+            <span class="Add-step">Step 1</span>
+            <h4 class="mt-3">Choose Your Course</h4>
+            <p>Select the IT training course that matches your career goals - Full Stack, Cyber Security, Data Science &
+              more.</p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="Add-card text-center p-4 h-100">
+            <div class="Add-icon mb-3">
+              <i class="bi bi-file-earmark-check"></i>
+            </div>
+            <span class="Add-step">Step 2</span>
+            <h4 class="mt-3">Fill Application Form</h4>
+            <p>Complete the online admission form with your details. Our team will contact you within 24 hours.</p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="Add-card text-center p-4 h-100">
+            <div class="Add-icon mb-3">
+              <i class="bi bi-credit-card"></i>
+            </div>
+            <span class="Add-step">Step 3</span>
+            <h4 class="mt-3">Pay Fees & Start</h4>
+            <p>Pay course fees (EMI available) and begin your journey. Limited seats - enroll now!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background-color: #f1f6fd;">
+
+    </div>
+  </section>
+
+
+  <section id="Gallery" style="display: none;">
     
+  </section>
+  <section id="Events" style="display: none;">
+    <div class="container-fluid   Addcontainer">
+
+      <div class="Addhead text-center">
+
+        <h1 class="Addh1"><b>Events & Workshops - TIPSG Kotputli
+
+          </b></h1>
+        <p style="color: white; text-align: center; ">Stay updated with seminars Kotputli, workshops Kotputli, and IT
+          events Kotputli. Join <br class="d-none d-md-block"> our industry expert sessions and networking
+          opportunities.</p>
+
+      </div>
+
+    </div>
+
+    <div class="container py-5">
+      <div class="row g-4">
+        <div style="text-align: center;" class="eventhead">
+          <h5>Upcoming Events & Seminars</h5>
+          <p>Register now for upcoming workshops and guest lectures in Kotputli</p>
+        </div>
+        <!-- Full Stack Bootcamp Card -->
+        <div class="col-md-6 col-lg-4 d-flex">
+          <div class="event-card w-100">
+            <div class="event-w">
+              <div class="event-header">
+                <span class="event-status">Upcoming</span>
+                <span class="event-badge">Training</span>
+                <!-- <i class="bi bi-calendar3"></i> -->
+                <i class="fa-solid fa-calendar-days"></i>
+              </div>
+            </div>
+            <div class="event-body">
+              <h5>Full Stack Development Bootcamp</h5>
+              <p>Intensive 2-day bootcamp covering React, Node.js, and MongoDB. Build a complete web application from
+                scratch.</p>
+              <p><i class="bi bi-calendar-event" style="color: #628af7;"></i> March 1, 2025</p>
+              <p><i class="bi bi-geo-alt" style="color: #ff4500;"></i> TIPSG Kotputli Campus</p>
+            </div>
+            <div class="event-footer">
+              <button class="event-register-btn">Register Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cyber Security Workshop Card -->
+        <div class="col-md-6 col-lg-4 d-flex">
+          <div class="event-card w-100">
+            <div class="event-w">
+              <div class="event-header">
+                <span class="event-status">Upcoming</span>
+                <span class="event-badge">Workshop</span>
+                <!-- <i class="bi bi-calendar3"></i> -->
+                <i class="fa-solid fa-calendar-days"></i>
+              </div>
+            </div>
+            <div class="event-body">
+              <h5>Cyber Security Awareness Workshop</h5>
+              <p>Learn about latest cyber threats and how to protect yourself online. Industry experts will share
+                insights on ethical hacking and security best practices.</p>
+              <p><i class="bi bi-calendar-event" style="color: #628af7;"></i> February 15, 2025</p>
+              <p><i class="bi bi-geo-alt" style="color: #ff4500;"></i> TIPSG Kotputli Campus</p>
+            </div>
+            <div class="event-footer">
+              <button class="event-register-btn">Register Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="background-color:#f1f6fd;">
+      <div class="container py-5">
+
+        <div style="text-align: center;" class="eventhead">
+          <h5>Past Events & Workshops</h5>
+          <p>Highlights from our previous seminars and training sessions</p>
+        </div>
+        <div class="col-md-6 col-lg-4 d-flex pt-5">
+          <div class="event-card1 w-100">
+            <div class="event-j">
+              <div class="event-e">
+                <span class="event-i">Completed</span>
+                <i class="bi bi-calendar3"></i>
+              </div>
+            </div>
+            <div class="event-d">
+              <span>Guest Lecture</span>
+
+              <h5>Industry Expert Guest Lecture on AI</h5>
+              <p><i class="bi bi-calendar-event"></i> December 10, 2024</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid plactoday">
+      <h2>Want to Host an Event at TIPSG?</h2>
+      <p> We welcome industry experts and organizations to conduct workshops and seminars at our <br class="d-none d-md-block">Kotputli campus.</p>
+      <a href="#">Contact Us</a>
+    </div>
+
+  </section>
+  <section id="Blog" style="display: none;"></section>
+  <section id="Contact" style="display: none;"></section>
 
 
 
-    <script src="js.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+
+
+  <script src="js.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>
