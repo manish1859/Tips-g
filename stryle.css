@@ -2694,6 +2694,9 @@ footer {
     .social-icons a:hover {
       background: #f97316;
     }
+    .footer-links li{
+      text-decoration: none;
+    }
 
     /* Tablet View */
     @media (max-width: 991px) {
