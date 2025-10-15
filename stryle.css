@@ -1336,6 +1336,9 @@ margin: 30px 0px 50px 0px;
   .aboutTips{
     padding-top: 20px;
   }
+  .aboutTips h2{
+    font-size: 35px;
+  }
 }
 /* About End */
 
@@ -2695,7 +2698,7 @@ footer {
       background: #f97316;
     }
     .footer-links li{
-      text-decoration: none;
+      list-style: none;
     }
 
     /* Tablet View */
