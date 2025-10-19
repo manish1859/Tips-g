@@ -2564,6 +2564,7 @@ margin: 30px 0px 50px 0px;
 }
 
 /* Contact Form */
+
 .contact-form {
   border-radius: 15px;
   box-shadow: 0 6px 15px rgba(0,0,0,0.08);
@@ -2590,7 +2591,11 @@ margin: 30px 0px 50px 0px;
 .contact-form button:hover {
   background: #e06500;
 }
-
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  font-size: 12px;  
+  color: #4B5563;  
+}
 /* Map */
 .contact-map {
   width: 100%;
@@ -2612,13 +2617,14 @@ margin: 30px 0px 50px 0px;
 }
 
 .contact-subtitle {
-  font-size: 22px;
-  font-weight: 300;
+  font-size: 15px;
+  font-weight: 400;
   color: #4B5563;
 }
+
 .contact-subtitle1 {
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 500;
   color: #4B5563;
 }
 
@@ -2637,7 +2643,7 @@ margin: 30px 0px 50px 0px;
 
   .contact-section { padding: 40px 10px; }
 
-  .contact-title { font-size: 1.4rem; color: #002c77 !important; text-align: center; }
+  .contact-title { font-size: 2.5rem; color: #002c77 !important; text-align: center; }
   .contact-subtitle { font-size: 0.95rem; text-align: center; font-weight: 400; }
 
   .contact-form { padding: 20px; }
@@ -2649,6 +2655,7 @@ margin: 30px 0px 50px 0px;
 
 
 /* Footer Start */
+
 footer {
       background: linear-gradient(135deg, #0f296a, #122d80);
       color: white;
@@ -2661,14 +2668,25 @@ footer {
       margin-bottom: 20px;
     }
 
-    .footer-icon {
+    .footer-course li{
+      font-size: 12px;
+      color: white;
+      padding-bottom: 5px;
+    }
+    .footer-section{
+      font-size: 25px;
+      font-weight: 700;
+      color: white;
+    }
+
+    /* .footer-icon {
       background: white;
       color: #0f296a;
       font-size: 22px;
       border-radius: 50%;
       padding: 6px 9px;
       margin-right: 10px;
-    }
+    } */
 
     .footer a {
       color: #fff;
@@ -2700,7 +2718,7 @@ footer {
     .footer-links li{
       list-style: none;
     }
-
+    
     /* Tablet View */
     @media (max-width: 991px) {
       .footer .col-md-3 {
@@ -2717,5 +2735,11 @@ footer {
       .social-icons a {
         margin: 6px;
       }
+        footer .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
     }
+
+
 /* Footer End */

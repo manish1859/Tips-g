@@ -2,16 +2,19 @@
     document.getElementById("loading").style.display = "none";
   });
 
-function showSection(id) {
-  document.querySelectorAll("section").forEach(sec => sec.style.display = "none");
-  document.getElementById(id).style.display = "block";
-}
+  function showSection(id) {
+    document.querySelectorAll("section").forEach(sec => sec.style.display = "none");
+    document.getElementById(id).style.display = "block";
+
+    // Jab section show ho to top pe scroll ho
+    window.scrollTo(0, 0);
+  }
+
   function setActive(el, section) {
     document.querySelectorAll(".nav-link").forEach(link => link.classList.remove("active"));
     el.classList.add("active");
-    showSection(section); 
+    showSection(section);
   }
-
 AOS.init();
   const homeanimat = document.querySelectorAll('.home-anim');
 
@@ -36,10 +39,11 @@ AOS.init();
     }, 2000); // 2 seconds after initial animation
   }
 
+
   window.addEventListener('scroll', animateHomeCards);
   window.addEventListener('load', animateHomeCards);
 
-const observer = new IntersectionObserver((entries) => {
+  const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('in-view');
@@ -49,9 +53,12 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.animate-left, .animate-right,.aboutcardbody,.aboutTipscard,.Eventcontainer,.concontainer,.gallery-header-container').forEach(el => {
+document.querySelectorAll(
+  '.animate-left, .animate-right, .aboutcardbody, .aboutTipscard, .Eventcontainer, .concontainer, .gallery-header-container'
+).forEach(el => {
   observer.observe(el);
 });
+
 
 //home js//
 document.addEventListener("DOMContentLoaded", () => {
