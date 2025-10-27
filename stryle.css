@@ -690,23 +690,24 @@ background: linear-gradient(90deg, #ea580c, #f97316);
   background: #2852b5;
 }
 
-/* .btn1 {
-  color: #1E3A8A;
+.btn1 {
+  color: #0d2c74;
   background-color: #fff;
-  border: 2px solid #1E3A8A;
-  text-decoration: none;
+  border: 2px solid #0d2c74;
   border-radius: 5px;
-  padding: 10px 39px !important;
-  font-size: 1.18rem !important;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
-} */
+}
 
 .btn1:hover {
   cursor: pointer;
-  background-color: #1E3A8A;
+  background-color: #0d2c74;
   color: #fff;
 }
+
 
 /* //success store// */
 
@@ -827,23 +828,6 @@ background: linear-gradient(90deg, #ea580c, #f97316);
   .text {
     padding: 6px !important; 
   }
-}
-
-.btn1 {
-  color: #0d2c74;
-  background-color: #fff;
-  border: 2px solid #0d2c74;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.btn1:hover {
-  cursor: pointer;
-  background-color: #0d2c74;
-  color: #fff;
 }
 
 /* //card scroll start// */
