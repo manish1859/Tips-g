@@ -142,7 +142,72 @@ const companyCardsObserver = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.3 });
 
+// Founder
+const fadeElements = document.querySelectorAll('.fade-up');
+
+const appearOptions = {
+  threshold: 0.15,
+  rootMargin: "0px 0px -30px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('visible');
+    observer.unobserve(entry.target);
+  });
+}, appearOptions);
+
+fadeElements.forEach(el => {
+  appearOnScroll.observe(el);
+});
+
 // Observe the parent container
 const companyRow = document.querySelector('.company-row');
 if (companyRow) companyCardsObserver.observe(companyRow);
 
+
+
+// corses
+document.addEventListener("DOMContentLoaded", function () {
+  // Default tab
+  const defaultTab = document.querySelector('#cousetab-all-tab');
+  const defaultPane = document.querySelector('#cousetab-all');
+
+  if (defaultTab && defaultPane) {
+    defaultTab.classList.add('active');
+    defaultPane.classList.add('show', 'active');
+  }
+
+  // Handle manual tab clicks
+  const tabButtons = document.querySelectorAll('.cousetab-link');
+  const tabPanes = document.querySelectorAll('.tab-pane');
+
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      tabPanes.forEach(pane => pane.classList.remove('show', 'active'));
+      button.classList.add('active');
+      const targetId = button.getAttribute('data-bs-target');
+      const targetPane = document.querySelector(targetId);
+      if (targetPane) targetPane.classList.add('show', 'active');
+    });
+  });
+});
+
+// Scroll
+    const topBtn = document.getElementById('topBtn');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        topBtn.classList.add('show');
+      } else {
+        topBtn.classList.remove('show');
+      }
+    });
+
+    // Optional: smooth scroll to top
+    topBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
