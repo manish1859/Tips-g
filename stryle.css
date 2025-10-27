@@ -1788,7 +1788,7 @@ margin: 30px 0px 50px 0px;
     .bottom-banner p {
       color: #bfdbfe;
       font-weight: 400;
-      font-size: 19px;
+      font-size: 17px;
       margin-bottom: 30px;
     }
 
@@ -1823,7 +1823,8 @@ margin: 30px 0px 50px 0px;
         font-size: 17px;
         padding: 10px 30px;
       }
-    }/* Courses End */
+    }
+    /* Courses End */
 
 /* Placment Start */
 
@@ -1858,7 +1859,7 @@ margin: 30px 0px 50px 0px;
     font-weight: 700;
   }
   .plachead p {
-    font-size: 15px !important;
+    font-size: 15px ;
   }
 
   .placcontainer {
@@ -2625,7 +2626,7 @@ margin: 30px 0px 50px 0px;
     /* Gallery Start */
         .gallery-horizontal-gap{
         font-weight: bold;
-        font-size: 45px !important;
+        font-size: 45px ;
     }
 
     
@@ -2646,17 +2647,8 @@ margin: 30px 0px 50px 0px;
   }
 }
     
-    @media (max-width:768px) {
-    .gallery-horizontal-gap{
-        font-weight: bold;
-        font-size: 32px;
-    }
-    .gallary-title{
-        font-size: 30px !important;
-    }
-    }
 .gallery-button-wrapper {
-    position: absolute;
+  position: absolute;
     top: 40px;
     display: inline-block;
     padding: 5px;
@@ -2664,8 +2656,8 @@ margin: 30px 0px 50px 0px;
     background-color: #ffffff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 10;
-}
-.gallary-section {
+  }
+  .gallary-section {
         background: #f8fbff;
       padding: 60px 20px;
       text-align: center;
@@ -2704,12 +2696,12 @@ margin: 30px 0px 50px 0px;
     .gallary-card h5 {
         font-weight: 600;
         margin-bottom: 5px;
-    }
+      }
     .gallary-card p {
         font-size: 0.9rem;
         opacity: 0.8;
-    }
-
+      }
+      
 .gallery-all-photos-btn {
     background-color: #2b3d7c;
     border-color: #2b3d7c;
@@ -2717,34 +2709,49 @@ margin: 30px 0px 50px 0px;
     padding: 8px 20px;
     font-weight: 500;
     border-radius: 6px;
-}
+  }
 
-.gallery-all-photos-btn:hover,
-.gallery-all-photos-btn:focus {
+  .gallery-all-photos-btn:hover,
+  .gallery-all-photos-btn:focus {
     background-color: #3f5296;
     border-color: #3f5296;
     color: #ffffff;
-}
-
-.gallery-coming-soon-text {
+  }
+  
+  .gallery-coming-soon-text {
     color: #6c757d !important;
     font-size: 1.25rem;
-}
-
-.gallery-header-container {
+  }
+  
+  .gallery-header-container {
     background-color: #172b77; 
     color: #ffffff;
     border-radius: 0;
-}
-
-
-
-.gallery-description {
-    font-size: 1.1rem !important; 
+  }
+  
+  
+  
+  .gallery-description {
+    font-size: 1.1rem ; 
     font-weight: 400; 
     color: #bfdbfe; 
     text-align: center;
-}
+  }
+  @media (max-width:768px) {
+  .gallery-horizontal-gap{
+      font-weight: bold;
+      font-size: 32px;
+  }
+  .gallary-title{
+      font-size: 28px !important;
+  }
+  .gallery-description{
+    font-size: 0.7rem !important;
+  }
+  .gallary-subtitle {
+    font-size: 12px;
+  }
+  }
 /* Gallery End */
 
 /* contact start */
