@@ -2970,7 +2970,7 @@ margin: 30px 0px 50px 0px;
 }
 
     .footer a {
-      color: #fff;
+      color: #BFDBFE;
       text-decoration: none;
       font-size: 12px;
     }
@@ -2982,11 +2982,15 @@ margin: 30px 0px 50px 0px;
     .footer-courses li{
       font-size:14px ;
       line-height: 28px;
+      color: #BFDBFE;
+    }
+    .footer-contact p{
+      color: #BFDBFE;
     }
     .social-icons a {
       display: inline-block;
       background: rgba(255, 255, 255, 0.1);
-      color: white;
+      color: #BFDBFE; 
       width: 36px;
       height: 36px;
       line-height: 36px;
