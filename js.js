@@ -10,12 +10,44 @@
     window.scrollTo(0, 0);
   }
 
-  function setActive(el, section) {
-    document.querySelectorAll(".nav-link").forEach(link => link.classList.remove("active"));
-    el.classList.add("active");
-    showSection(section);
+function setActive(el, section) {
+  // Remove "active" from all nav links
+  document.querySelectorAll(".nav-link").forEach(link => link.classList.remove("active"));
+
+  // Add "active" to the clicked one
+  el.classList.add("active");
+
+  // Show the target section
+  showSection(section);
+
+  // ===== Instantly Close Bootstrap Offcanvas =====
+  const offcanvasElement = document.querySelector('.offcanvas.show');
+  if (offcanvasElement) {
+    const offcanvasInstance = bootstrap.Offcanvas.getInstance(offcanvasElement);
+    if (offcanvasInstance) {
+      offcanvasInstance.hide();
+
+      // Remove backdrop instantly (Bootstrap sometimes keeps it for a moment)
+      const backdrop = document.querySelector('.offcanvas-backdrop');
+      if (backdrop) backdrop.remove();
+
+      // Restore body scroll immediately
+      document.body.style.overflow = 'auto';
+      document.body.classList.remove('offcanvas-backdrop', 'show');
+    }
   }
+}
+
+
+
+
 AOS.init();
+
+
+
+
+
+
   const homeanimat = document.querySelectorAll('.home-anim');
 
   function animateHomeCards() {
