@@ -1725,8 +1725,8 @@ html, body {
   background-color: #1e3a8a;
   color: white;
   font-weight: 600;
-  margin-top: auto;
-  margin-bottom: 10px;
+  /* margin-top: auto;
+  margin-bottom: 10px; */
 }
 
 .btn-dark-blue:hover {
