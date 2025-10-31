@@ -851,131 +851,288 @@ background: linear-gradient(90deg, #ea580c, #f97316);
 }
 
 /* Card Wrapper */
-.home-card-carousel-wrapper {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
+.carousel-container {
+    width: 100%;
+    max-width: 1200px;
+    height: 450px;
+    position: relative;
+    perspective: 1000px;
+    margin-top: 80px;
 }
 
-.home-card-track {
-  display: flex;
-  transition: transform 0.8s ease-in-out;
+.carousel-track {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Card Base */
-.home-card-item {
-  flex: 0 0 25%;
-  padding: 15px;
+.team-card {
+    position: absolute;
+    width: 280px;
+    height: 380px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
 }
 
-.home-card-box {
-  background: #fff;
-  border-radius: 20px;
-  text-align: center;
-  overflow: hidden;
-  transition: all 0.4s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  position: relative;
+.team-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.home-card-box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+.social-overlay {
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: rgba(8, 42, 123, 0.5); /* Blue overlay */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0; /* Hidden by default */
+    transform: translateY(100%); 
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out; 
+    pointer-events: none; 
 }
 
-/* Card Top Image Area */
-.home-card-image {
-  padding: 40px 0;
-  background: linear-gradient(135deg, #172554, #1e3a8a);
-  position: relative;
+.overlay-name {
+    font-size: 1.5rem;
+    /* color: #4b5563; */
+    font-weight: 700;
+    margin-bottom: 5px;
 }
 
-.home-card-image img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 5px solid #fff;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
-  transition: transform 0.4s ease;
+.overlay-role {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    opacity: 0.8;
+    text-transform: uppercase;
 }
 
-.home-card-box:hover .home-card-image img {
-  transform: scale(1.1);
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 8px;
+    transition: color 0.2s ease;
+    text-decoration: none;
+}
+.social-links a:hover {
+    color: rgb(245, 2, 2); 
 }
 
-/* Info Section */
-.home-card-info {
-  background: #ffffff;
-  color: #374151;
-  padding: 20px 10px 10px;
+.team-card.center:hover .social-overlay {
+    opacity: 1;
+    transform: translateY(0); /* Slide up to final position */
+    pointer-events: all; /* Allows clicking on links */
 }
 
-.home-card-name {
-  font-size: 18px;
-  font-weight: 700;
-  color: #1E3A8A;
-  margin-bottom: 5px;
+.team-card.center:hover img {
+    filter: brightness(60%); /* Darkens the image under the overlay */
 }
 
-.home-card-role {
-  font-size: 14px;
-  color: #4B5563;
-  font-weight: 500;
+.team-card.center {
+    z-index: 10;
+    transform: scale(1.1) translateZ(0);
 }
 
-/* Social Icons */
-.home-card-social {
-  list-style: none;
-  margin: 15px 0 25px;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 12px;
+.team-card.center img {
+    filter: none;
 }
 
-.home-card-social li a i {
-  width: 38px;
-  height: 38px;
-  line-height: 38px;
-  border-radius: 50%;
-  background: #f3f4f6;
-  color: #1E3A8A;
-  transition: all 0.3s ease;
-  font-size: 16px;
-  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+/* The rest of the existing styles remain the same for rotation */
+.team-card.left-2 {
+    z-index: 1;
+    transform: translateX(-400px) scale(0.8) translateZ(-300px);
+    opacity: 0.7;
 }
 
-.home-card-social li a:hover i {
-  background: linear-gradient(135deg, #172554, #1e3a8a);
-  color: #fff;
-  transform: scale(1.1);
+.team-card.left-2 img {
+    filter: grayscale(100%);
 }
 
-/* Decorative Border Animation */
-.home-card-box::before {
-  content: "";
+.team-card.left-1 {
+    z-index: 5;
+    transform: translateX(-200px) scale(0.9) translateZ(-100px);
+    opacity: 0.9;
+}
+
+.team-card.left-1 img {
+    filter: grayscale(100%);
+}
+
+.team-card.right-1 {
+    z-index: 5;
+    transform: translateX(200px) scale(0.9) translateZ(-100px);
+    opacity: 0.9;
+}
+
+.team-card.right-1 img {
+    filter: grayscale(100%);
+}
+
+.team-card.right-2 {
+    z-index: 1;
+    transform: translateX(400px) scale(0.8) translateZ(-300px);
+    opacity: 0.7;
+}
+
+.team-card.right-2 img {
+    filter: grayscale(100%);
+}
+
+.team-card.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.member-info {
+    text-align: center;
+    margin-top: 40px;
+    transition: all 0.5s ease-out;
+}
+
+.member-name {
+    color:#4B5563;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.member-name::before,
+.member-name::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    width: 100px;
+    height: 2px;
+    background: #4B5563;
+}
+
+.member-name::before {
+    left: -120px;
+}
+
+.member-name::after {
+    right: -120px;
+}
+
+.nav-arrow {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 4px;
-  background: linear-gradient(90deg, #1E3A8A, #172554);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s ease;
+  top: 50%;
+  transform: translateY(-50%);
+  background:transparent;
+  color: rgb(83, 83, 83);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  transition: all 0.35s ease;
+  font-size: 1.8rem;
+  border: none;
+  animation: pulseGlow 3s infinite ease-in-out;
 }
 
-.home-card-box:hover::before {
-  transform: scaleX(1);
+/* ✨ Click/Active effect */
+.nav-arrow:active {
+  transform: translateY(-50%) scale(0.95);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
 }
 
-/* Responsive Design */
-@media (max-width: 991px) {
-  .home-card-item { flex: 0 0 50%; }
+/* Left/Right positioning */
+.nav-arrow.left {
+  left: 25px;
+  color: white;
 }
 
-@media (max-width: 575px) {
-  .home-card-item { flex: 0 0 100%; }
-  .title { font-size: 28px !important; }
-  .sec-title h2 { font-size: 24px; }
+.nav-arrow.right {
+  right: 25px;
+    color: white;
+
+}
+
+/* Optional: fade-in animation when the page loads */
+@keyframes fadeInArrow {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+.nav-arrow {
+  animation: fadeInArrow 0.8s ease forwards, pulseGlow 3s infinite ease-in-out;
+}
+
+@media (max-width: 768px) {
+
+    .team-card {
+        width: 200px;
+        height: 280px;
+    }
+
+    .team-card.left-2 {
+        transform: translateX(-250px) scale(0.8) translateZ(-300px);
+    }
+
+    .team-card.left-1 {
+        transform: translateX(-120px) scale(0.9) translateZ(-100px);
+    }
+
+    .team-card.right-1 {
+        transform: translateX(120px) scale(0.9) translateZ(-100px);
+    }
+
+    .team-card.right-2 {
+        transform: translateX(250px) scale(0.8) translateZ(-300px);
+    }
+
+    .member-name {
+        font-size: 1.2rem;
+    }
+
+    .member-role {
+        font-size: 1.2rem;
+    }
+
+    .member-name::before,
+    .member-name::after {
+        width: 50px;
+    }
+
+    .member-name::before {
+        left: -70px;
+    }
+
+    .member-name::after {
+        right: -70px;
+    }
+    .nav-arrow{
+      display: none;
+    } 
 }
 
 

@@ -292,10 +292,21 @@ footer.blog-footer {
 
         <div style="margin-top:14px">
           <p class="muted">Want starter code?</p>
-          <a class="btn" href="https://manish1859.github.io/Tips-g/#Admissions">Get Starter</a>
+         <a href="../index.html#Admissions" class="btn mt-3 w-100">Apply Now</a>
         </div>
       </aside>
     </main>
   </div>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+  const hash = window.location.hash.substring(1); // remove '#'
+  if (hash) {
+    showSection(hash); // show the section with that ID
+  } else {
+    showSection("home"); // default section (you can change it)
+  }
+});
+  </script>
+  <script src="../js.js"></script>
 </body>
 </html>
