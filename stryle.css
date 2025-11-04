@@ -111,9 +111,6 @@
   background: #1e3a8a;
   color: #fff;
   font-size: 20px;
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
   transition: transform 0.3s ease;
 }
 
@@ -147,6 +144,7 @@
   color: #374151 !important;
   font-size: 12px !important;
   font-weight: 500;
+  margin: 3.8px;
   padding: 9px  !important;
   border-radius: 8px;
   display: flex;

@@ -145,7 +145,6 @@ fadeElements.forEach(el => {
 const companyRow = document.querySelector('.company-row');
 if (companyRow) companyCardsObserver.observe(companyRow);
 
-// Courses tab JS
 document.addEventListener("DOMContentLoaded", function () {
   const defaultTab = document.querySelector('#cousetab-all-tab');
   const defaultPane = document.querySelector('#cousetab-all');
@@ -171,6 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Scroll to top button
+
 const topBtn = document.getElementById('topBtn');
 
 window.addEventListener('scroll', () => {
