@@ -7,12 +7,37 @@ function showSection(id) {
   document.getElementById(id).style.display = "block";
   window.scrollTo(0, 0);
 }
+window.addEventListener("load", function () {
+  document.getElementById("loading").style.display = "none";
+
+  // last visited section check karo
+  const lastSection = localStorage.getItem("activeSection") || "Home";
+  showSection(lastSection);
+  
+  // active nav link set karo
+  document.querySelectorAll(".nav-link").forEach(link => {
+    link.classList.toggle("active", link.getAttribute("onclick")?.includes(lastSection));
+  });
+
+  // top par scroll karo
+  window.scrollTo(0, 0);
+});
+
+function showSection(id) {
+  document.querySelectorAll("section").forEach(sec => sec.style.display = "none");
+  const target = document.getElementById(id);
+  if (target) target.style.display = "block";
+}
 
 function setActive(el, section) {
   document.querySelectorAll(".nav-link").forEach(link => link.classList.remove("active"));
   el.classList.add("active");
   showSection(section);
 
+  // section yaad rakho
+  localStorage.setItem("activeSection", section);
+
+  // offcanvas close logic
   const offcanvasElement = document.querySelector('.offcanvas.show');
   if (offcanvasElement) {
     const offcanvasInstance = bootstrap.Offcanvas.getInstance(offcanvasElement);
@@ -26,6 +51,9 @@ function setActive(el, section) {
       document.body.classList.remove('offcanvas-backdrop', 'show');
     }
   }
+
+  // scroll top par le jao
+  window.scrollTo(0, 0);
 }
 
 AOS.init();
@@ -347,3 +375,4 @@ if (carouselContainer) {
 
 updateCarousel(0);
 startAutoSlide();
+

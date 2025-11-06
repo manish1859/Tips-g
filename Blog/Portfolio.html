@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>How to Build a Strong Portfolio as an IT Student — Steps, Projects & Career Tips</title>
+
+  <meta name="description" content="Learn how to build a strong IT portfolio as a student. Discover essential projects, tools, and presentation tips to stand out in internships and job placements." />
+  <meta name="keywords" content="IT portfolio, student portfolio, IT career, resume tips, projects for IT students, GitHub portfolio" />
+  <meta name="author" content="Ashish Yadav" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+:root {
+  --bg: linear-gradient(to right, #f8fbff, #e0f2ff);
+  --card: rgba(255, 255, 255, 0.85);
+  --muted: #6b7280;
+  --accent: #1e3a8a;
+  --accent-2: #3b82f6;
+  --text-dark: #1e293b;
+  --text-light: #334155;
+}
+
+/* Body */
+body {
+  margin: 0;
+  font-family: 'Poppins', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text-dark);
+  line-height: 1.8;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 24px;
+}
+
+/* HEADER */
+header.blog-header {
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  color: white;
+  padding: 50px 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(59,130,246,0.3);
+  position: relative;
+  overflow: hidden;
+  animation: floatIn 1.2s ease-out;
+}
+
+header.blog-header::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: lightFloat 8s infinite alternate ease-in-out;
+}
+
+@keyframes lightFloat {
+  from { transform: translate(0, 0); opacity: 0.6; }
+  to { transform: translate(-30px, 30px); opacity: 1; }
+}
+
+header.blog-header h1 {
+  margin: 0 0 10px;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+header.blog-header p.meta {
+  color: rgba(255,255,255,0.9);
+  font-size: 14px;
+}
+
+/* GRID LAYOUT */
+main.content {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 32px;
+  margin-top: 40px;
+}
+
+/* ARTICLE */
+article.post {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(30,58,138,0.1);
+  box-shadow: 0 8px 20px rgba(59,130,246,0.1);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+article.post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(59,130,246,0.2);
+}
+
+article.post::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -70%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+  transform: skewX(-25deg);
+  transition: left 0.8s ease;
+}
+
+article.post:hover::before {
+  left: 120%;
+}
+
+/* HEADINGS */
+h2 {
+  color: var(--accent);
+  border-left: 4px solid var(--accent);
+  padding-left: 10px;
+  font-size: 18px;
+  margin-top: 28px;
+}
+
+h3 {
+  color: var(--accent-2);
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+/* TEXT */
+p, .lead {
+  color: var(--text-light);
+  font-size: 15px;
+}
+
+/* CALLOUT BOX */
+.callout {
+  background: rgba(96,165,250,0.15);
+  border-left: 4px solid var(--accent);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin: 18px 0;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #172554, #1e3a8a);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  box-shadow: 0 4px 12px rgba(59,130,246,0.4);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 25px rgba(37,99,235,0.5);
+}
+
+/* SIDEBAR */
+aside.sidebar {
+  background: rgba(255,255,255,0.9);
+  border-radius: 14px;
+  padding: 22px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px rgba(59,130,246,0.15);
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+aside.sidebar:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(37,99,235,0.2);
+}
+
+aside.sidebar strong {
+  color: var(--accent);
+}
+
+aside.sidebar ul li a {
+  color: var(--accent-2);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+aside.sidebar ul li a:hover {
+  text-decoration: underline;
+  color: var(--accent);
+}
+
+footer.blog-footer {
+  text-align: center;
+  color: var(--muted);
+  margin-top: 24px;
+  font-size: 13px;
+}
+
+@keyframes floatIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 980px) {
+  main.content {
+    grid-template-columns: 1fr;
+  }
+  header.blog-header h1 {
+    font-size: 24px;
+  }
+  article.post {
+    padding: 24px;
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="blog-header">
+      <h1>How to Build a Strong Portfolio as an IT Student</h1>
+      <p class="meta">Step-by-step guide to showcase your skills effectively | By Ashish Yadav — Nov 5, 2025</p>
+    </header>
+
+    <main class="content">
+      <article class="post" id="post">
+        <p class="lead">
+          Your portfolio is your first impression in the IT world. Whether you’re applying for internships, freelance projects, or full-time jobs — a strong portfolio can make you stand out among thousands.
+        </p>
+
+        <h2>1. Why a Portfolio Matters</h2>
+        <p>
+          A portfolio is more than just a list of projects — it’s proof of your problem-solving ability, creativity, and consistency. Recruiters often check your GitHub or personal website before calling for an interview.
+        </p>
+
+        <h2>2. What to Include in Your Portfolio</h2>
+        <ul>
+          <li>Personal introduction and career goals</li>
+          <li>Best 3–5 projects (with code links and live demos)</li>
+          <li>Technical skills and certifications</li>
+          <li>Education and achievements</li>
+          <li>Contact form or resume download link</li>
+        </ul>
+
+        <div class="callout">
+          <b>Pro Tip:</b> Keep your design minimal. Focus on showcasing your *skills* and *impact*, not flashy animations.
+        </div>
+
+        <h2>3. Best Platforms to Host Your Portfolio</h2>
+        <p>
+          Use platforms like <strong>GitHub Pages</strong>, <strong>Vercel</strong>, or <strong>Netlify</strong> for free hosting. You can build your portfolio using HTML/CSS, or modern frameworks like <strong>React</strong> or <strong>Next.js</strong>.
+        </p>
+
+        <h2>4. Highlight Real-World Projects</h2>
+        <p>
+          Create practical projects like:
+        </p>
+        <ul>
+          <li>To-do app with local storage</li>
+          <li>Personal blog with authentication</li>
+          <li>Responsive portfolio website</li>
+          <li>College project management system</li>
+        </ul>
+
+        <h2>5. Keep Updating</h2>
+        <p>
+          A portfolio is a living document — update it regularly with new skills, experiences, and certifications.
+        </p>
+
+        <footer class="blog-footer">— Keep learning. Keep building. Your portfolio is your brand!</footer>
+      </article>
+
+      <aside class="sidebar">
+        <strong>Quick Links</strong>
+        <p class="muted">Jump to sections</p>
+        <ul style="padding-left:14px; margin:8px 0 14px 0; line-height:1.9">
+          <li><a href="#post">Why Portfolio?</a></li>
+          <li><a href="#post">What to Include</a></li>
+          <li><a href="#post">Projects</a></li>
+        </ul>
+
+        <div style="margin-top:12px">
+          <div class="tag">Level</div>
+          <div class="tag">Student Friendly</div>
+        </div>
+
+        <div style="margin-top:14px">
+          <p class="muted">Want to build yours today?</p>
+          <a href="../index.html#Admissions" class="btn mt-3 w-100">Start Building</a>
+        </div>
+      </aside>
+    </main>
+  </div>
+</body>
+</html>
