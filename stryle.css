@@ -119,6 +119,7 @@
 }
 
 /* Brand Text *//* Brand Text */
+
 .Add-brand {
   text-align: center; 
 }
@@ -3040,6 +3041,7 @@ html, body {
   position: relative;
   overflow: hidden;
   z-index: 1;
+  box-shadow: 0 8px 20px white;
   margin-bottom: 10px !important;
 }
 
@@ -3056,7 +3058,7 @@ html, body {
 .btn-gradient:hover {
   background: linear-gradient(135deg, #ea580c, #c2410c);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(234, 88, 12, 0.3);
+  box-shadow: 0 8px 20px rgba(234, 88, 12, 0.3) ;
 }
 
 .btn-gradient:hover::before {

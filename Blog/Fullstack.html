@@ -1,32 +1,742 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Course Structure | Animation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="Full.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
-
 </head>
+
 <body>
-  
-  <section>
 
-  <div style="display: flex; justify-content: center; align-items: center;">
-  <div class="Tips-gprogram">
-   <div class="Tips-span"></div> TIPSG Trainig Program
-  </div>
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm Add-navbar ">
+    <div class="container col-lg-11 d-flex align-items-center justify-content-center">
+
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html#home" onclick="setActive(this,'home')">
+          <div class="Add-logo d-flex align-items-center justify-content-center">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+<div class="Add-brand">
+            <strong class="Add-brand-text">TIPS-G</strong>
+            <small class="Add-brand-subtext text-muted">Kotputli</small>
+          </div>
+        </a>
+
+        <!-- Mobile Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Desktop Menu -->
+        <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex">
+          <ul class="navbar-nav align-items-center" id="mainMenu">
+            <li class="nav-item"><a class="nav-link active" href="../index.html#home" onclick="setActive(this,'home')"><i
+                  class="fas fa-home me-1"></i> Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#About_us" onclick="setActive(this,'About_us')"><i
+                  class="fas fa-graduation-cap me-1"></i> About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#Courses" onclick="setActive(this,'Courses')"><i
+                  class="fas fa-book-open me-1"></i> Courses</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#Placements" onclick="setActive(this,'Placements')"><i
+                  class="fas fa-award me-1"></i> Placements</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#Admissions" onclick="setActive(this,'Admissions')"><i
+                  class="fas fa-user-friends me-1"></i> Admissions</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#Gallery" onclick="setActive(this,'Gallery')"><i
+                  class="far fa-image me-1"></i> Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#Events" onclick="setActive(this,'Events')"><i
+                  class="far fa-calendar-alt me-1"></i> Events</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#Blog" onclick="setActive(this,'Blog')"><i
+                  class="far fa-newspaper me-1"></i> Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#Contact" onclick="setActive(this,'Contact')"><i
+                  class="far fa-envelope me-1"></i> Contact</a></li>
+            <li class="nav-item">
+              <a class="Add-btn-enroll" href="../index.html#Admissions" onclick="setActive(this,'Admissions')">Enroll Now</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+  <!-- Offcanvas (Mobile) -->
+  <div class="offcanvas offcanvas-end w-75" tabindex="-1" id="navMenu">
+    <div class="offcanvas-header">
+      <h5>Menu</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body ">
+      <ul class="navbar-nav" id="offMenu">
+        <li class="nav-item"><a class="nav-link active" href="../index.html#home" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'home')"><i class="fas fa-home me-1"></i> Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#About_us" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'About_us')"><i class="fas fa-graduation-cap me-1"></i> About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#Courses" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Courses')"><i class="fas fa-book-open me-1"></i> Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#Placements" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Placements')"><i class="fas fa-award me-1"></i> Placements</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#Admissions" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Admissions')"><i class="fas fa-user-friends me-1"></i> Admissions</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#Gallery" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Gallery')"><i class="far fa-image me-1"></i> Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#Events" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Events')"><i class="far fa-calendar-alt me-1"></i> Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#Blog" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Blog')"><i class="far fa-newspaper me-1"></i> Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#Contact" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Contact')"><i class="far fa-envelope me-1"></i> Contact</a></li>
+        <li class="nav-item mt-3">
+          <a class="Add-btn-enroll" href="../index.html#Admissions" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Admissions')">Enroll Now</a>
+        </li>
+      </ul>
+    </div>
   </div>
 
+
+  <section class="hero-section">
+    <div class="program-badge">
+      <div class="modules-dot"></div>
+      TIPS-G Training Program
+    </div>
+
+    <h1 >Full Stack Development</h1>
+    <h2>2 Year Professional Training</h2>
+<p>
+  <span class="typing-text">Learn. Build. Deploy. Get Hired.</span><br />
+  TIPS-G (TIPSG Training) — Hands-on web & mobile development: Frontend,
+  <br class="d-md-block d-none">
+  Backend, Cloud, DevOps, and real-world projects.
+  <strong style="color: black;">
+    2 years training + 1 year paid 
+    <br class="d-md-block d-none">
+    internship → job support.
+  </strong>
+</p>
+
+
+    <div class="d-flex justify-content-center gap-3 mt-4 flex-wrap">
+      <button class="btn-primary-custom">Enroll Now <i class="fa-solid fa-arrow-right btn-primary-icon"></i></button>
+      <button class="btn-outline-custom "> <i class="fa-solid fa-download"></i>       Get Brochure</button>
+    </div>
+
+    <div class="features">
+      <div class="feature"><i class="bi bi-clock"></i> 2 Years</div>
+      <div class="feature"><i class="bi bi-briefcase"></i> 1 Year Paid Internship</div>
+      <div class="feature"><i class="bi bi-award"></i> 100% Placement Support</div>
+    </div>
+
+    <div class="wave-container">
+      <svg viewBox="0 0 1200 200" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="softGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#b3e5fc" stop-opacity="0.2" />
+            <stop offset="50%" stop-color="#c7d2fe" stop-opacity="0.4" />
+            <stop offset="100%" stop-color="#dbeafe" stop-opacity="0.2" />
+          </linearGradient>
+        </defs>
+        <path d="M0,67 C150,200 350,0 600,120 C850,240 1050,60 1200,90 L1200,200 L0,200 Z"></path>
+      </svg>
+    </div>
+  </section>
+  <!-- Why choose -->
+     <div class="container-fluid py-5">
+    <div class="col-lg-10 mx-auto">
+    <h2 class="section-title mb-3">Why Choose TIPS-G</h2>
+    <p class="section-subtitle">A comprehensive program designed to transform you into a job-ready full-stack <br class="d-none d-md-block">developer</p>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="feature-card feature-blue  h-100" style="position: relative;">
+          <div class="circle1 " style="position: absolute;"></div>
+          <div class="icon-box icon-blue edit-rotate">
+            <i class="bi bi-calendar-event"></i>
+          </div>
+          <h5>2 Years of In-depth Training</h5>
+          <p>Comprehensive curriculum covering all aspects of modern web development</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="feature-card feature-purple h-100 " style="position: relative;">
+                    <div class="circle2 " style="position: absolute;"></div>
+
+          <div class="icon-box icon-purple edit-rotate">
+            <i class="bi bi-briefcase"></i>
+          </div>
+          <h5>1 Year Paid Internship</h5>
+          <p>Real company experience with compensation after training completion</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="feature-card feature-green h-100" style="position: relative;">
+          <div class="circle3 " style="position: absolute;"></div>
+
+          <div class="icon-box icon-green edit-rotate">
+            <i class="bi bi-award"></i>
+          </div>
+          <h5>100% Job Placement Support</h5>
+          <p>Dedicated career services and interview preparation assistance</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="feature-card feature-orange h-100" style="position: relative;">
+                    <div class="circle4 " style="position: absolute;"></div>
+
+          <div class="icon-box icon-orange edit-rotate">
+            <i class="bi bi-rocket-takeoff"></i>
+          </div>
+          <h5>Real-world Projects</h5>
+          <p>Build your portfolio with production-ready applications</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="feature-card feature-voilet h-100" style="position: relative;">
+                    <div class="circle5 " style="position: absolute;"></div>
+
+          <div class="icon-box icon-violet edit-rotate">
+            <i class="bi bi-person-lines-fill"></i>
+          </div>
+          <h5>Personal Mentorship</h5>
+          <p>One-on-one guidance from industry experts throughout your journey</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="feature-card feature-cyan h-100" style="position: relative;">
+                    <div class="circle6 " style="position: absolute;"></div>
+
+          <div class="icon-box icon-cyan edit-rotate">
+            <i class="bi bi-graph-up-arrow"></i>
+          </div>
+          <h5>Flexible Learning Paths</h5>
+          <p>Choose from full-stack or specialized frontend/backend tracks</p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+
+  <!-- Courses -->
+  <div class="container-fluid py-5" style="background: linear-gradient(180deg, #f8fbff, #eaf2ff);overflow-x: hidden;">
+    <div class="col-lg-10 mx-auto">
+    <h2 class="course-title">Course Structure</h2>
+    <p class="coures-subtitle">Comprehensive curriculum designed by industry experts to take you from beginner to professional</p>
+
+    <!-- Card 1 -->
+    <div class="course-card mb-5 ">
+      <div class="card-left" style="position: relative;">
+       <div class="circle " style="position: absolute;"></div>
+        <i class="bi bi-code-slash"></i>
+        <h4>Year 1 — Foundation & Frontend Development</h4>
+        <p>Build your fundamentals and master core web technologies</p>
+      </div>
+      <div class="card-right">
+        <h6 class="modules-title d-flex"> <div class="modules-dot"></div> MODULES</h6>
+        <ul class="modules-list mb-0">
+          <li>HTML5, CSS3, JavaScript (ES6+)</li>
+          <li>Responsive Web Design with Flexbox & Grid</li>
+          <li>Version Control (Git & GitHub)</li>
+          <li>Introduction to React.js (Hooks, Context, Router)</li>
+          <li>UI/UX Basics and Figma Design</li>
+          <li>Animations, Transitions, and SEO for Frontend Apps</li>
+        </ul>
+        <div class="outcome-box">
+          <i class="bi bi-mortarboard fs-6 " style="margin-top: -42px;"></i>
+          <div><p style="color: #4F46E5;font-size: 12px;margin-bottom: 0px;">OUTCOME  </p>
+          <p style="margin-bottom: 2px;">Build responsive websites, interactive UIs, and understand core structure of web applications.</p>
+          
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="course-card mb-5">
+      <div class="card-left" style="background: linear-gradient(135deg,#6366f1,#a855f7);">
+        <div class="circle " style="position: absolute;"></div>
+        <i class="bi bi-server"></i>
+        <h4>Year 2 — Backend & DevOps Development</h4>
+        <p>Learn backend frameworks, databases, and deployment pipelines</p>
+      </div>
+      <div class="card-right">
+        <h6 class="modules-title d-flex"> <div class="modules-dot"></div> MODULES</h6>
+        <ul class="modules-list mb-0" >
+          <li>Node.js, Express.js, REST & GraphQL APIs</li>
+          <li>Authentication, Authorization, Security</li>
+          <li>Databases: MongoDB, MySQL, PostgreSQL</li>
+          <li>Cloud & DevOps: Docker, CI/CD, AWS, Vercel, Netlify</li>
+          <li>Testing (Jest / Mocha) and Performance Optimization</li>
+          <li>Capstone Project & Career Preparation</li>
+        </ul>
+
+          <div class="outcome-box">
+          <i class="bi bi-gear fs-6 " style="margin-top: -27px;"></i>
+          <div><p style="color: #4F46E5;font-size: 12px;margin-bottom: 0px;">OUTCOME  </p>
+          <p style="margin-bottom: 2px;">Build scalable web backends and automate deployment pipelines.</p>
+          
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="course-card">
+      <div class="card-left" style="background: linear-gradient(135deg,#f97316,#ec4899);">
+        <div class="circle " style="position: absolute;"></div>
+        <i class="bi bi-briefcase"></i>
+        <h4>Year 3 — Advanced Projects & Placement</h4>
+        <p>Apply all your skills in real-world projects and job preparation</p>
+      </div>
+      <div class="card-right">
+        <h6 class="modules-title d-flex"> <div class="modules-dot"></div> MODULES</h6>
+        <ul class="modules-list mb-0">
+          <li>Frontend — 1 Year (HTML, CSS, JS, React)</li>
+          <li>Backend — 1 Year (Node.js, Databases, APIs)</li>
+          <li>6-Month Intensive (UI or API specialization)</li>
+          <li>Language Bootcamps (3–6 months: Python, Java, Go)</li>
+
+        </ul>
+          <div class="outcome-box">
+          <i class="bi bi-stars fs-6 " style="margin-top: -42px;"></i>
+          <div><p style="color: #4F46E5;font-size: 12px;margin-bottom: 0px;">OUTCOME  </p>
+          <p style="margin-bottom: 2px;">Build responsive websites, interactive UIs, and understand core structure of web applications.</p>
+          
+          </div>
+
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <!-- Project -->
+     <section class="projects py-5">
+    <div class="container-fluid">
+      <div class="col-lg-10 mx-auto ">
+        <h2 class="fw-bold mb-2 project-title text-center">Projects & Portfolio</h2>
+        <p class="project-subtitle mb-5 text-center">
+          Build real-world applications that showcase your skills to potential employers
+        </p>
+
+      <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-md-6">
+          <div class="project-card">
+            <div class="icon-box bg-blue">
+              <i class="bi bi-cart"></i>
+            </div>
+            <h5 class="fw-bold mt-3">E-commerce Full-Stack Application</h5>
+            <p>Build a complete online store with cart, payments, admin panel, and inventory management</p>
+            <div class="tags">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>MongoDB</span>
+              <span>Stripe</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-6">
+          <div class="project-card">
+            <div class="icon-box bg-purple">
+              <i class="bi bi-chat-dots"></i>
+            </div>
+            <h5 class="fw-bold mt-3">Real-time Chat & Collaboration App</h5>
+            <p>Create a live messaging platform with WebSocket connections and team collaboration features</p>
+            <div class="tags">
+              <span>Socket.io</span>
+              <span>React</span>
+              <span>Express</span>
+              <span>Redis</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-6">
+          <div class="project-card">
+            <div class="icon-box bg-orange">
+              <i class="bi bi-journal-text"></i>
+            </div>
+            <h5 class="fw-bold mt-3">Personal Portfolio with Blog & CMS</h5>
+            <p>Design and deploy your professional portfolio with integrated blog and content management</p>
+            <div class="tags">
+              <span>Next.js</span>
+              <span>Tailwind</span>
+              <span>Markdown</span>
+              <span>Vercel</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-md-6">
+          <div class="project-card">
+            <div class="icon-box bg-green">
+              <i class="bi bi-people"></i>
+            </div>
+            <h5 class="fw-bold mt-3">Team Capstone Project</h5>
+            <p>Collaborate on a real-world project for employer demonstration and portfolio showcase</p>
+            <div class="tags">
+              <span>Full Stack</span>
+              <span>Agile</span>
+              <span>Git</span>
+              <span>Production</span>
+            </div>
+          </div>
+        </div>
+      </div>
+            </div>
+
+    </div>
   </section>
 
+  <!--  -->
+  <!-- Intership -->
+  <section class="intership">
+    <div class="container-fluid py-5">
+    <div class="col-lg-10 mx-auto">
+    
+    <h2 class="intership-title">Internship & Career Path</h2>
+    <p class="intership-subtitle">
+      After training (24 months) students begin a <strong>1-year paid internship</strong> on live projects with partner<br> companies. Program includes resume building, interview prep, and placement coaching.
+    </p>
+
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-6 col-lg-4">
+        <div class="timeline-card" style="position: relative;">
+              <div class="line-wrapper" style="position: absolute;">
+  <div class="line"></div>
+  <div class="intership-dot"></div>
+</div>
+          <div class="timeline-icon"><i class="bi bi-book"></i></div>
+          <p class="timeline-step">0–24 MONTHS</p>
+          <h5 class="timeline-title">Training Phase</h5>
+          <p class="timeline-text">Intensive learning with assignments, mini-projects, and hands-on practice</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="timeline-card" style="position: relative;">
+                          <div class="line-wrapper" style="position: absolute;">
+  <div class="line"></div>
+  <div class="intership-dot"></div>
+</div>
+          <div class="timeline-icon"><i class="bi bi-briefcase"></i></div>
+          <p class="timeline-step">AFTER 24 MONTHS</p>
+          <h5 class="timeline-title">Paid Internship</h5>
+          <p class="timeline-text">12-month paid internship working on live projects with partner companies</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="timeline-card">
+          <div class="timeline-icon"><i class="bi bi-graph-up-arrow"></i></div>
+          <p class="timeline-step">POST-INTERNSHIP</p>
+          <h5 class="timeline-title">Career Launch</h5>
+          <p class="timeline-text">Placement assistance with goal of securing full-time offer</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="career-box mt-5">
+      <h4>Your Career Journey Starts Here</h4>
+      <p>
+        Join a community of successful developers who have transformed their careers through TIPSG <br>Training. With dedicated mentorship and placement support, you're never alone on your <br>journey to becoming a professional developer.
+      </p>
+    </div>
+    </div>
+  </div>
+  </section>
+
+  <!-- Carrer Section -->
+    <section class="career-section" style="  background: #f6f9ff;">
+    <div class="container-fluid">
+      <div class="col-lg-10 mx-auto">
+      <h2 class="career-title1">Future Goals & Career Outcomes</h2>
+      <p class="career-desc">
+        TIPS-G prepares students for diverse roles in the tech industry. Whether you want to join a <br class="d-none d-md-block">
+        startup, work at a Fortune 500 company, or build your own product, our comprehensive training <br class="d-none d-md-block">
+        gives you the foundation to succeed. Start as a developer and grow into leadership, architecture,<br class="d-none d-md-block">
+        or specialized technical roles.
+      </p>
+
+      <h3 class="sub-heading">Entry-Level Opportunities</h3>
+      <div class="row">
+        <div class="col-lg-4 mb-2">
+        <div class="career-card">
+          <i class="fa-solid fa-code"></i>
+          <span>Junior Full-Stack Engineer</span>
+        </div>
+        </div>
+        <div class="col-lg-4 mb-2">
+        <div class="career-card ">
+          <i class="fa-solid fa-layer-group"></i>
+          <span>Frontend Engineer</span>
+        </div>
+        </div>
+        <div class="col-lg-4 mb-2">
+        <div class="career-card">
+          <i class="fa-solid fa-gears"></i>
+          <span>Backend/API Developer</span>
+        </div>
+        </div>
+        <div class="col-lg-4 mb-5">
+        <div class="career-card">
+          <i class="fa-solid fa-cloud"></i>
+          <span>DevOps/Cloud Engineer</span>
+        </div>
+        </div>
+        <div class="col-lg-4 mb-5">
+        <div class="career-card">
+          <i class="fa-solid fa-flask"></i>
+          <span>Product Engineer</span>
+        </div>
+        </div>
+        <div class="col-lg-4 mb-5">
+        <div class="career-card">
+          <i class="fa-solid fa-chart-line"></i>
+          <span>Startup Founder</span>
+        </div>
+        </div>
+      </div>
+
+      <div class="growth-box">
+        <h3>Long-Term Career Growth</h3>
+        <p>With experience and continuous learning, advance to senior positions:</p>
+        <div class="growth-tags">
+          <span>Senior Engineer</span>
+          <span>Tech Lead</span>
+          <span>Cloud Architect</span>
+          <span>ML Engineer</span>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" style="background-color: #fff;">
+    <div class="container-fluid">
+        <h2>Frequently Asked Questions</h2>
+        <p>Get answers to common questions about the program</p>
+
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faq1">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+                Is placement guaranteed?
+              </button>
+            </h2>
+            <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                TIPSG provides 100% placement support and works with partner companies to facilitate job opportunities. While we cannot legally guarantee placement (as it depends on student performance, interview outcomes, and market conditions), we are committed to supporting every student through resume building, interview prep, and connecting them with hiring partners until they secure a position.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faq2">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+                Are there prerequisites?
+              </button>
+            </h2>
+            <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                No strict prerequisites are required. Basic computer literacy and a strong willingness to learn coding are essential. We provide introductory modules to help complete beginners get up to speed. If you're passionate about technology and committed to learning, you're qualified to join.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faq3">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+                Can I choose remote or in-person learning?
+              </button>
+            </h2>
+            <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Yes! Both remote and in-person options are available depending on the batch and your location. Remote students receive the same quality instruction, projects, and mentorship as in-person students. We use modern collaboration tools to ensure a seamless learning experience regardless of format.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  </section>
+
+  <!-- Contact -->
+  <section class="apply-section" style="background-color: #f8fbff;">
+    <div class="container-fluid">
+      <div class="col-lg-10 mx-auto">
+        <h2 class="apply-title">Ready to Start Your Journey?</h2>
+        <p class="apply-subtitle pt-2">Next batches start frequently. Limited seats per batch for personalized mentorship.</p>
+
+        <div class="row g-4 align-items-stretch">
+          <!-- Left Box -->
+          <div class="col-lg-5 ">
+            <div class="contact-box">
+              <h5>Get in Touch</h5>
+              <div class="contact-item">
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                  <small>Email</small><br>
+                  <a href="mailto:admissions@tipsg.in" style="font-size: 13px;"><b>admissions@tipsg.in</b></a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <div>
+                  <small>Phone</small><br>
+                  <a href="tel:+917000000000" style="font-size: 13px;">+91 70000 00000</a>
+                </div>
+              </div>
+              <hr style="border: 1px solid rgb(225, 224, 224);">
+              <button class="btn w-100 mt-3">
+                <i class="fa-solid fa-download me-2"></i> Download Brochure
+              </button>
+            </div>
+
+            <div class="why-box">
+              <h6>Why Apply Now?</h6>
+              <ul>
+                <li><i class="fa-solid fa-check-circle"></i> Early bird discounts available</li>
+                <li><i class="fa-solid fa-check-circle"></i> Limited seats per batch</li>
+                <li><i class="fa-solid fa-check-circle"></i> One-on-one admission counseling</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Right Form -->
+          <div class="col-lg-7">
+            <div class="apply-form">
+              <h5 class="mb-4 fw-semibold">Apply Now</h5>
+              <form>
+                <div class="mb-3">
+                  <label class="form-label" >Full Name *</label>
+                  <input type="text" class="form-control" placeholder="Enter your full name" required>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Email Address *</label>
+                  <input type="email" class="form-control" placeholder="your.email@example.com" required>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Phone Number *</label>
+                  <input type="tel" class="form-control" placeholder="+91 xxxxxx xxxx" required>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Course Interest *</label>
+                  <select class="form-select" style="font-size: 12px;" required>
+                    <option value="">Select a course</option>
+                    <option>Web Development</option>
+                    <option>Data Science</option>
+                    <option>Graphic Design</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Message (Optional)</label>
+                  <textarea class="form-control" rows="3" placeholder="Tell us about your background and goals..."></textarea>
+                </div>
+                <button type="submit" class="apply-btn">Apply Now</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Footer -->
+  <footer class="footer">
+    <div class="container-fluid">
+      <div class="col-lg-10 mx-auto">
+        <div class="row justify-content-between">
+
+          <!-- Left Section -->
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="d-flex mb-2 align-items-center">
+              <div class="footer-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <h5 class="m-0"><strong style="color: white;">TIPSG Kotputli</strong></h5>
+            </div>
+
+            <p style="color: #BEDEFE;">
+              District's First IT Training & Placement Center, empowering students
+              with world-class skills and guaranteed career opportunities.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-md-2 col-sm-6 mb-4">
+            <h6 class="footer-title">Quick Links</h6>
+            <ul class="list-unstyled">
+              <li><a href="#home" onclick="setActive(this,'home')"> Home</a></li>
+              <li><a href="#about" onclick="setActive(this,'About_us')"> About Us</a></li>
+              <li><a href="#courses" onclick="setActive(this,'Courses')">Courses</a></li>
+              </li>
+              <li><a href="#placements" onclick="setActive(this,'Placements')"> Placements</a></li>
+              <li><a href="#admissions" onclick="setActive(this,'Admissions')"> Admissions</a></li>
+            </ul>
+          </div>
+
+          <!-- Popular Courses -->
+          <div class="col-md-3 col-sm-6 mb-4 footer-courses">
+            <h6 class="footer-title">Popular Courses</h6>
+            <ul class="list-unstyled">
+             <li> <a href="Fullstack.html"> Full Stack Development</a></li>
+              <li></li><a href="cybercourses.html"> Cyber Security</a></li>
+              <li></li><a href="data.html"> Data Science & AI</a></li>
+              <li></li><a href="Digital.html"> Digital Marketing</a></li>
+              <li></li><a href="Graphic.html"> Graphic Designing</a></li>
+              <li></li><a href="App.html"> Graphic Designing</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Section -->
+          <div class="col-md-3 col-sm-6 mb-4 footer-contact">
+            <h6 class="footer-title">Contact Us</h6>
+            <p><i class="fas fa-envelope me-2 text-white"></i> info@tipsgkotputli.com</p>
+            <p><i class="fas fa-phone me-2 text-white"></i> +91 98765 43210</p>
+            <div class="social-icons mt-3">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+          <hr style="border: 0.3px solid lightblue;">
+          <p style="text-align: center; font-size: 12px; color: #BEDEFE">© 2025 TIPSG Kotputli. All rights reserved. |
+            Empowering Careers, Transforming Lives</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 
+  <script>
+    const cards = document.querySelectorAll(".course-card");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("animate");
+      });
+    }, { threshold: 0.3 });
 
-
+    cards.forEach(card => observer.observe(card));
+  </script>
   <script src="Blog.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

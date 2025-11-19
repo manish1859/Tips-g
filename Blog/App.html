@@ -22,176 +22,760 @@
   <meta name="twitter:title" content="App Development Course | TIPS-G Institute" />
   <meta name="twitter:description" content="Learn Android, iOS, and cross-platform app development using Flutter & React Native. Build a professional career in mobile app development." />
   <meta name="twitter:image" content="img/app-development.jpg" />
-
-  <!-- Schema.org for Google -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Course",
-    "name": "App Development Course",
-    "description": "Professional course covering Android, iOS, and cross-platform app development using Flutter and React Native.",
-    "provider": {
-      "@type": "Organization",
-      "name": "TIPS-G Institute",
-      "url": "https://yourdomain.com"
-    },
-    "inLanguage": "en",
-    "audience": {
-      "@type": "Audience",
-      "audienceType": "Students, Developers, Beginners"
-    }
-  }
-  </script>
-
-  <!-- Google Font -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <link rel="stylesheet" href="App.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <!-- <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js" type="module"></script> -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
-  <style>
-    body {
-      font-family: "Poppins", sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f6fb;
-      color: #222;
-      line-height: 1.6;
-    }
 
-    header {
-      background: linear-gradient(135deg, #172554, #1e3a8a);
-      color: #fff;
-      text-align: center;
-      padding: 80px 20px 100px;
-      position: relative;
-    }
-
-    header::after {
-      content: "";
-      position: absolute;
-      bottom: -30px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 120px;
-      height: 6px;
-      background: #fff;
-      border-radius: 3px;
-    }
-
-    header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 15px;
-      letter-spacing: 1px;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      opacity: 0.95;
-      margin: 0;
-    }
-
-    .content {
-      max-width: 1100px;
-      background: #fff;
-      margin: -50px auto 40px;
-      padding: 50px 30px;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-      position: relative;
-      z-index: 2;
-    }
-
-    h2 {
-      color: #1e3a8a;
-      border-left: 5px solid #172554;
-      padding-left: 12px;
-      margin-bottom: 18px;
-    }
-
-    ul {
-      padding-left: 20px;
-      margin-top: 10px;
-    }
-
-    ul li {
-      margin-bottom: 8px;
-    }
-
-    .btn {
-      display: inline-block;
-      background: linear-gradient(135deg, #172554, #1e3a8a);
-      color: #fff;
-      padding: 14px 28px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      margin-top: 25px;
-    }
-
-    .btn:hover {
-      background: linear-gradient(135deg, #1e3a8a, #172554);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-      transform: scale(1.03);
-    }
-
-    footer {
-      background: #0f172a;
-      color: #ccc;
-      text-align: center;
-      padding: 18px;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.2rem;
-      }
-      header p {
-        font-size: 1rem;
-      }
-      .content {
-        padding: 30px 18px;
-      }
-    }
-  </style>
 </head>
 <body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm Add-navbar ">
+    <div class="container col-lg-11 d-flex align-items-center justify-content-center">
 
-  <header>
-    <h1>App Development Course</h1>
-    <p>Build Android & iOS Apps with Flutter and React Native</p>
-  </header>
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html#home" onclick="setActive(this,'home')">
+          <div class="Add-logo d-flex align-items-center justify-content-center">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+<div class="Add-brand">
+            <strong class="Add-brand-text">TIPS-G</strong>
+            <small class="Add-brand-subtext text-muted">Kotputli</small>
+          </div>
+        </a>
 
-  <section class="content">
-    <h2>About the Course</h2>
-    <p>
-      The <strong>App Development Course</strong> at <strong>TIPS-G Institute</strong> is designed to help you become a professional mobile app developer.
-      You’ll gain hands-on experience in developing Android, iOS, and cross-platform apps using <strong>Flutter</strong> and <strong>React Native</strong>,
-      while mastering UI/UX design, API integration, and app publishing.
-    </p>
+        <!-- Mobile Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <h2>Key Topics Covered</h2>
-    <ul>
-      <li>Android App Development (Java / Kotlin)</li>
-      <li>iOS App Development (Swift Basics)</li>
-      <li>Cross-Platform App Building (Flutter / React Native)</li>
-      <li>Mobile UI/UX Design & Prototyping</li>
-      <li>Database & API Integration (Firebase, REST APIs)</li>
-      <li>App Testing, Debugging & Deployment</li>
-    </ul>
+        <!-- Desktop Menu -->
+        <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex">
+          <ul class="navbar-nav align-items-center" id="mainMenu">
+            <li class="nav-item"><a class="nav-link active" href="../index.html#home" onclick="setActive(this,'home')"><i
+                  class="fas fa-home me-1"></i> Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#About_us" onclick="setActive(this,'About_us')"><i
+                  class="fas fa-graduation-cap me-1"></i> About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#Courses" onclick="setActive(this,'Courses')"><i
+                  class="fas fa-book-open me-1"></i> Courses</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#Placements" onclick="setActive(this,'Placements')"><i
+                  class="fas fa-award me-1"></i> Placements</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#Admissions" onclick="setActive(this,'Admissions')"><i
+                  class="fas fa-user-friends me-1"></i> Admissions</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#Gallery" onclick="setActive(this,'Gallery')"><i
+                  class="far fa-image me-1"></i> Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#Events" onclick="setActive(this,'Events')"><i
+                  class="far fa-calendar-alt me-1"></i> Events</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#Blog" onclick="setActive(this,'Blog')"><i
+                  class="far fa-newspaper me-1"></i> Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#Contact" onclick="setActive(this,'Contact')"><i
+                  class="far fa-envelope me-1"></i> Contact</a></li>
+            <li class="nav-item">
+              <a class="Add-btn-enroll" href="../index.html#Admissions" onclick="setActive(this,'Admissions')">Enroll Now</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-    <h2>Career Opportunities</h2>
-    <p>
-      After completing this course, you can start a career as a <strong>Mobile App Developer</strong>,
-      <strong>Flutter Developer</strong>, or <strong>Cross-Platform Engineer</strong>.
-      The demand for skilled app developers is high across IT, startups, and software firms.
-    </p>
 
-    <a href="../index.html#Admissions" class="btn">Apply Now</a>
+  <!-- Offcanvas (Mobile) -->
+  <div class="offcanvas offcanvas-end w-75" tabindex="-1" id="navMenu">
+    <div class="offcanvas-header">
+      <h5>Menu</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body ">
+      <ul class="navbar-nav" id="offMenu">
+        <li class="nav-item"><a class="nav-link active" href="../index.html#home" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'home')"><i class="fas fa-home me-1"></i> Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#About_us" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'About_us')"><i class="fas fa-graduation-cap me-1"></i> About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#Courses" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Courses')"><i class="fas fa-book-open me-1"></i> Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#Placements" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Placements')"><i class="fas fa-award me-1"></i> Placements</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#Admissions" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Admissions')"><i class="fas fa-user-friends me-1"></i> Admissions</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#Gallery" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Gallery')"><i class="far fa-image me-1"></i> Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#Events" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Events')"><i class="far fa-calendar-alt me-1"></i> Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#Blog" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Blog')"><i class="far fa-newspaper me-1"></i> Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#Contact" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Contact')"><i class="far fa-envelope me-1"></i> Contact</a></li>
+        <li class="nav-item mt-3">
+          <a class="Add-btn-enroll" href="../index.html#Admissions" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Admissions')">Enroll Now</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+
+  <section class="hero-section container-fluid">
+    <div class="col-lg-10 mx-auto">
+    <div class="row align-items-center">
+      <!-- Left Content -->
+      <div class="col-lg-6 col-md-12 text-lg-start text-center">
+        <div class="badge-custom">
+          <svg style="color: #3b82f6;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles w-4 h-4 text-[#3b82f6]"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path><path d="M20 3v4"></path><path d="M22 5h-4"></path><path d="M4 17v2"></path><path d="M5 18H3"></path></svg> Award-Winning Development Agency
+        </div>
+        <h1 class="hero-title">Innovative App Development for the Future</h1>
+        <p class="hero-text">
+          We create stunning mobile experiences with cutting-edge technology and creative excellence.
+        </p>
+        <button class="btn btn-gradient">
+          Start Your Project <i class="fa-solid fa-arrow-right ms-2"></i>
+        </button>
+      </div>
+
+      <!-- Right Animated Phone -->
+      <div class="col-lg-6 col-md-12 mt-5 mt-lg-0 phone-wrapper">
+<lottie-player 
+    src="Isometric animation for UIUX design landing page..json"
+    background="transparent"  
+    speed="1"  
+    style="width: 400px; height: 400px;"  
+    loop  
+    autoplay>
+</lottie-player>
+      </div>
+    </div>
+</div>
   </section>
 
-  <footer>
-    © 2025 TIPS-G Institute | All Rights Reserved
+    <!-- About Section -->
+  <section class="about-section container-fluid">
+    <div class="col-lg-10 mx-auto">
+    <div class="row align-items-center g-5">
+      <!-- Left Icon -->
+      <div class="col-lg-6 col-md-12 d-flex justify-content-center">
+        <div class="about-icon-box">
+          <div class="about-icon-inner">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+          </div>
+          <h5>Building Innovation</h5>
+        </div>
+      </div>
+
+      <!-- Right Text -->
+      <div class="col-lg-6 col-md-12 about-text">
+        <h2 class="about-heading">About Our Agency</h2>
+        <p>
+          We are a team of passionate developers, designers, and innovators dedicated to transforming ideas into powerful digital experiences. With years of expertise and cutting-edge technology, we deliver solutions that drive growth.
+        </p>
+        <p>
+          Our mission is to help businesses succeed in the digital age by creating high-quality, user-centric mobile applications that make a difference.
+        </p>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section container-fluid text-center">
+    <div class="col-lg-10 mx-auto">
+    <div class="row g-4">
+      <div class="col-md-3 col-6">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <div class="stat-number" data-target="500">0</div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+          <div class="stat-number" data-target="250">0</div>
+          <div class="stat-label">Happy Clients</div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-globe"></i></div>
+          <div class="stat-number" data-target="35">0</div>
+          <div class="stat-label">Countries Served</div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-award"></i></div>
+          <div class="stat-number" data-target="48">0</div>
+          <div class="stat-label">Awards Won</div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  
+  <section class="container-fluid py-5 mt-5" style="background: linear-gradient(90deg,#f8fafc , #e0f2fe);">
+
+    <div class="text-center mb-5">
+      <h2 class="section-title">Our App Development <span>Services</span></h2>
+      <p class="section-subtitle">From concept to launch, we provide comprehensive app development services tailored <br class="d-none d-md-block"> to your business needs</p>
+    </div>
+
+    <!-- Cards Row -->
+     <div class="col-lg-10 mx-auto">
+    <div class="row g-4">
+
+      <!-- Card 1 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="service-card">
+          <div class="icon-box"><i class="fa-solid fa-mobile-screen-button"></i></div>
+          <h5>Native App Development</h5>
+          <p>High-performance native applications for iOS and Android</p>
+
+          <ul>
+            <li>Android Development (Kotlin)</li>
+            <li>iOS Development (Swift)</li>
+            <li>Platform-specific optimization</li>
+          </ul>
+
+          <a href="#" class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="service-card">
+          <div class="icon-box"><i class="fa-solid fa-layer-group"></i></div>
+          <h5>Cross-Platform Apps</h5>
+          <p>Build once, deploy everywhere with modern frameworks</p>
+
+          <ul>
+            <li>React Native development</li>
+            <li>Flutter applications</li>
+            <li>Code reusability & efficiency</li>
+          </ul>
+
+          <a href="#" class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="service-card">
+          <div class="icon-box"><i class="fa-solid fa-server"></i></div>
+          <h5>Backend & APIs</h5>
+          <p>Robust backend solutions and scalable API development</p>
+
+          <ul>
+            <li>Node.js & Express</li>
+            <li>Firebase integration</li>
+            <li>Django REST Framework</li>
+          </ul>
+
+          <a href="#" class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="service-card">
+          <div class="icon-box"><i class="fa-solid fa-palette"></i></div>
+          <h5>UI/UX Design</h5>
+          <p>Beautiful, user-centric design that converts</p>
+
+          <ul>
+            <li>Figma design systems</li>
+            <li>Adobe XD prototyping</li>
+            <li>User research & testing</li>
+          </ul>
+
+          <a href="#" class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </section>
+
+  <section class="container py-5">
+<div class="col-lg-10 mx-auto">
+  <div class="text-center">
+    <h2 class="section-title1">Our Development <span>Process</span></h2>
+    <p class="section-subtitle1">A proven methodology that delivers exceptional results every time</p>
+  </div>
+
+  <div class="position-relative step-color">
+    <!-- Horizontal connecting line -->
+    <div class="process-line"></div>
+
+    <div class="row text-center justify-content-between">
+
+      <!-- Step 1 -->
+      <div class="col-lg-2 col-md-4 col-6 process-step">
+        <div class="icon-box1"><i class="fa-solid fa-lightbulb"></i></div>
+        <div class="dot left"></div>
+        <p class="step-number">Step 1</p>
+        <p class="step-title">Plan</p>
+        <p class="step-desc">
+          We analyze your requirements and create a strategic roadmap for success.
+        </p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="col-lg-2 col-md-4 col-6 process-step">
+        <div class="icon-box1"><i class="fa-solid fa-pen"></i></div>
+        <p class="step-number">Step 2</p>
+        <p class="step-title">Design</p>
+        <p class="step-desc">
+          Our designers craft beautiful, intuitive interfaces that users love.
+        </p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="col-lg-2 col-md-4 col-6 process-step">
+        <div class="icon-box1"><i class="fa-solid fa-code"></i></div>
+        <p class="step-number">Step 3</p>
+        <p class="step-title">Develop</p>
+        <p class="step-desc">
+          Expert developers bring your vision to life with clean, efficient code.
+        </p>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="col-lg-2 col-md-4 col-6 process-step">
+        <div class="icon-box1"><i class="fa-solid fa-rocket"></i></div>
+        <p class="step-number">Step 4</p>
+        <p class="step-title">Launch</p>
+        <p class="step-desc">
+          We deploy your app and ensure a smooth, successful release.
+        </p>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="col-lg-2 col-md-4 col-6 process-step">
+        <div class="icon-box1"><i class="fa-solid fa-headphones"></i></div>
+        <div class="dot right"></div>
+        <p class="step-number">Step 5</p>
+        <p class="step-title">Support</p>
+        <p class="step-desc">
+          Ongoing maintenance and updates to keep your app running perfectly.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+  </section>
+
+  <section class="container-fluid py-5 text-center" style="background: linear-gradient(135deg, #eef4ff, #e0efff);">
+
+  <h2 class="section-title2">Our Tech <span>Stack</span></h2>
+  <p class="section-subtitle2">We work with cutting-edge technologies to build robust, scalable applications</p>
+  <div class="col-lg-10 mx-auto">
+  <div class="row g-4 justify-content-center">
+
+    <!-- CARD 1 -->
+    <div class="col-lg-2 col-md-3 col-6">
+      <div class="tech-card">
+        <div class="tech-icon" style="background:linear-gradient(135deg,#60a5fa,#0ea5e9)">RN</div>
+        <div class="tech-name">React Native</div>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="col-lg-2 col-md-3 col-6">
+      <div class="tech-card">
+        <div class="tech-icon" style="background:linear-gradient(135deg,#0284c7,#0ea5e9)">FL</div>
+        <div class="tech-name">Flutter</div>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="col-lg-2 col-md-3 col-6">
+      <div class="tech-card">
+        <div class="tech-icon" style="background:linear-gradient(135deg,#66bb6a,#43a047)">NO</div>
+        <div class="tech-name">Node.js</div>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="col-lg-2 col-md-3 col-6">
+      <div class="tech-card">
+        <div class="tech-icon" style="background:linear-gradient(135deg,#f59e0b,#fbbf24)">FI</div>
+        <div class="tech-name">Firebase</div>
+      </div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="col-lg-2 col-md-3 col-6">
+      <div class="tech-card">
+        <div class="tech-icon" style="background:linear-gradient(135deg,#ef4444,#f87171)">SW</div>
+        <div class="tech-name">Swift</div>
+      </div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="col-lg-2 col-md-3 col-6">
+      <div class="tech-card">
+        <div class="tech-icon" style="background:linear-gradient(135deg,#8b5cf6,#a855f7)">KO</div>
+        <div class="tech-name">Kotlin</div>
+      </div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="col-lg-2 col-md-3 col-6">
+      <div class="tech-card">
+        <div class="tech-icon" style="background:linear-gradient(135deg,#064e3b,#065f46)">DJ</div>
+        <div class="tech-name">Django</div>
+      </div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="col-lg-2 col-md-3 col-6">
+      <div class="tech-card">
+        <div class="tech-icon" style="background:linear-gradient(135deg,#22c55e,#16a34a)">MO</div>
+        <div class="tech-name">MongoDB</div>
+      </div>
+    </div>
+
+    <!-- CARD 9 -->
+    <div class="col-lg-2 col-md-3 col-6">
+      <div class="tech-card">
+        <div class="tech-icon" style="background:linear-gradient(135deg,#1e40af,#2563eb)">PO</div>
+        <div class="tech-name">PostgreSQL</div>
+      </div>
+    </div>
+
+    <!-- CARD 10 -->
+    <div class="col-lg-2 col-md-3 col-6">
+      <div class="tech-card">
+        <div class="tech-icon" style="background:linear-gradient(135deg,#ea580c,#f97316)">AW</div>
+        <div class="tech-name">AWS</div>
+      </div>
+    </div>
+
+    <!-- CARD 11 -->
+    <div class="col-lg-2 col-md-3 col-6">
+      <div class="tech-card">
+        <div class="tech-icon" style="background:linear-gradient(135deg,#0369a1,#0284c7)">DO</div>
+        <div class="tech-name">Docker</div>
+      </div>
+    </div>
+
+    <!-- CARD 12 -->
+    <div class="col-lg-2 col-md-3 col-6">
+      <div class="tech-card">
+        <div class="tech-icon" style="background:linear-gradient(135deg,#db2777,#ec4899)">GR</div>
+        <div class="tech-name">GraphQL</div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+  </section>
+
+  <section class="container-fluid py-5">
+  <div class="text-center">
+    <h2 class="title3">What Our Clients <span>Say</span></h2>
+    <p class="subtitle3">Don't just take our word for it – hear from businesses we've helped transform</p>
+  </div>
+
+  <div class="col-lg-10 mx-auto">
+    <div class="row g-4 justify-content-center" id="testimonial-wrapper">
+
+      <!-- CARD 1 -->
+      <div class="col-lg-4 col-md-6 testimonial-item">
+        <div class="testimonial-card active-card">
+          <div class="quote-icon">❞</div>
+          <p>
+"Working with this team was an absolute pleasure. They delivered our app ahead of schedule and exceeded all our expectations. The attention to detail and innovative solutions they provided transformed our business."</p>
+
+          <div class="stars mt-3 mb-3">
+            <i>★</i><i>★</i><i>★</i><i>★</i><i>★</i>
+          </div>
+
+          <hr>
+
+          <div class="d-flex align-items-center mt-3">
+            <div class="profile-img">S</div>
+            <div class="ms-3">
+              <h6 class="mb-0">Sarah Johnson</h6>
+              <small class="text-muted">CEO at TechStart Inc</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="col-lg-4 col-md-6 testimonial-item">
+        <div class="testimonial-card">
+          <div class="quote-icon">❞</div>
+          <p>
+"Outstanding development work! The team's expertise in both iOS and Android platforms ensured our app performed flawlessly across all devices. Their post-launch support has been exceptional."</p>
+
+          <div class="stars mt-3 mb-3">
+            <i>★</i><i>★</i><i>★</i><i>★</i><i>★</i>
+          </div>
+
+          <hr>
+
+          <div class="d-flex align-items-center  mt-3">
+            <div class="profile-img">M</div>
+            <div class="ms-3">
+              <h6 class="mb-0">Michael Chen</h6>
+              <small class="text-muted">Product Manager at InnovateLabs</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="col-lg-4 col-md-6 testimonial-item">
+        <div class="testimonial-card">
+          <div class="quote-icon">❞</div>
+          <p>
+"From concept to launch, they guided us every step of the way. The UI/UX design they created is intuitive and beautiful. Our user engagement has increased by 300% since launch!"</p>
+
+          <div class="stars mt-3 mb-3">
+            <i>★</i><i>★</i><i>★</i><i>★</i><i>★</i>
+          </div>
+
+          <hr>
+
+          <div class="d-flex align-items-center mt-3">
+            <div class="profile-img">E</div>
+            <div class="ms-3">
+              <h6 class="mb-0">Emma Williams</h6>
+              <small class="text-muted">Founder at HealthFit Pro</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DOTS -->
+  <div class="slider-dots">
+    <span class="client-dot client-active-dot"></span>
+    <span class="client-dot"></span>
+    <span class="client-dot"></span>
+  </div>
+  </section>
+
+  <section class="container py-5 text-center">
+
+  <h2 class="quote-title2">Get Your Free <span>Quote</span></h2>
+  <p class="quote-sub2">Ready to bring your app idea to life? Let's talk about your project</p>
+
+  <div class="quote-card2">
+
+    <form>
+
+      <div class="row g-4">
+
+        <!-- Name -->
+        <div class="col-md-6 text-start">
+          <label class="form-label fw-semibold">Your Name</label>
+          <input type="text" class="form-control" placeholder="John Doe">
+        </div>
+
+        <!-- Email -->
+        <div class="col-md-6 text-start">
+          <label class="form-label fw-semibold">Email Address</label>
+          <input type="email" class="form-control" placeholder="john@example.com">
+        </div>
+
+        <!-- Service Type -->
+        <div class="col-12 text-start">
+          <label class="form-label fw-semibold">Service Type</label>
+          <select class="form-select">
+            <option selected>Select a service</option>
+            <option>App Development</option>
+            <option>UI/UX Design</option>
+            <option>Backend Development</option>
+            <option>Full Stack Development</option>
+          </select>
+        </div>
+
+        <!-- Project Details -->
+        <div class="col-12 text-start">
+          <label class="form-label fw-semibold">Project Details</label>
+          <textarea class="form-control" placeholder="Tell us about your app idea, features, timeline, and budget..."></textarea>
+        </div>
+
+        <!-- Button -->
+        <div class="col-12 mt-3">
+          <button class="quote-btn2">
+            Send Message <i class="fa-solid fa-paper-plane ms-2"></i>
+          </button>
+        </div>
+
+      </div>
+
+    </form>
+
+  </div>
+
+  </section>
+
+  <footer class="footer">
+    <div class="container-fluid">
+      <div class="col-lg-10 mx-auto">
+        <div class="row justify-content-between">
+
+          <!-- Left Section -->
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="d-flex mb-2 align-items-center">
+              <div class="footer-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <h5 class="m-0"><strong style="color: #3b82f6;">TIPSG Kotputli</strong></h5>
+            </div>
+
+            <p style="color: #3b82f6;">
+              District's First IT Training & Placement Center, empowering students
+              with world-class skills and guaranteed career opportunities.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-md-2 col-sm-6 mb-4">
+            <h6 class="footer-title">Quick Links</h6>
+            <ul class="list-unstyled">
+              <li><a href="#home" onclick="setActive(this,'home')"> Home</a></li>
+              <li><a href="#about" onclick="setActive(this,'About_us')"> About Us</a></li>
+              <li><a href="#courses" onclick="setActive(this,'Courses')">Courses</a></li>
+              </li>
+              <li><a href="#placements" onclick="setActive(this,'Placements')"> Placements</a></li>
+              <li><a href="#admissions" onclick="setActive(this,'Admissions')"> Admissions</a></li>
+            </ul>
+          </div>
+
+          <!-- Popular Courses -->
+          <div class="col-md-3 col-sm-6 mb-4 footer-courses">
+            <h6 class="footer-title">Popular Courses</h6>
+            <ul class="list-unstyled">
+             <li> <a href="Fullstack.html"> Full Stack Development</a></li>
+              <li></li><a href="cybercourses.html"> Cyber Security</a></li>
+              <li></li><a href="data.html"> Data Science & AI</a></li>
+              <li></li><a href="Digital.html"> Digital Marketing</a></li>
+              <li></li><a href="Graphic.html"> Graphic Designing</a></li>
+              <li></li><a href="App.html"> Graphic Designing</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Section -->
+          <div class="col-md-3 col-sm-6 mb-4 footer-contact">
+            <h6 class="footer-title">Contact Us</h6>
+            <p><i class="fas fa-envelope me-2 " style="color: #3b82f6;"></i> info@tipsgkotputli.com</p>
+            <p><i class="fas fa-phone me-2 " style="color: #3b82f6;"></i> +91 98765 43210</p>
+            <div class="social-icons mt-3">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr style="border: 0.3px solid #3b82f6;">
+      <p style="text-align: center; font-size: 12px; color: #3b82f6">© 2025 TIPSG Kotputli. All rights reserved. |
+        Empowering Careers, Transforming Lives</p>
+    </div>
   </footer>
+
+
+    <script>
+    function countUp(element) {
+      const target = +element.getAttribute("data-target");
+      const speed = 50;
+      let count = 0;
+      const update = () => {
+        if (count < target) {
+          count += Math.ceil(target / 60);
+          element.textContent = count + "+";
+          setTimeout(update, speed);
+        } else {
+          element.textContent = target + "+";
+        }
+      };
+      update();
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          const number = entry.target.querySelector(".stat-number");
+          if (number && !number.classList.contains("counted")) {
+            number.classList.add("counted");
+            countUp(number);
+          }
+        }
+      });
+    }, { threshold: 0.4 });
+
+    document.querySelectorAll(".stat-card").forEach((card) => observer.observe(card));
+  </script>
+
+  <script>
+  let index = 0;
+  const cards = document.querySelectorAll(".testimonial-card");
+  const dots = document.querySelectorAll(".client-dot");
+
+  function updateSlider() {
+    cards.forEach(card => card.classList.remove("active-card"));
+    dots.forEach(dot => dot.classList.remove("client-active-dot"));
+
+    cards[index].classList.add("active-card");
+    dots[index].classList.add("client-active-dot");
+  }
+
+  // AUTO SLIDE
+  function autoSlide() {
+    index++;
+    if (index > cards.length - 1) index = 0;
+    updateSlider();
+  }
+
+  let slideInterval = setInterval(autoSlide, 3000);
+
+  // DOT CLICK
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      index = i;
+      updateSlider();
+      resetTimer();
+    });
+  });
+
+  function resetTimer() {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(autoSlide, 3000);
+  }
+</script>
+
+<script>
+  const cards1 = document.querySelectorAll('.tech-card,.service-card');
+
+  const observer1 = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  cards1.forEach(card => {
+    observer1.observe(card);
+  });
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
 
 </body>
 </html>

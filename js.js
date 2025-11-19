@@ -4,23 +4,37 @@ window.addEventListener("load", function () {
 
 function showSection(id) {
   document.querySelectorAll("section").forEach(sec => sec.style.display = "none");
-  document.getElementById(id).style.display = "block";
+  
+  const sec = document.getElementById(id);
+  if (sec) {
+    sec.style.display = "block";
+    localStorage.setItem("activeSection", id);
+  }
+
   window.scrollTo(0, 0);
 }
+
 window.addEventListener("load", function () {
   document.getElementById("loading").style.display = "none";
 
-  // last visited section check karo
-  const lastSection = localStorage.getItem("activeSection") || "Home";
-  showSection(lastSection);
-  
-  // active nav link set karo
-  document.querySelectorAll(".nav-link").forEach(link => {
-    link.classList.toggle("active", link.getAttribute("onclick")?.includes(lastSection));
-  });
+  let hash = window.location.hash.replace("#", "");  // URL hash read karo
+  let lastSection = localStorage.getItem("activeSection");
 
-  // top par scroll karo
-  window.scrollTo(0, 0);
+  if (hash) {
+    showSection(hash);  // if URL has #Blog → Blog show
+  } 
+  else if (lastSection) {
+    showSection(lastSection); // last visited section load
+  } 
+  else {
+    showSection("home"); // default
+  }
+
+  // Active nav-link set karo
+  document.querySelectorAll(".nav-link").forEach(link => {
+    let id = link.getAttribute("onclick")?.match(/'(.*?)'/)?.[1];
+    link.classList.toggle("active", id === hash || id === lastSection);
+  });
 });
 
 function showSection(id) {
