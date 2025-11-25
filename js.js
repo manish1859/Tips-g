@@ -231,9 +231,9 @@ topBtn.addEventListener('click', (e) => {
 
 // ourteam
 const teamMembers = [
-  { name: "Emily Kim", role: "Founder", img: "https://img.freepik.com/free-photo/portrait-attractive-young-african-american-man-laughing_176420-13725.jpg?w=740", insta: "#", fb: "#", email: "emily@example.com", linkedin: "#" },
-  { name: "Michael Steward", role: "Creative Director", img: "https://img.freepik.com/free-photo/young-pretty-woman-casual-outfit-posing-against-white-wall_231208-10022.jpg?w=740", insta: "#", fb: "#", email: "michael@example.com", linkedin: "#" },
-  { name: "Emma Rodriguez", role: "Lead Developer", img: "https://img.freepik.com/free-photo/portrait-young-man-with-dark-hair_1262-18451.jpg?w=740", insta: "#", fb: "#", email: "emma@example.com", linkedin: "#" },
+  { name: "ghanshyam Malhotra", role: "Founder", img: "img/Founder.jpeg", insta: "#", fb: "#", email: "emily@example.com", linkedin: "#" },
+  { name: "Abhishek Nagar", role: "Cyber Security", img: "img/Abhi.jpg", insta: "https://www.instagram.com/hacker_abhii/", fb: "https://www.facebook.com/profile.php?id=100037883687980", email: "abhisheknagar41153@gmail.com", linkedin: "https://www.linkedin.com/in/abhishek-nagar-5a5600215/" },
+  { name: "Gajju Sir", role: "Software Developer", img: "img/Gajjusir.jpg", insta: "https://github.com/Gajanandyadav1",  email: "gajanandyadav0066@gmail.com", linkedin: "www.linkedin.com/in/gajanandyadav0507" },
   { name: "Julia Gimmel", role: "UX Designer", img: "https://img.freepik.com/free-photo/portrait-young-woman-with-brown-long-hair_1262-18751.jpg?w=740", insta: "#", fb: "#", email: "julia@example.com", linkedin: "#" },
   { name: "Lisa Anderson", role: "Marketing Manager", img: "https://img.freepik.com/free-photo/young-man-with-dark-hair-beard_1262-18451.jpg?w=740", insta: "#", fb: "#", email: "lisa@example.com", linkedin: "#" },
   { name: "James Wilson", role: "Product Manager", img: "https://img.freepik.com/free-photo/cute-young-girl_23-2149179979.jpg?w=740", insta: "#", fb: "#", email: "james@example.com", linkedin: "#" }

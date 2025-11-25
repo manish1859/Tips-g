@@ -909,14 +909,14 @@ background: linear-gradient(90deg, #ea580c, #f97316);
 }
 
 .overlay-name {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     /* color: #4b5563; */
     font-weight: 700;
     margin-bottom: 5px;
 }
 
 .overlay-role {
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 400;
     margin-bottom: 20px;
     opacity: 0.8;
@@ -925,7 +925,7 @@ background: linear-gradient(90deg, #ea580c, #f97316);
 
 .social-links a {
     color: white;
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin: 0 8px;
     transition: color 0.2s ease;
     text-decoration: none;
