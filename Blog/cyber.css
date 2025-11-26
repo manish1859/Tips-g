@@ -1,0 +1,389 @@
+        /* Custom Styles for Neon Glows, Gradients, and Background */
+        :root {
+            --neon-blue: #06b6d4; /* cyan-500 */
+            --neon-purple: #a855f7; /* violet-500 */
+            --dark-blue: #0b1a3d;
+            --main-bg: #030712; /* dark black */
+            --font-inter: 'Inter', sans-serif;
+            --font-mono: 'Roboto Mono', monospace;
+        }
+
+        body {
+            font-family: var(--font-inter);
+            background-color: var(--main-bg);
+            color: #e5e7eb; /* text-gray-200 */
+            overflow-x: hidden;
+        }
+
+
+
+        
+        #home {
+             line-height: 1.4 !important;
+        }
+
+        /* 1. Cyber Grid Background Effect (Subtle, only for main body) */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background-image:
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+
+.collapse {
+    visibility: collapse !important;
+}
+/* MAIN NAVBAR */
+.Add-navbar {
+
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  height: 72px;
+  justify-content: space-between;
+  background: linear-gradient(90deg, var(--color-bg-deep), var(--color-bg-mid)) !important;
+  box-shadow: 0 2px 12px rgba(0, 255, 0, 0.15);
+  border-bottom: 1px solid rgba(0, 255, 0, 0.25);
+}
+
+/* MOBILE OFFCANVAS */
+.offcanvas-body {
+  background: linear-gradient(90deg, var(--color-bg-deep), var(--color-bg-mid));
+}
+
+/* LOGO BOX */
+.Add-logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: rgba(0, 255, 0, 0.15);
+  color: #00ff00;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+  box-shadow: 0 0 12px rgba(0, 255, 0, 0.45);
+}
+
+.Add-logo:hover {
+  transform: scale(1.05);
+}
+
+/* BRAND TEXT */
+.Add-brand {
+  text-align: center;
+}
+
+.Add-brand-text {
+  color: #00ff00;
+  font-weight: 700;
+  font-size: clamp(18px, 2.2vw, 22px);
+}
+
+.Add-brand-subtext {
+  color: #00ff00 !important;
+  font-size: clamp(12px, 1.5vw, 16px);
+  opacity: 0.7;
+  margin-top: -6px;
+}
+
+/* NAV LINK */
+.Add-navbar .nav-link {
+  color: #00ff00 !important;
+  font-size: 13px;
+  font-weight: 500;
+  margin: 4px;
+  padding: 8px 10px !important;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.Add-navbar .nav-link i {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+/* HOVER */
+.Add-navbar .nav-link:hover {
+  background-color: rgba(0, 255, 0, 0.15);
+  color: var(--color-accent-green) !important;
+  text-shadow: 0 0 8px var(--color-accent-green);
+}
+
+/* ACTIVE LINK */
+.Add-navbar .nav-link.active {
+  background: var(--color-accent-green) !important;
+  color: #000 !important;
+  text-shadow: 0 0 10px var(--color-accent-green);
+}
+
+/* ENROLL BUTTON */
+.Add-btn-enroll {
+  background: linear-gradient(90deg, #00ff00, #66ff66);
+  color: #000 !important;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 9px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 0 12px rgba(0, 255, 0, 0.35);
+  transition: 0.3s ease;
+}
+
+.Add-btn-enroll:hover {
+  background: linear-gradient(90deg, #66ff66, #00ff00);
+  box-shadow: 0 0 18px #00ff00;
+}
+
+/* MOBILE FIX */
+@media (max-width: 991px) {
+  .Add-navbar {
+    height: auto;
+  }
+
+  .navbar-brand {
+    margin-right: auto;
+  }
+
+  .navbar-toggler {
+    margin-left: auto;
+    border: none;
+    filter: brightness(0) invert(1);
+  }
+
+  .Add-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .Add-brand-text {
+    font-size: 18px;
+  }
+}
+
+
+        /* 2. Neon Text Effect (for Logo and Headlines) */
+ .neon-text {
+    color: #00ff00; 
+    text-shadow:
+        0 0 3px  rgb(0, 255, 0,0.3),
+        0 0 7px rgb(0, 255, 0,0.3),
+        0 0 12px  rgb(0, 255, 0,0.3),
+        0 0 10px rgb(0, 255, 0,0.3);
+       
+}
+ .neon-text1 {
+    color: #00ff00; 
+    text-shadow:
+        0 0 3px  rgb(0, 255, 0,0.3),
+        0 0 7px rgb(0, 255, 0,0.3),
+        0 0 12px  rgb(0, 255, 0,0.3),
+        0 0 10px rgb(0, 255, 0,0.3);
+       
+        font-size: 40px;
+}
+        /* 3. Neon Button Glow Effect */
+        .neon-btn {
+            background-image: linear-gradient(45deg, var(--neon-purple) 0%, var(--neon-blue) 100%);
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+        }
+        .neon-btn:hover {
+            box-shadow: 0 0 15px var(--neon-blue), 0 0 25px var(--neon-blue), 0 0 35px var(--neon-purple);
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        /* 4. Module Card Styling */
+        .module-card {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.9), rgba(6, 18, 48, 0.9));
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .module-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            border-color: var(--neon-blue);
+            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3);
+        }
+
+        .module-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top left, rgba(6, 182, 212, 0.2) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+
+        .module-card:hover::before {
+            opacity: 1;
+        }
+
+        /* 5. Monospace style for tech terms */
+        .tech-term {
+            font-family: var(--font-mono);
+            color: var(--neon-purple);
+        }
+
+
+.cyber-subtitle{
+    font-size: 35px;
+        color: #fff;
+
+    font-weight: 700;
+}
+
+
+
+
+
+
+/* Tablets (medium screens) */
+@media (max-width: 992px) {
+    .cyber-tech-term,
+    .cyber-tech-term2 {
+        font-size: 36px !important; 
+    }
+}
+
+/* Mobile (small screens) */
+@media (max-width: 576px) {
+    .cyber-tech-term,
+    .cyber-tech-term2 {
+        font-size: 20px !important; 
+    }
+    .cyber-subtitle{
+    font-size: 25px;
+    font-weight: 700;
+}
+
+}
+.footer {
+  background: linear-gradient(90deg, #001500, #003300);
+  padding-top: 60px;
+  padding-bottom: 30px;
+  border-top: 1px solid rgba(0, 255, 0, 0.3);
+  box-shadow: 0px -4px 15px rgba(0, 255, 0, 0.2);
+}
+
+/* Icon Box */
+.footer-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  background: rgba(0, 255, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 255, 0, 0.4);
+}
+
+/* Heading */
+.footer-heading {
+  color: #00ff00;
+  font-weight: 700;
+}
+
+/* Section Title */
+.footer-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #00e600;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Paragraph Text */
+.footer-text {
+  color: #aaffaa;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Links */
+.footer-links li a {
+  color: #aaffaa;
+  text-decoration: none;
+  display: block;
+  margin: 6px 0;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.footer-links li a:hover {
+  color: #00ff00;
+  text-shadow: 0 0 12px rgba(0, 255, 0, 0.7);
+}
+
+/* Courses */
+.footer-courses li {
+  list-style: none;
+}
+
+.footer-courses li a {
+  color: #aaffaa;
+  text-decoration: none;
+  margin-bottom: 6px;
+}
+
+.footer-courses li a:hover {
+  cursor: pointer;
+  color: #00ff00;
+  text-shadow: 0 0 12px rgba(0, 255, 0, 0.7);
+}
+
+/* Contact */
+.footer-contact p {
+  color: #aaffaa;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+/* Social Icons */
+.social-icons a {
+  color: #aaffaa;
+  font-size: 15px;
+  border: 2px solid #aaffaa;
+  border-radius: 10px;
+  padding: 10px;
+  margin-right: 12px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #00ff00;
+  text-shadow: 0 0 12px rgba(0, 255, 0, 0.7);
+}
+
+/* Line Separator */
+.footer-line {
+  border: 0.3px solid rgba(0, 255, 0, 0.3);
+  margin: 25px 0;
+}
+
+/* Copyright */
+.footer-copy {
+  text-align: center;
+  color: #88ff88;
+  font-size: 12px;
+}

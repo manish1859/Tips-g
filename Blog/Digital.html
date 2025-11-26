@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Digital Marketing in 2025 - Professional Course</title>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS CSS CDN (Scroll Animations) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome (Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* --- Color Variables and Global Styles --- */
+        :root {
+            --color-dark-bg: #0a0f1c;
+            --color-text-light: #f8f9fa;
+            --color-neon-blue: #00c6ff;
+            --color-deep-blue: #0072ff;
+            --color-gradient: linear-gradient(90deg, var(--color-neon-blue), var(--color-deep-blue));
+            --color-glass: rgba(255, 255, 255, 0.05);
+            --color-highlight: #6c63ff;
+        }
+        /* SECTION BACKGROUND */
+#tools {
+  background: var(--color-dark-bg);
+  padding: 80px 0;
+}
+
+/* HEADING */
+#tools h2 {
+  color: var(--color-text-light);
+  text-shadow: 0 0 12px rgba(0, 198, 255, 0.5);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: var(--color-gradient);
+  -webkit-background-clip: text;
+  color: transparent;
+  /* text-shadow: 0 0 15px rgba(0, 198, 255, 0.9); */
+}
+
+/* TOOL ICON CARDS */
+.tool-icon-glow {
+  width: 110px;
+  height: 110px;
+  border-radius: 16px;
+  background: var(--color-glass);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(0, 198, 255, 0.2);
+  /* box-shadow: 0 0 15px rgba(0, 198, 255, 0.25); */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+/* ICON */
+.tool-icon-glow i {
+  font-size: 35px;
+  color: var(--color-neon-blue);
+  filter: drop-shadow(0 0 6px rgba(0, 198, 255, 0.7));
+  transition: 0.35s ease;
+}
+
+/* TEXT */
+.tool-icon-glow p {
+  margin-top: 8px;
+  color: var(--color-text-light);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* HOVER EFFECT */
+.tool-icon-glow:hover {
+  transform: translateY(-8px) scale(1.07);
+  border-color: var(--color-neon-blue);
+  box-shadow: 
+    0 0 20px rgba(0, 198, 255, 0.6),
+    0 0 35px rgba(0, 114, 255, 0.4);
+}
+
+.tool-icon-glow:hover i {
+  color: var(--color-deep-blue);
+  transform: scale(1.18);
+  filter: drop-shadow(0 0 12px rgba(0, 198, 255, 1));
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .tool-icon-glow {
+    width: 90px;
+    height: 90px;
+  }
+
+  .tool-icon-glow i {
+    font-size: 28px;
+  }
+
+  .tool-icon-glow p {
+    font-size: 11px;
+  }
+}
+
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--color-text-light);
+            background-color: var(--color-dark-bg);
+            min-height: 100vh;
+            scroll-behavior: smooth;
+        }
+        .fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 11vh;
+    left: 0;
+    z-index: 1030;
+}
+
+        /* --- Global Component Styling --- */
+        .gradient-text {
+            background: var(--color-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 50px 0;
+            }
+        }
+
+        /* Neon Button & Glow Effect */
+        .neon-btn {
+            background: var(--color-gradient);
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 10px 30px;
+            border-radius: 50px;
+            box-shadow: 0 0 10px rgba(0, 198, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+        .neon-btn:hover {
+            box-shadow: 0 0 25px var(--color-neon-blue), 0 0 50px var(--color-deep-blue);
+            transform: translateY(-2px);
+        }
+
+        /* Neon Card Styling */
+        .neon-card {
+            background-color: var(--color-glass);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(0, 198, 255, 0.2);
+            box-shadow: 0 0 15px rgba(0, 198, 255, 0.1);
+            transition: transform 0.4s ease, 
+            box-shadow 0.4s ease;
+            border-radius: 12px;
+        }
+        .neon-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 30px rgba(0, 198, 255, 0.4);
+        }
+
+        .icon-box {
+            font-size: 2.5rem;
+            color: var(--color-neon-blue);
+            /* text-shadow: 0 0 10px var(--color-neon-blue); */
+        }
+
+        /* --- Hero Section Specific --- */
+        #hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding-top: 100px;
+            background: radial-gradient(circle at 10% 20%, rgba(0, 114, 255, 0.1), transparent 50%),
+                        radial-gradient(circle at 90% 80%, rgba(0, 198, 255, 0.1), transparent 50%);
+        }
+        .hero-headline {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+        @media (min-width: 992px) {
+            .hero-headline {
+                font-size: 5rem;
+            }
+        }
+
+        /* Animated Gradient Background Orb (Subtle) */
+        .gradient-orb {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            opacity: 0.3;
+            filter: blur(50px);
+            z-index: 0;
+            animation: orb-move 20s infinite alternate;
+        }
+        .orb-1 { top: 10%; left: 5%; background: var(--color-neon-blue); }
+        .orb-2 { bottom: 20%; right: 10%; background: var(--color-deep-blue); animation-delay: -10s; }
+        @keyframes orb-move {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(20px, 30px); }
+        }
+
+        /* --- Tools Covered Section --- */
+        .tool-icon-glow {
+            font-size: 3rem;
+            color: var(--color-text-light);
+            padding: 15px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        .tool-icon-glow:hover {
+            color: var(--color-neon-blue);
+            transform: scale(1.1);
+            background-color: rgba(0, 198, 255, 0.1);
+            box-shadow: 0 0 15px var(--color-neon-blue);
+        }
+
+        /* --- Pricing Section --- */
+        .price-card-header {
+            background: linear-gradient(90deg, var(--color-dark-bg), rgba(0, 198, 255, 0.1), var(--color-dark-bg));
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(0, 198, 255, 0.2);
+        }
+        .price-card-expert {
+            border: 2px solid var(--color-neon-blue);
+            box-shadow: 0 0 30px rgba(0, 198, 255, 0.5);
+        }
+        .price-card-expert .price-card-header {
+            background: linear-gradient(90deg, rgba(0, 114, 255, 0.2), var(--color-neon-blue), rgba(0, 114, 255, 0.2));
+            color: var(--color-dark-bg);
+        }
+
+
+
+        .footer {
+  background: linear-gradient(135deg, #0a0f24, #0d1b3a, #0a0f24);
+  padding-top: 60px;
+  padding-bottom: 30px;
+  border-top: 1px solid rgba(0, 140, 255, 0.2);
+  box-shadow: 0px -4px 15px rgba(0, 140, 255, 0.15);
+}
+
+.footer-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  background: rgba(0, 140, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 180, 255, 0.3);
+}
+
+.footer-heading {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.footer-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #64b5ff;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-text {
+  color: #bfe5ff;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-links li a {
+  color: #bfe5ff;
+  text-decoration: none;
+  display: block;
+  margin: 6px 0;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.footer-links li a:hover {
+  color: #4db8ff;
+  text-shadow: 0 0 8px rgba(0, 191, 255, 0.6);
+}
+.footer-courses li{
+    list-style: none;
+}
+.footer-courses li a {
+  color: #bfe5ff;
+  text-decoration: none;
+  margin-bottom: 6px;
+}
+.footer-courses li a:hover {
+    cursor: pointer;
+  color: #4db8ff;
+  text-shadow: 0 0 8px rgba(0, 191, 255, 0.6);
+}
+
+.footer-contact p {
+  color: #bfe5ff;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.social-icons a {
+  color: #bfe5ff;
+  font-size: 15px;
+  border:  2px solid #bfe5ff;
+  border-radius: 10px;
+  padding: 10px;
+  margin-right: 12px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #4db8ff;
+  text-shadow: 0 0 10px rgba(0, 191, 255, 0.6);
+}
+
+.footer-line {
+  border: 0.3px solid rgba(0, 174, 255, 0.3);
+  margin: 25px 0;
+}
+
+.footer-copy {
+  text-align: center;
+  color: #9cd8ff;
+  font-size: 12px;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Animated Orbs Background -->
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: rgba(10, 15, 28, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+        <div class="container">
+            <a class="navbar-brand fw-bold gradient-text" href="../index.html#home">TIPS-G Kotputli</a>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Section -->
+    <header id="hero" class="text-center">
+        <div class="container-fluid">
+            <div class="col-lg-10 mx-auto">
+            <div class="row justify-content-center">
+                <div class="col-lg-10" data-aos="fade-up" data-aos-duration="1200">
+                    <h1 class="hero-headline text-white mb-4">
+                        <span class="gradient-text">Master Digital Marketing</span> in 2025
+                    </h1>
+                    <p class="lead text-white-50 mx-auto mb-5" style="max-width: 800px;">
+                        The definitive course to build a six-figure marketing career. Learn the strategies, master the tools, and deliver exponential ROI.
+                    </p>
+                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                        <a href="#cta" class="btn btn-lg neon-btn me-sm-3">
+                            Start Enrollment <i class="fas fa-bolt ms-2"></i>
+                        </a>
+                        <a href="#" class="btn btn-lg btn-outline-light rounded-pill border-2" style="border-color: var(--color-neon-blue);">
+                            Get Free Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. About the Course -->
+    <section id="about" class="section-padding">
+        <div class="container-fluid">
+            <div class="col-lg-10 mx-auto">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h2 class="display-4 fw-bold mb-4 gradient-text">Why Digital Marketing Now?</h2>
+                    <p class="lead text-white-50">
+                        Digital transformation has created a global demand for skilled marketers. The global marketing services market is valued at over $400 Billion, and businesses are desperate for experts who can drive performance.
+                    </p>
+                    <p class="text-white-50">
+                        Our course bridges the gap between theoretical knowledge and real-world application, offering a competitive edge for high-demand roles like **Performance Marketing Manager** and **SEO Strategist**.
+                    </p>
+                    <div class="mt-4">
+                         <a href="#learn" class="btn btn-lg btn-outline-light rounded-pill border-2" style="border-color: var(--color-neon-blue);font-size: 18px;">
+                            Explore Outcomes <i class="fas fa-chevron-down ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Placeholder Graphic for Job Scope/Growth -->
+                <div class="col-lg-6 mt-5 mt-lg-0 text-center" data-aos="fade-left">
+                    <div class="p-4 neon-card">
+                        <i class="fas fa-globe-americas icon-box mb-3" style="font-size: 6rem; opacity: 0.8;"></i>
+                        <p class="h5 text-white">Job Scope & Market Value Visualization</p>
+                        <p class="text-muted-30 small">Representing the global, high-demand career path awaiting you.</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. What You’ll Learn (Main Topics) -->
+    <section id="learn" class="section-padding" style="background-color: rgba(255, 255, 255, 0.02);">
+        <div class="container-fluid">
+            <div class="col-lg-10 mx-auto">
+            <h2 class="display-4 fw-bold text-center mb-5">Core Mastery Topics</h2>
+            <div class="row g-4">
+                <!-- Topics Loop -->
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="neon-card p-4 text-center h-100">
+                        <i class="fas fa-search icon-box mb-3"></i>
+                        <h5 class="text-white">SEO & Technical SEO</h5>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="neon-card p-4 text-center h-100">
+                        <i class="fas fa-ad icon-box mb-3" style="color: var(--color-deep-blue);"></i>
+                        <h5 class="text-white">SEM & Google Ads</h5>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="neon-card p-4 text-center h-100">
+                        <i class="fas fa-share-alt icon-box mb-3"></i>
+                        <h5 class="text-white">Social Media Marketing</h5>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="neon-card p-4 text-center h-100">
+                        <i class="fas fa-feather-alt icon-box mb-3" style="color: var(--color-deep-blue);"></i>
+                        <h5 class="text-white">Content Marketing</h5>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="neon-card p-4 text-center h-100">
+                        <i class="fas fa-envelope icon-box mb-3"></i>
+                        <h5 class="text-white">Email & Automation</h5>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="neon-card p-4 text-center h-100">
+                        <i class="fas fa-chart-line icon-box mb-3" style="color: var(--color-deep-blue);"></i>
+                        <h5 class="text-white">Analytics & Data</h5>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="700">
+                    <div class="neon-card p-4 text-center h-100">
+                        <i class="fas fa-sitemap icon-box mb-3"></i>
+                        <h5 class="text-white">Affiliate Marketing</h5>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="800">
+                    <div class="neon-card p-4 text-center h-100">
+                        <i class="fas fa-robot icon-box mb-3" style="color: var(--color-deep-blue);"></i>
+                        <h5 class="text-white">AI Tools & Trends</h5>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Course Modules (Accordion Style) -->
+    <section id="modules" class="section-padding">
+        <div class="container">
+            <h2 class="display-4 fw-bold text-center mb-5 gradient-text">Full Course Curriculum</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <div class="accordion" id="moduleAccordion">
+                        <!-- Module 1 -->
+                        <div class="accordion-item neon-card mb-3">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" style="background-color: transparent;">
+                                    <span class="fw-bold me-3 gradient-text">01.</span> Digital Strategy & Planning
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#moduleAccordion">
+                                <div class="accordion-body text-white small" style="background-color: rgba(255, 255, 255, 0.01);">
+                                    Define customer personas, map the digital funnel (AIDA), set measurable KPIs, and select the right channel mix for various business models.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Module 2 -->
+                        <div class="accordion-item neon-card mb-3">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" style="background-color: transparent;">
+                                    <span class="fw-bold me-3 gradient-text">02.</span> Advanced SEO & Content
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#moduleAccordion">
+                                <div class="accordion-body text-white small" style="background-color: rgba(255, 255, 255, 0.01);">
+                                    Master on-page optimization, technical site audits, link-building outreach, and use AI to scale high-quality content production.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Module 3 -->
+                        <div class="accordion-item neon-card mb-3">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" style="background-color: transparent;">
+                                    <span class="fw-bold me-3 gradient-text">03.</span> Paid Media & Conversion Tracking
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#moduleAccordion">
+                                <div class="accordion-body text-white small" style="background-color: rgba(255, 255, 255, 0.01);">
+                                    Deep dive into Google Ads (Search, Display, YouTube), Meta Ads (Facebook/Instagram), advanced audience targeting, and Google Tag Manager implementation.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Module 4 -->
+                        <div class="accordion-item neon-card mb-3">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" style="background-color: transparent;">
+                                    <span class="fw-bold me-3 gradient-text">04.</span> Capstone Project & Certification
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#moduleAccordion">
+                                <div class="accordion-body text-white small" style="background-color: rgba(255, 255, 255, 0.01);">
+                                    Launch and manage a full 360-degree digital campaign for a mock client, building your professional portfolio and earning your certification.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Why Choose Us (Animated Cards) -->
+    <section id="whyus" class="section-padding" style="background-color: rgba(0, 198, 255, 0.03);">
+        <div class="container-fluid ">
+            <div class="col-lg-10 mx-auto">
+            <h2 class="display-4 fw-bold text-center mb-5">The <span class="gradient-text">Lab Advantage</span></h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="neon-card p-4 text-center h-100">
+                        <i class="fas fa-user-tie icon-box mb-3"></i>
+                        <h5 class="fw-bold">Industry Mentors</h5>
+                        <p class="text-white-50 mb-0">Learn directly from 5+ year veterans in agency and corporate settings.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="neon-card p-4 text-center h-100">
+                        <i class="fas fa-certificate icon-box mb-3" style="color: var(--color-deep-blue);"></i>
+                        <h5 class="fw-bold">Official Certification</h5>
+                        <p class="text-white-50 mb-0">Globally recognized certificate of completion to boost your resume.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="neon-card p-4 text-center h-100">
+                        <i class="fas fa-project-diagram icon-box mb-3"></i>
+                        <h5 class="fw-bold">Real Projects</h5>
+                        <p class="text-white-50 mb-0">Build a robust portfolio by executing live campaigns and case studies.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="neon-card p-4 text-center h-100">
+                        <i class="fas fa-briefcase icon-box mb-3" style="color: var(--color-deep-blue);"></i>
+                        <h5 class="fw-bold">Placement Support</h5>
+                        <p class="text-white-50 mb-0">Resume review, interview training, and access to our hiring network.</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Tools Covered (Icons/Logos) -->
+    <section id="tools" class="section-padding">
+        <div class="container-fluid text-center">
+            <div class="col-lg-10 mx-auto">
+            <h2 class="display-4 fw-bold mb-5">Tools You'll <span class="gradient-text">Master</span></h2>
+            <div class="d-flex flex-wrap justify-content-center gap-5">
+                <div class="tool-icon-glow pt-5" data-aos="zoom-in" data-aos-delay="50"><i class="fab fa-google"></i><p class="small mt-2">Analytics</p></div>
+                <div class="tool-icon-glow pt-5" data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-chart-area"></i><p class="small mt-2">SEMrush</p></div>
+                <div class="tool-icon-glow pt-5" data-aos="zoom-in" data-aos-delay="150"><i class="fas fa-link"></i><p class="small mt-2">Ahrefs</p></div>
+                <div class="tool-icon-glow pt-5" data-aos="zoom-in" data-aos-delay="200"><i class="fab fa-facebook-f"></i><p class="small mt-2">Meta Ads</p></div>
+                <div class="tool-icon-glow pt-5" data-aos="zoom-in" data-aos-delay="250"><i class="fas fa-paper-plane"></i><p class="small mt-2">Mailchimp</p></div>
+                <div class="tool-icon-glow pt-5" data-aos="zoom-in" data-aos-delay="300"><i class="fas fa-desktop"></i><p class="small mt-2">Hootsuite</p></div>
+                <div class="tool-icon-glow pt-5" data-aos="zoom-in" data-aos-delay="350"><i class="fas fa-paint-brush"></i><p class="small mt-2">Canva</p></div>
+                <div class="tool-icon-glow pt-5" data-aos="zoom-in" data-aos-delay="400"><i class="fas fa-robot"></i><p class="small mt-2">AI Tools</p></div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Success Stats / Graph Section -->
+    <section id="stats" class="section-padding" style="background-color: rgba(255, 255, 255, 0.02);">
+        <div class="container-fluid">
+            <div class="col-lg-10 mx-auto">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                    <h2 class="fw-bold mb-4">The Proof is in the <span class="gradient-text">Performance</span></h2>
+                    <p class="lead text-white-50">Our focus on ROI and data mastery translates directly into career success for our graduates.</p>
+                    <ul class="list-unstyled text-white mt-4">
+                        <li class="mb-2"><i class="fas fa-check-circle me-3" style="color: var(--color-neon-blue);"></i> 90% Job Placement Rate within 6 months.</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-3" style="color: var(--color-neon-blue);"></i> 42% Average Salary Increase reported by alumni.</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-3" style="color: var(--color-neon-blue);"></i> 10+ Real-World Campaigns completed by every student.</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <canvas id="growthChartCanvas"></canvas>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Testimonials / Reviews (Carousel) -->
+    <section id="testimonials" class="section-padding">
+        <div class="container-fluid">
+            <div class="col-lg-10 mx-auto">
+            <h2 class="display-4 fw-bold text-center mb-5">Alumni <span class="gradient-text">Testimonials</span></h2>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- Review 1 -->
+                    <div class="carousel-item active">
+                        <div class="neon-card p-5 mx-auto text-center" style="max-width: 800px;">
+                            <i class="fas fa-quote-left fs-3 gradient-text mb-4"></i>
+                            <p class="lead fst-italic">"The curriculum is future-proof. I learned how to integrate AI tools before my competitors even knew they existed. Landed a Senior Analyst role easily."</p>
+                            <div class="text-warning mt-3">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="fw-bold mt-2">- Marcus A. (Performance Marketing)</p>
+                        </div>
+                    </div>
+                    <!-- Review 2 -->
+                    <div class="carousel-item">
+                        <div class="neon-card p-5 mx-auto text-center" style="max-width: 800px;">
+                            <i class="fas fa-quote-left fs-3 gradient-text mb-4"></i>
+                            <p class="lead fst-italic">"Real projects and mentor support changed everything. This isn't just theory; it's a launchpad for your career."</p>
+                            <div class="text-warning mt-3">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p class="fw-bold mt-2">- Jessica L. (E-commerce Strategist)</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carousel Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: drop-shadow(0 0 5px var(--color-neon-blue));"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true" style="filter: drop-shadow(0 0 5px var(--color-neon-blue));"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- 9. Pricing Plans -->
+    <section id="pricing" class="section-padding" style="background-color: rgba(0, 198, 255, 0.03);">
+        <div class="container-fluid">
+            <div class="col-lg-10 mx-auto">
+            <h2 class="display-4 fw-bold text-center mb-5 gradient-text">Flexible Pricing</h2>
+            <div class="row g-4 justify-content-center">
+                <!-- Plan 1: Basic -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="neon-card p-4 h-100 text-center">
+                        <div class="price-card-header mb-4">
+                            <h4 class="fw-bold text-white mb-0 pt-3">Basic Access</h4>
+                            <p class="small text-white-50 mb-0">Foundational Learning</p>
+                        </div>
+                        <h1 class="display-4 fw-bold gradient-text mb-3">$199<span class="fs-6 text-muted">/month</span></h1>
+                        <ul class="list-unstyled text-start small">
+                            <li class="mb-2"><i class="fas fa-check-circle me-3" style="color: var(--color-neon-blue);"></i> Core Modules Access (1-4)</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-3" style="color: var(--color-neon-blue);"></i> Self-Paced Learning</li>
+                            <li class="mb-2 text-muted"><i class="fas fa-times-circle me-3"></i> Dedicated Mentor Support</li>
+                            <li class="mb-2 text-muted"><i class="fas fa-times-circle me-3"></i> Placement Assistance</li>
+                        </ul>
+                        <a href="#cta" class="btn btn-sm neon-btn w-100 mt-3">Choose Basic</a>
+                    </div>
+                </div>
+
+                <!-- Plan 2: Pro (Best Value) -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="neon-card p-4 h-100 text-center price-card-expert">
+                        <div class="price-card-header mb-4" style="background: var(--color-gradient);">
+                            <h4 class="fw-bold text-dark mb-0 pt-3">Pro Masterclass</h4>
+                            <p class="small text-white-50 mb-0">The Full Career Path</p>
+                        </div>
+                        <h1 class="display-4 fw-bold text-white mb-3">$399<span class="fs-6 text-muted">/month</span></h1>
+                        <ul class="list-unstyled text-start small">
+                            <li class="mb-2"><i class="fas fa-check-circle me-3" style="color: var(--color-neon-blue);"></i> **All Modules Access**</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-3" style="color: var(--color-neon-blue);"></i> Weekly Live Strategy Sessions</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-3" style="color: var(--color-neon-blue);"></i> Dedicated Mentor Support</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-3" style="color: var(--color-neon-blue);"></i> Full Certification & Portfolio Review</li>
+                        </ul>
+                        <a href="#cta" class="btn btn-sm neon-btn w-100 mt-3 neon-pulse-btn">Start Pro Enrollment</a>
+                    </div>
+                </div>
+
+                <!-- Plan 3: Expert -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="neon-card p-4 h-100 text-center">
+                        <div class="price-card-header mb-4">
+                            <h4 class="fw-bold text-white mb-0 pt-3">Expert Agency</h4>
+                            <p class="small text-white-50 mb-0">Premium 1:1 Coaching</p>
+                        </div>
+                        <h1 class="display-4 fw-bold gradient-text mb-3">$599<span class="fs-6 text-muted">/month</span></h1>
+                        <ul class="list-unstyled text-start small">
+                            <li class="mb-2"><i class="fas fa-check-circle me-3" style="color: var(--color-neon-blue);"></i> **All Pro Features**</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-3" style="color: var(--color-neon-blue);"></i> 1:1 Bi-Weekly Coaching</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-3" style="color: var(--color-neon-blue);"></i> Guaranteed Placement Interviews</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-3" style="color: var(--color-neon-blue);"></i> Lifetime Access to Alumni Network</li>
+                        </ul>
+                        <a href="#cta" class="btn btn-sm neon-btn w-100 mt-3">Contact Sales</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Call-to-Action -->
+    <section id="cta" class="py-5 py-md-5 text-center" style="background: linear-gradient(135deg, var(--color-deep-blue), var(--color-neon-blue), var(--color-deep-blue));">
+        <div class="container-fluid py-5" data-aos="zoom-in">
+            <div class="col-lg-10 mx-auto">
+            <h2 class="display-3 fw-bold mb-4 text-white" style="font-size: 46px;">Your Future in Digital Awaits.</h2>
+            <p class="lead mb-5 text-white">Enroll today and join the elite cohort of digital marketers.</p>
+            <a href="#pricing" class="btn btn-lg btn-light  fw-bold  px-5" style="border-radius: 50px; color: var(--color-deep-blue);font-size: 18px;">
+                Claim Your Spot Now!
+            </a>
+            <p class="small mt-3 text-white">Seats are limited for the next masterclass intake.</p>
+        </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+  <div class="container pt-5">
+
+    <div class="row justify-content-between">
+
+      <!-- Left -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <div class="d-flex mb-2 align-items-center">
+          <div class="footer-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h5 class="m-0 footer-heading">TIPSG Kotputli</h5>
+        </div>
+
+        <p class="footer-text">
+          District's First IT Training & Placement Center, empowering
+          students with world-class skills and guaranteed career opportunities.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-2 col-sm-6 mb-4">
+        <h6 class="footer-title">Quick Links</h6>
+        <ul class="footer-links">
+          <li><a href="../index.html#home">Home</a></li>
+          <li><a href="../index.html#About_us">About Us</a></li>
+          <li><a href="../index.html#Courses">Courses</a></li>
+          <li><a href="../index.html#Placements">Placements</a></li>
+          <li><a href="../index.html#Admissions">Admissions</a></li>
+        </ul>
+      </div>
+
+      <!-- Courses -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <h6 class="footer-title">Popular Courses</h6>
+        <ul class="footer-courses">
+          <li> <a href="/Blog/Fullstack.html"> Full Stack Development </a> </li>
+          <li> <a href="/Blog/cybercourses.html"> Cyber Security </a></li>
+          <li> <a href="/Blog/DataScienceCourses.html"> Data Science & AI</a></li>
+          <li> <a href="/Blog/Digital.html"> Digital Marketing</a></li>
+          <li> <a href="/Blog/Graphic.html"> Graphic Designing</a></li>
+          <li> <a href="/Blog/App.html"> App development</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <h6 class="footer-title">Contact Us</h6>
+        <p><i class="fas fa-envelope me-2 text-white"></i> info@tipsgkotputli.com</p>
+        <p><i class="fas fa-phone me-2 text-white"></i> +91 9251639675 </p>
+
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="footer-line">
+
+    <p class="footer-copy">© 2025 TIPSG Kotputli. All rights reserved.</p>
+
+  </div>
+</footer>
+
+  
+
+    <!-- Bootstrap 5 JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS CDN -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize AOS (Scroll Animations)
+            AOS.init({
+                duration: 1000,
+                once: true,
+                easing: 'ease-in-out'
+            });
+
+            // Chart.js Implementation for Success Stats
+            const ctx = document.getElementById('growthChartCanvas').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Job Placement', 'Salary Increase', 'Projects Completed'],
+                    datasets: [{
+                        label: 'Success Metrics',
+                        data: [90, 42, 100], // 100 for projects (representing 10 campaigns)
+                        backgroundColor: [
+                            'rgba(0, 198, 255, 0.8)', // Neon Blue
+                            'rgba(0, 114, 255, 0.8)', // Deep Blue
+                            'rgba(108, 99, 255, 0.8)'  // Highlight Purple
+                        ],
+                        borderColor: [
+                            'var(--color-dark-bg)',
+                            'var(--color-dark-bg)',
+                            'var(--color-dark-bg)'
+                        ],
+                        borderWidth: 3,
+                        hoverOffset: 10,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: {
+                        animateScale: true,
+                        animateRotate: true,
+                        duration: 1500
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: '#ffffff',
+                                font: {
+                                    size: 14,
+                                }
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Key Success Metrics (%)',
+                            color: '#ffffff',
+                            font: {
+                                size: 18,
+                                weight: 'bold'
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Simple Neon Pulse on Expert Button
+            const pulseStyle = document.createElement('style');
+            pulseStyle.innerHTML = `
+                @keyframes neon-pulse {
+                    0% { box-shadow: 0 0 10px rgba(0, 198, 255, 0.5); }
+                    50% { box-shadow: 0 0 25px rgba(0, 198, 255, 1); }
+                    100% { box-shadow: 0 0 10px rgba(0, 198, 255, 0.5); }
+                }
+                .neon-pulse-btn {
+                    animation: neon-pulse 2s infinite alternate;
+                }
+            `;
+            document.head.appendChild(pulseStyle);
+
+            // Simple Typing/Scrolling Animation effect in Hero (Subtle Parallax)
+            window.addEventListener('scroll', function() {
+                const heroText = document.querySelector('#hero .container');
+                const scrollPosition = window.scrollY;
+                // Apply subtle vertical translation to create a parallax effect
+                if (heroText) {
+                    heroText.style.transform = `translateY(${scrollPosition * 0.15}px)`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

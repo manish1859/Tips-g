@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Design Mastery 2025 - Professional Graphic Design Course</title>
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS CSS CDN (Scroll Animations) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome (Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* --- Color Variables and Global Styles --- */
+        :root {
+            --color-dark-bg: #0a0a0f;
+            --color-text-light: #f8f9fa;
+            --color-neon-primary: #ff4b2b; /* Red/Orange Accent */
+            --color-neon-secondary: #ff416c; /* Pink Accent */
+            --color-gradient: linear-gradient(90deg, var(--color-neon-primary), var(--color-neon-secondary));
+            --color-glass: rgba(255, 255, 255, 0.05);
+            --shadow-glow: 0 0 15px rgba(255, 75, 43, 0.4);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--color-text-light);
+            background-color: var(--color-dark-bg);
+            min-height: 100vh;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+.Add-navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  background: var(--color-gradient);
+  box-shadow: 0 4px 20px rgba(255, 50, 60, 0.35);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+}
+
+/* Offcanvas */
+.offcanvas-body {
+  background: var(--color-dark-bg);
+  color: var(--color-text-light);
+}
+
+/* ===========================
+   LOGO
+=========================== */
+.Add-logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: var(--color-neon-primary);
+  color: #fff;
+  font-size: 20px;
+  transition: 0.35s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 14px rgba(255, 65, 60, 0.7);
+}
+
+.Add-logo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 22px rgba(255, 60, 55, 0.9);
+}
+
+/* ===========================
+   BRAND TEXT
+=========================== */
+.Add-brand {
+  text-align: center; 
+}
+
+.Add-brand-text {
+  color: var(--color-text-light);  /* strong blue */
+  font-weight: 700;
+  font-size: clamp(18px, 2.2vw, 22px); 
+  display: block; 
+}
+
+.Add-brand-subtext {
+  color: var(--color-text-light); /* slate grey */
+  font-size: clamp(12px, 1.5vw, 16px); 
+  display: block;
+  font-size: 1.7vh;
+  font-weight: bold;
+  margin-top: -8px;
+}
+
+/* ===========================
+   NAV LINKS
+=========================== */
+.Add-navbar .nav-link {
+  color: var(--color-text-light) !important;
+  font-size: 13px !important;
+  font-weight: 500;
+  margin: 4px;
+  padding: 8px !important;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  transition: 0.3s ease;
+}
+
+.Add-navbar .nav-link i {
+  font-size: 15px;
+  opacity: 0.95;
+}
+
+/* Hover */
+.Add-navbar .nav-link:hover {
+  background: var(--color-glass);
+  color: var(--color-text-light) !important;
+  box-shadow: 0 0 10px rgba(255, 45, 120, 0.4);
+}
+
+/* Active */
+.Add-navbar .nav-link.active {
+  background: var(--color-gradient) !important;
+  color: #fff !important;
+  box-shadow: 0 0 18px rgba(255, 60, 50, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* ===========================
+   ENROLL BUTTON
+=========================== */
+.Add-btn-enroll {
+  background: var(--color-gradient);
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 9px 15px;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 0 14px rgba(255, 55, 60, 0.5);
+  transition: 0.35s ease;
+}
+
+.Add-btn-enroll:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 22px rgba(255, 40, 80, 0.7);
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+@media (max-width: 991px) {
+  .Add-navbar {
+    height: auto;
+  }
+
+  .navbar-brand {
+    margin-right: auto;
+  }
+
+  .navbar-toggler {
+    margin-left: auto;
+    border: none;
+  }
+
+  .Add-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .Add-brand-text {
+    font-size: 18px;
+  }
+}
+
+section {
+  margin-top: 72px;
+}
+
+
+        /* --- Global Component Styling --- */
+        .gradient-text {
+            background: var(--color-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 60px 0;
+            }
+        }
+
+        /* Neon Button & Glow Effect */
+        .neon-btn {
+            background: var(--color-gradient);
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 12px 35px;
+            border-radius: 50px;
+            box-shadow: var(--shadow-glow);
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .neon-btn:hover {
+            box-shadow: 0 0 30px var(--color-neon-primary), 0 0 50px var(--color-neon-secondary);
+            transform: translateY(-3px) scale(1.02);
+        }
+
+        /* Creative Card Styling (Glassmorphism) */
+        .design-card {
+            background-color: var(--color-glass);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .design-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 40px rgba(255, 65, 108, 0.3);
+        }
+
+        .icon-large {
+            font-size: 3.5rem;
+            color: var(--color-neon-primary);
+            text-shadow: 0 0 10px var(--color-neon-secondary);
+        }
+
+        /* --- Hero Section Specific --- */
+        #hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding-top: 100px;
+        }
+
+        /* Animated Floating Shapes/Orbs */
+        .floating-shape {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            opacity: 0.1;
+            filter: blur(50px);
+            z-index: 0;
+            animation: float-move 25s infinite alternate;
+        }
+        .shape-1 { top: 10%; left: 5%; background: #ff4b2b; animation-delay: 0s; }
+        .shape-2 { bottom: 20%; right: 10%; background: #ff416c; animation-delay: -12s; }
+        .shape-3 { top: 40%; right: 40%; width: 100px; height: 100px; background: #6a11cb; animation-delay: -5s; }
+        @keyframes float-move {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(50px, -50px) rotate(360deg); }
+        }
+
+        /* Subtle Cursor Glow Effect (Bonus) */
+        #cursor-glow {
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 75, 43, 0.6) 0%, transparent 70%);
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s linear, opacity 0.3s ease;
+            opacity: 0.4;
+            z-index: 9999;
+        }
+        @media (max-width: 992px) {
+             #cursor-glow { display: none; }
+        }
+
+        /* --- Tools Section Hover Effect --- */
+        .tool-box {
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .tool-box:hover {
+            transform: scale(1.15);
+        }
+        .tool-name {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--color-gradient);
+            padding: 4px 10px;
+            border-radius: 5px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, bottom 0.3s ease;
+            white-space: nowrap;
+        }
+        .tool-box:hover .tool-name {
+            opacity: 1;
+            visibility: visible;
+            bottom: -40px;
+        }
+
+        /* Timeline/Module Styling */
+        .timeline {
+            border-left: 3px solid rgba(255, 75, 43, 0.2);
+            padding-left: 20px;
+            position: relative;
+        }
+        .timeline-item {
+            position: relative;
+            padding-bottom: 30px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--color-neon-primary);
+            box-shadow: 0 0 10px var(--color-neon-primary);
+        }
+.icon-large {
+  font-size: 3rem;
+  color: #fff; /* optional - adjust as needed */
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.8),
+               0 0 20px rgba(255, 0, 0, 0.6),
+               0 0 30px rgba(255, 0, 0, 0.4);
+}
+
+    .icon-large {
+      font-size: 3rem;
+      text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.6),
+        0 0 20px rgba(0, 255, 255, 0.4);
+    }
+    .lead{
+        font-size: 15px;
+    }
+
+
+    
+        .footer {
+  background: var(--color-gradient);
+  padding-top: 60px;
+  padding-bottom: 30px;
+  border-top: 1px solid rgba(0, 140, 255, 0.2);
+  box-shadow: 0px -4px 15px rgba(0, 140, 255, 0.15);
+}
+
+.footer-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  background: rgba(0, 140, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 180, 255, 0.3);
+}
+
+.footer-heading {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.footer-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #64b5ff;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-text {
+  color: #bfe5ff;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-links li a {
+  color: #bfe5ff;
+  text-decoration: none;
+  display: block;
+  margin: 6px 0;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.footer-links li a:hover {
+  color: #4db8ff;
+  text-shadow: 0 0 8px rgba(0, 191, 255, 0.6);
+}
+.footer-courses li{
+    list-style: none;
+}
+.footer-courses li a {
+  color: #bfe5ff;
+  text-decoration: none;
+  margin-bottom: 6px;
+}
+.footer-courses li a:hover {
+    cursor: pointer;
+  color: #4db8ff;
+  text-shadow: 0 0 8px rgba(0, 191, 255, 0.6);
+}
+
+.footer-contact p {
+  color: #bfe5ff;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.social-icons a {
+  color: #bfe5ff;
+  font-size: 15px;
+  border:  2px solid #bfe5ff;
+  border-radius: 10px;
+  padding: 10px;
+  margin-right: 12px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #4db8ff;
+  text-shadow: 0 0 10px rgba(0, 191, 255, 0.6);
+}
+
+.footer-line {
+  border: 0.3px solid rgba(0, 174, 255, 0.3);
+  margin: 25px 0;
+}
+
+.footer-copy {
+  text-align: center;
+  color: #9cd8ff;
+  font-size: 12px;
+}
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm Add-navbar ">
+    <div class="container col-lg-11 d-flex align-items-center justify-content-center">
+
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html#home" onclick="setActive(this,'home')">
+          <div class="Add-logo d-flex align-items-center justify-content-center">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+<div class="Add-brand">
+            <strong class="Add-brand-text">TIPS-G</strong>
+            <small class="Add-brand-subtext text-muted">Kotputli</small>
+          </div>
+        </a>
+
+        <!-- Mobile Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Desktop Menu -->
+        <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex">
+          <ul class="navbar-nav align-items-center" id="mainMenu">
+            <li class="nav-item"><a class="nav-link active" href="../index.html#home" onclick="setActive(this,'home')"><i
+                  class="fas fa-home me-1"></i> Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#About_us" onclick="setActive(this,'About_us')"><i
+                  class="fas fa-graduation-cap me-1"></i> About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#Courses" onclick="setActive(this,'Courses')"><i
+                  class="fas fa-book-open me-1"></i> Courses</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#Placements" onclick="setActive(this,'Placements')"><i
+                  class="fas fa-award me-1"></i> Placements</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#Admissions" onclick="setActive(this,'Admissions')"><i
+                  class="fas fa-user-friends me-1"></i> Admissions</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#Gallery" onclick="setActive(this,'Gallery')"><i
+                  class="far fa-image me-1"></i> Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#Events" onclick="setActive(this,'Events')"><i
+                  class="far fa-calendar-alt me-1"></i> Events</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#Blog" onclick="setActive(this,'Blog')"><i
+                  class="far fa-newspaper me-1"></i> Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#Contact" onclick="setActive(this,'Contact')"><i
+                  class="far fa-envelope me-1"></i> Contact</a></li>
+            <li class="nav-item">
+              <a class="Add-btn-enroll" href="../index.html#Admissions" onclick="setActive(this,'Admissions')">Enroll Now</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+  <!-- Offcanvas (Mobile) -->
+  <div class="offcanvas offcanvas-end w-75" tabindex="-1" id="navMenu">
+    <div class="offcanvas-header">
+      <h5>Menu</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body ">
+      <ul class="navbar-nav" id="offMenu">
+        <li class="nav-item"><a class="nav-link active" href="../index.html#home" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'home')"><i class="fas fa-home me-1"></i> Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#About_us" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'About_us')"><i class="fas fa-graduation-cap me-1"></i> About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#Courses" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Courses')"><i class="fas fa-book-open me-1"></i> Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#Placements" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Placements')"><i class="fas fa-award me-1"></i> Placements</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#Admissions" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Admissions')"><i class="fas fa-user-friends me-1"></i> Admissions</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#Gallery" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Gallery')"><i class="far fa-image me-1"></i> Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#Events" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Events')"><i class="far fa-calendar-alt me-1"></i> Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#Blog" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Blog')"><i class="far fa-newspaper me-1"></i> Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#Contact" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Contact')"><i class="far fa-envelope me-1"></i> Contact</a></li>
+        <li class="nav-item mt-3">
+          <a class="Add-btn-enroll" href="../index.html#Admissions" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Admissions')">Enroll Now</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+    <!-- Subtle Cursor Glow (Bonus) -->
+    <div id="cursor-glow"></div>
+
+    <!-- Animated Background Shapes -->
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+
+
+    <!-- 1. Hero Section -->
+    <header id="hero" class="text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10" data-aos="fade-up" data-aos-duration="1200">
+                    <h1 class="display-1 fw-bolder mb-4 text-white">
+                        Become a <span class="gradient-text">Professional Graphic Designer</span> in 2025
+                    </h1>
+                    <p class="lead text-white-50 mx-auto mb-5" style="max-width: 900px;">
+                        Master the art of **creativity, design tools, and visual storytelling** required by top agencies. Transform your passion into a profitable career.
+                    </p>
+                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                        <a href="#pricing" class="btn btn-lg neon-btn me-sm-3">
+                            Get Started Today <i class="fas fa-long-arrow-alt-right ms-2"></i>
+                        </a>
+                        <a href="#" class="btn btn-lg btn-outline-light rounded-pill border-2" style="border-color: var(--color-neon-primary);">
+                            Free Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. About Graphic Design -->
+    <section id="about" class="section-padding" style="background-color: rgba(255, 255, 255, 0.01);">
+        <div class="container-fluid">
+            <div class="col-lg-10 mx-auto">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h2 class="display-4 fw-bold mb-4 gradient-text">The Language of Visuals</h2>
+                    <p class="lead text-white-50">
+                        Graphic Design is the core of modern communication. From stunning corporate branding to engaging digital campaigns, every successful business relies on powerful visuals.
+                    </p>
+                    <p class="lead text-white-50">
+                        This course teaches you to move beyond filters and simple layouts, focusing on **strategic design thinking**, advanced color theory, and creating assets that deliver measurable results in branding and marketing.
+                    </p>
+                    <a href="#learn" class="btn btn-sm neon-btn mt-3">View Curriculum</a>
+                </div>
+                <!-- Creative SVG Placeholder -->
+                <div class="col-lg-6 mt-5 mt-lg-0 text-center" data-aos="fade-left">
+                    <svg viewBox="0 0 100 100" class="w-100" style="max-width: 450px;">
+                        <defs>
+                            <linearGradient id="gradientSvg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#ff4b2b" />
+                                <stop offset="100%" stop-color="#ff416c" />
+                            </linearGradient>
+                        </defs>
+                        <rect x="10" y="10" width="80" height="80" rx="15" fill="rgba(255,255,255,0.05)" stroke="url(#gradientSvg)" stroke-width="1.5" />
+                        <circle cx="35" cy="35" r="15" fill="url(#gradientSvg)" opacity="0.8" />
+                        <polygon points="50,65 75,75 75,50 50,40" fill="#6a11cb" opacity="0.8" />
+                        <path d="M 20 70 Q 30 90, 80 80" stroke="#ff4b2b" fill="none" stroke-width="3" stroke-linecap="round" />
+                        <text x="50" y="55" font-family="Poppins" font-size="8" fill="#f8f9fa" text-anchor="middle">DESIGN</text>
+                    </svg>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. What You’ll Learn (Modules in Creative Cards) -->
+    <section id="learn" class="section-padding">
+        <div class="container-fluid">
+            <div class="col-lg-10 mx-auto">
+            <h2 class="display-4 fw-bold text-center mb-5">Mastery <span class="gradient-text">Domains</span></h2>
+            <div class="row g-4">
+                <!-- Topics Loop -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="design-card p-4 h-100">
+<i class="fas fa-palette icon-large mb-3"></i>
+                        <h5 class="fw-bold text-white">Fundamentals & Theory</h5>
+                        <p class="lead text-white-30 mb-0">Color theory, typography hierarchy, composition, and visual balance.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="design-card p-4 h-100">
+                        <i class="fas fa-image icon-large mb-3" style="color: #fff;"></i>
+                        <h5 class="fw-bold text-white">Photoshop & Illustration</h5>
+                        <p class="lead text-white-50 mb-0">Advanced photo retouching, digital painting, and complex manipulation techniques.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="design-card p-4 h-100">
+                        <i class="fas fa-vector-square icon-large mb-3"></i>
+                        <h5 class="fw-bold text-white">Illustrator & Branding</h5>
+                        <p class="lead text-white-50 mb-0">Vector graphics, logo design, identity systems, and production readiness.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="design-card p-4 h-100">
+                        <i class="fas fa-laptop-code icon-large mb-3" style="color: #fff;"></i>
+                        <h5 class="fw-bold text-white">Figma & UI/UX Design</h5>
+                        <p class="lead text-white-50 mb-0">Wireframing, prototyping, user flows, and high-fidelity mockups for web/mobile.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="design-card p-4 h-100">
+                        <i class="fas fa-film icon-large mb-3"></i>
+                        <h5 class="fw-bold text-white">Motion Graphics (Basics)</h5>
+                        <p class="lead text-white-50 mb-0">Introduction to After Effects for short animations, kinetic typography, and promos.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="design-card p-4 h-100">
+                        <i class="fas fa-briefcase icon-large mb-3" style="color: #fff;"></i>
+                        <h5 class="fw-bold text-white">Freelance & Portfolio</h5>
+                        <p class="lead text-white-50 mb-0">Pricing, client communication, contracts, and creating an irresistible Behance portfolio.</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Course Modules (Timeline) -->
+    <section id="modules" class="section-padding" style="background-color: rgba(255, 255, 255, 0.01);">
+        <div class="container">
+            <div class="col-lg-10 mx-auto">
+            <h2 class="display-4 fw-bold text-center mb-5">6-Week <span class="gradient-text">Design Sprint</span></h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="timeline">
+                        <div class="timeline-item" data-aos="fade-right">
+                            <h4 class="text-white fw-bold">Week 1-2: Visual Foundation & Photoshop Deep Dive</h4>
+                            <p class="lead text-white-50 small">Understanding the design process, mastering selections, layers, blending modes, and photo restoration.</p>
+                        </div>
+                        <div class="timeline-item" data-aos="fade-left">
+                            <h4 class="text-white fw-bold">Week 3: Vector Mastery & Branding Identity</h4>
+                            <p class="lead text-white-50">Logo ideation in Illustrator, vector tracing, typography pairing, and building a 3-page brand guide.</p>
+                        </div>
+                        <div class="timeline-item" data-aos="fade-right">
+                            <h4 class="text-white fw-bold">Week 4: Digital UI/UX Prototyping in Figma</h4>
+                            <p class="lead text-white-50">Creating low-fidelity wireframes, high-fidelity mockups, and collaborative design system usage.</p>
+                        </div>
+                        <div class="timeline-item" data-aos="fade-left">
+                            <h4 class="text-white fw-bold">Week 5: Advanced Print & Web Assets</h4>
+                            <p class="lead text-white-50">Design for social media, print material prep (CMYK), ad banners, and dynamic web headers.</p>
+                        </div>
+                        <div class="timeline-item" data-aos="fade-right">
+                            <h4 class="text-white fw-bold">Week 6: Motion Intro & Final Portfolio Launch</h4>
+                            <p class="lead text-white-50">Creating a 5-second animated logo sting (After Effects), and curating/launching your professional Behance/Dribbble portfolio.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Tools You’ll Master -->
+    <section id="tools" class="section-padding">
+        <div class="container text-center">
+            <h2 class="display-4 fw-bold mb-5">The <span class="gradient-text">Design Arsenal</span></h2>
+            <div class="d-flex flex-wrap justify-content-center gap-5">
+                 <div class="tool-box">
+    <i class="fa-brands fa-pinterest-p icon-large" style="color:#31A8FF;"></i>
+    <p class="small mt-2 text-white-50">Photoshop</p>
+    <div class="tool-name">Image Editor</div>
+  </div>
+
+  <div class="tool-box">
+    <i class="fa-brands fa-instagram icon-large" style="color:#FF9A00;"></i>
+    <p class="small mt-2 text-white-50">Illustrator</p>
+    <div class="tool-name">Vector Art</div>
+  </div>
+                <div class="tool-box" data-aos="zoom-in" data-aos-delay="150">
+                    <!-- Figma Icon using SVG/FA concept, using a box icon instead of custom icon -->
+                    <i class="fas fa-bezier-curve icon-large" style="color: #ff4b2b;"></i>
+                    <p class="small mt-2 text-white-50">Figma</p>
+                    <div class="tool-name">UI/UX Prototyping</div>
+                </div>
+                <div class="tool-box" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-layer-group icon-large" style="color: #6a11cb;"></i>
+                    <p class="small mt-2 text-white-50">After Effects</p>
+                    <div class="tool-name">Motion Graphics</div>
+                </div>
+                <div class="tool-box" data-aos="zoom-in" data-aos-delay="250">
+                    <i class="fas fa-video icon-large" style="color: #ff416c;"></i>
+                    <p class="small mt-2 text-white-50">Premiere Pro</p>
+                    <div class="tool-name">Video Editing</div>
+                </div>
+                <div class="tool-box" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fas fa-drafting-compass icon-large" style="color: #ff4b2b;"></i>
+                    <p class="small mt-2 text-white-50">Canva</p>
+                    <div class="tool-name">Quick Design</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Why Choose Us (Animated Gradient Cards) -->
+    <section id="whyus" class="section-padding" style="background-color: rgba(255, 255, 255, 0.01);">
+        <div class="container-fluid">
+            <div class="col-lg-10 mx-auto">
+            <h2 class="display-4 fw-bold text-center mb-5">The Creative <span class="gradient-text">Edge</span></h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="design-card p-4 text-center h-100">
+                        <i class="fas fa-chalkboard-teacher icon-large mb-3" style="color: #6a11cb;"></i>
+                        <h5 class="fw-bold">Expert Mentors</h5>
+                        <p class="lead text-white-50 mb-0">Learn from seasoned agency owners and freelance veterans.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="design-card p-4 text-center h-100">
+                        <i class="fas fa-rocket icon-large mb-3" style="color: var(--color-neon-primary);"></i>
+                        <h5 class="fw-bold">Real-World Projects</h5>
+                        <p class="lead text-white-50 mb-0">Build assets for fictional and real client briefs for maximum impact.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="design-card p-4 text-center h-100">
+                        <i class="fas fa-certificate icon-large mb-3" style="color: #6a11cb;"></i>
+                        <h5 class="fw-bold">Certification</h5>
+                        <p class="lead text-white-50 mb-0">Globally recognized certificate and internship opportunities.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="design-card p-4 text-center h-100">
+                        <i class="fas fa-infinity icon-large mb-3" style="color: var(--color-neon-primary);"></i>
+                        <h5 class="fw-bold">Lifetime Access</h5>
+                        <p class="lead text-white-50 mb-0">Stay updated with course content and access to our alumni community.</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Stats / Graph Section (Animated Progress Bars) -->
+    <section id="stats" class="section-padding">
+        <div class="container">
+            <h2 class="display-4 fw-bold text-center mb-5">Impact <span class="gradient-text">Metrics</span></h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="mb-4" data-aos="fade-right">
+                        <h6 class="text-white-50">Student Satisfaction (98%)</h6>
+                        <div class="progress" style="height: 10px; background-color: rgba(255, 255, 255, 0.1);">
+                            <div class="progress-bar" role="progressbar" id="progress-satisfaction" style="width: 0%; background: var(--color-gradient); box-shadow: var(--shadow-glow);" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4" data-aos="fade-right" data-aos-delay="100">
+                        <h6 class="text-white-50">Job Placement Rate (92%)</h6>
+                        <div class="progress" style="height: 10px; background-color: rgba(255, 255, 255, 0.1);">
+                            <div class="progress-bar" role="progressbar" id="progress-placement" style="width: 0%; background: linear-gradient(90deg, #6a11cb, #2575fc); box-shadow: 0 0 15px rgba(106, 17, 203, 0.4);" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4" data-aos="fade-right" data-aos-delay="200">
+                        <h6 class="text-white-50">Total Design Projects Completed (1500+)</h6>
+                        <div class="progress" style="height: 10px; background-color: rgba(255, 255, 255, 0.1);">
+                            <div class="progress-bar" role="progressbar" id="progress-projects" style="width: 0%; background: var(--color-gradient); box-shadow: var(--shadow-glow);" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Testimonials (Carousel) -->
+    <section id="testimonials" class="section-padding" style="background-color: rgba(255, 255, 255, 0.01);">
+        <div class="container">
+            <h2 class="display-4 fw-bold text-center mb-5">Alumni <span class="gradient-text">Showcase</span></h2>
+            <div id="designCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- Testimonial 1 -->
+                    <div class="carousel-item active">
+                        <div class="design-card p-5 mx-auto text-center" style="max-width: 800px;" data-aos="zoom-in">
+                            <i class="fas fa-quote-left fs-3 gradient-text mb-4"></i>
+                            <p class="lead fst-italic">"The Portfolio Building module was a game-changer. I landed a contract with a top startup immediately after launching my Behance page. This course pays for itself."</p>
+                            <div class="text-warning mt-3">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="fw-bold mt-2">- Emily Chen, UI/UX Designer</p>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="carousel-item">
+                        <div class="design-card p-5 mx-auto text-center" style="max-width: 800px;" data-aos="zoom-in">
+                            <i class="fas fa-quote-left fs-3 gradient-text mb-4"></i>
+                            <p class="lead fst-italic">"I finally understand the difference between good design and effective design. The Figma section alone boosted my efficiency by 200%."</p>
+                            <div class="text-warning mt-3">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p class="fw-bold mt-2">- Rohan Sharma, Branding Consultant</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carousel Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#designCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: drop-shadow(0 0 5px var(--color-neon-primary));"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#designCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true" style="filter: drop-shadow(0 0 5px var(--color-neon-secondary));"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Pricing Plans -->
+    <section id="pricing" class="section-padding">
+        <div class="container-fluid">
+            <div class="col-lg-10 mx-auto">
+            <h2 class="display-4 fw-bold text-center mb-5 gradient-text">Choose Your <span class="gradient-text">Path</span></h2>
+            <div class="row g-4 justify-content-center">
+                <!-- Plan 1: Basic -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="design-card p-4 h-100 text-center">
+                        <h4 class="fw-bold text-white mb-0 mt-3">Basic Access</h4>
+                        <p class="lead text-white-50 mb-4">Self-Paced Fundamentals</p>
+                        <h1 class="display-3 fw-bold gradient-text mb-3">$149<span class="fs-6 text-muted">/month</span></h1>
+                        <ul class="list-unstyled text-start small mt-4" style="font-size: 13px;" >
+                            <li class="mb-2"><i class="fas fa-check-circle me-3" style="color: var(--color-neon-primary);"></i> Core Video Library</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-3" style="color: var(--color-neon-primary);"></i> Design Templates & Assets</li>
+                            <li class=" mb-2  text-white-50"><i class="fas fa-times-circle me-3"></i> 1:1 Mentor Review</li>
+                            <li class="mb-2  text-white-50"><i class="fas fa-times-circle me-3"></i> Internship Support</li>
+                        </ul>
+                        <a href="#cta" class="btn btn-sm neon-btn w-100 mt-4 mb-3">Start Basic</a>
+                    </div>
+                </div>
+
+                <!-- Plan 2: Pro (Best Value) -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="design-card p-4 h-100 text-center" style="border: 2px solid var(--color-neon-secondary); box-shadow: 0 0 30px rgba(255, 65, 108, 0.6);">
+                        <span class="badge rounded-pill text-dark p-2 mb-3" style="background: linear-gradient(90deg, #ff4b2b, #ff416c);">Most Popular</span>
+                        <h4 class="fw-bold text-white mb-0">Pro Creator</h4>
+                        <p class="lead text-white-50 mb-4">Full Professional Track</p>
+                        <h1 class="display-3 fw-bold text-white mb-3" style="text-shadow: 0 0 5px var(--color-neon-primary);">$299<span class="fs-6 text-muted">/month</span></h1>
+                        <ul class="list-unstyled text-start small mt-4" style="font-size: 13px;">
+                            <li class="mb-2"><i class="fas fa-check-circle me-3" style="color: var(--color-neon-primary);"></i> All Modules & Tools</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-3" style="color: var(--color-neon-primary);"></i> Weekly Live Critiques</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-3" style="color: var(--color-neon-primary);"></i> Dedicated 1:1 Mentor Review</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-3" style="color: var(--color-neon-primary);"></i> Portfolio Guidance</li>
+                        </ul>
+                        <a href="#cta" class="btn btn-sm neon-btn w-100 mt-4 mb-3">Enroll Pro</a>
+                    </div>
+                </div>
+
+                <!-- Plan 3: Master -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="design-card p-4 h-100 text-center">
+                        <h4 class="fw-bold text-white mb-0 mt-3">Master Agency</h4>
+                        <p class="lead text-white-50 mb-4">1:1 Coaching & Placement</p>
+                        <h1 class="display-3 fw-bold gradient-text mb-3">$499<span class="fs-6 text-muted">/month</span></h1>
+                        <ul class="list-unstyled text-start small mt-4" style="font-size: 13px;">
+                            <li class="mb-2"><i class="fas fa-check-circle me-3" style="color: var(--color-neon-primary);"></i> All Pro Features</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-3" style="color: var(--color-neon-primary);"></i> Bi-Weekly Private Coaching</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-3" style="color: var(--color-neon-primary);"></i> Guaranteed Internship Interview</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-3" style="color: var(--color-neon-primary);"></i> Alumni Lifetime Support</li>
+                        </ul>
+                        <a href="#cta" class="btn btn-sm neon-btn w-100 mt-4">Contact for Master</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Call-to-Action -->
+    <section id="cta" class="py-5 py-md-5 text-center" style="background: linear-gradient(135deg, #6a11cb, #ff416c, #ff4b2b);">
+     
+        <div class="container py-5" data-aos="zoom-in">
+            <div class="col-lg-10 mx-auto">
+            <h2 class="display-3 fw-bold mb-4 text-white" style="font-size: 46px;">Start Creating. <span style="text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);">Start Designing.</span></h2>
+            <p class="lead mb-5 text-white">Secure your spot in the next session and elevate your design career to professional status.</p>
+            <a href="#pricing" class="btn btn-lg btn-light text-uppercase fw-bold p-3 px-5" style="border-radius: 50px; color: #ff4b2b; font-size: 18px;">
+                Enroll Now & Unlock Your Creativity
+            </a>
+            
+        </div>
+    </section>
+
+   
+    <footer class="footer">
+  <div class="container pt-5">
+
+    <div class="row justify-content-between">
+
+      <!-- Left -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <div class="d-flex mb-2 align-items-center">
+          <div class="footer-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h5 class="m-0 footer-heading">TIPSG Kotputli</h5>
+        </div>
+
+        <p class="footer-text">
+          District's First IT Training & Placement Center, empowering
+          students with world-class skills and guaranteed career opportunities.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-2 col-sm-6 mb-4">
+        <h6 class="footer-title">Quick Links</h6>
+        <ul class="footer-links">
+          <li><a href="../index.html#home">Home</a></li>
+          <li><a href="../index.html#About_us">About Us</a></li>
+          <li><a href="../index.html#Courses">Courses</a></li>
+          <li><a href="../index.html#Placements">Placements</a></li>
+          <li><a href="../index.html#Admissions">Admissions</a></li>
+        </ul>
+      </div>
+
+      <!-- Courses -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <h6 class="footer-title">Popular Courses</h6>
+        <ul class="footer-courses">
+          <li> <a href="/Blog/Fullstack.html"> Full Stack Development </a> </li>
+          <li> <a href="/Blog/cybercourses.html"> Cyber Security </a></li>
+          <li> <a href="/Blog/DataScienceCourses.html"> Data Science & AI</a></li>
+          <li> <a href="/Blog/Digital.html"> Digital Marketing</a></li>
+          <li> <a href="/Blog/Graphic.html"> Graphic Designing</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <h6 class="footer-title">Contact Us</h6>
+        <p><i class="fas fa-envelope me-2 text-white"></i> info@tipsgkotputli.com</p>
+        <p><i class="fas fa-phone me-2 text-white"></i> +91 9251639675 </p>
+
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="footer-line">
+
+    <p class="footer-copy">© 2025 TIPSG Kotputli. All rights reserved.</p>
+
+  </div>
+</footer>
+
+
+    <!-- Bootstrap 5 JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS CDN -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize AOS (Scroll Animations)
+            AOS.init({
+                duration: 1000,
+                once: true,
+                easing: 'ease-in-out'
+            });
+
+            // Function to animate progress bars on scroll (triggered by AOS)
+            function animateProgressBars() {
+                const satisfaction = document.getElementById('progress-satisfaction');
+                const placement = document.getElementById('progress-placement');
+                const projects = document.getElementById('progress-projects');
+
+                // Check if bars are visible (AOS has run its course)
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            satisfaction.style.width = satisfaction.getAttribute('aria-valuenow') + '%';
+                            placement.style.width = placement.getAttribute('aria-valuenow') + '%';
+                            projects.style.width = projects.getAttribute('aria-valuenow') + '%';
+                            observer.unobserve(entry.target); // Stop observing once animated
+                        }
+                    });
+                }, { threshold: 0.5 }); // Trigger when 50% of the element is visible
+
+                const statsSection = document.getElementById('stats');
+                if (statsSection) {
+                    observer.observe(statsSection);
+                }
+            }
+            animateProgressBars();
+
+
+            // Bonus: Subtle Cursor Glow Animation
+            const cursorGlow = document.getElementById('cursor-glow');
+            if (cursorGlow) {
+                document.addEventListener('mousemove', (e) => {
+                    cursorGlow.style.left = e.clientX + 'px';
+                    cursorGlow.style.top = e.clientY + 'px';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

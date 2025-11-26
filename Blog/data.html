@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Data Science & AI | Futuristic Lab</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Chart.js for data visualization -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <style>
+        /* Define the custom color palette and font family */
+        :root {
+            --color-bg-deep: #0a0f1f;
+            --color-bg-mid: #121c3c;
+            --color-accent-cyan: #00ffff;
+            --color-accent-purple: #8a2be2;
+            --color-accent-green: #00ff9d;
+            --color-text-light: #e0f2fe;
+        }
+
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--color-bg-deep);
+            color: var(--color-text-light);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+/* MAIN NAVBAR */
+.Add-navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  height: 72px;
+  justify-content: space-between;
+  background: linear-gradient(90deg, var(--color-bg-deep), var(--color-bg-mid)) !important;
+  box-shadow: 0 2px 12px rgba(0, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(0, 255, 255, 0.18);
+}
+
+/* MOBILE OFFCANVAS */
+.offcanvas-body {
+  background: linear-gradient(90deg, var(--color-bg-deep), var(--color-bg-mid));
+}
+
+/* LOGO BOX */
+.Add-logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: rgba(0, 255, 255, 0.15);
+  color: var(--color-accent-cyan);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.45);
+}
+
+.Add-logo:hover {
+  transform: scale(1.05);
+}
+
+/* BRAND TEXT */
+.Add-brand {
+  text-align: center;
+}
+
+.Add-brand-text {
+  color: var(--color-accent-cyan) ;
+  font-weight: 700;
+  font-size: clamp(18px, 2.2vw, 22px);
+  display: block;
+}
+
+.Add-brand-subtext {
+  color: var(--color-text-light);
+  font-size: clamp(12px, 1.5vw, 16px);
+  display: block;
+  margin-top: -8px;
+  opacity: 0.8;
+}
+
+/* NAV-LINK */
+.Add-navbar .nav-link {
+  color: var(--color-text-light) ;
+  font-size: 12px;
+  font-weight: 500;
+  margin: 3.8px;
+  padding: 9px !important;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  transition: 0.3s ease;
+}
+
+.Add-navbar .nav-link i {
+  font-size: 15px;
+  opacity: 0.85;
+}
+
+/* HOVER EFFECT */
+.Add-navbar .nav-link:hover {
+  background-color: rgba(0, 255, 255, 0.12);
+  color: var(--color-accent-green) !important;
+  text-shadow: 0 0 8px var(--color-accent-green);
+}
+
+/* ACTIVE LINK */
+.Add-navbar .nav-link.active {
+  background: var(--color-accent-purple) !important;
+  color: #fff !important;
+  text-shadow: 0 0 10px var(--color-accent-purple);
+}
+
+/* ENROLL BUTTON */
+.Add-btn-enroll {
+  background: linear-gradient(90deg, var(--color-accent-purple), var(--color-accent-cyan));
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 9px;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.35);
+  transition: 0.3s ease;
+}
+
+.Add-btn-enroll:hover {
+  background: linear-gradient(90deg, var(--color-accent-green), var(--color-accent-cyan));
+  box-shadow: 0 0 14px var(--color-accent-green);
+  color: #000 !important;
+}
+
+/* MOBILE FIX */
+@media (max-width: 991px) {
+  .Add-navbar {
+    height: auto;
+  }
+
+  .navbar-brand {
+    margin-right: auto;
+  }
+
+  .navbar-toggler {
+    margin-left: auto;
+    border: none;
+    filter: brightness(0) invert(1);
+  }
+
+  .Add-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .Add-brand-text {
+    font-size: 18px;
+  }
+}
+
+section {
+  margin-top: 72px;
+}
+
+        /* --- Custom Neon Glow Effect for Text and Borders --- */
+        .neon-text-cyan {
+            color: var(--color-accent-cyan);
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.5), 0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(0, 255, 255, 0.2);
+        }
+        
+
+        .neon-border-pulse {
+            border: 2px solid var(--color-accent-cyan);
+            box-shadow: 0 0 8px var(--color-accent-cyan), inset 0 0 8px var(--color-accent-cyan);
+            transition: all 0.3s ease;
+        }
+
+        .neon-border-pulse:hover {
+            border-color: var(--color-accent-purple);
+            box-shadow: 0 0 15px var(--color-accent-purple), inset 0 0 15px var(--color-accent-purple);
+            transform: translateY(-2px);
+        }
+
+        /* --- Button Neon Pulse Animation --- */
+        .neon-pulse-btn {
+            background: linear-gradient(90deg, var(--color-accent-cyan), var(--color-accent-purple));
+            color: var(--color-bg-deep);
+            font-weight: 700;
+            padding: 1rem 2.5rem;
+            border-radius: 9999px;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            transition: all 0.3s ease;
+            animation: pulse-glow 2s infinite alternate;
+        }
+
+        .neon-pulse-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px var(--color-accent-purple), 0 0 40px var(--color-accent-purple);
+            animation: none;
+        }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 10px rgba(0, 255, 255, 0.5); }
+            100% { box-shadow: 0 0 20px var(--color-accent-cyan), 0 0 30px rgba(138, 43, 226, 0.7); }
+        }
+
+        /* --- Gradient Backgrounds --- */
+        .section-bg {
+            background: radial-gradient(circle at top, var(--color-bg-mid) 0%, var(--color-bg-deep) 100%);
+        }
+        .hero-bg {
+            background: radial-gradient(ellipse at center, rgba(18, 28, 60, 0.8) 0%, var(--color-bg-deep) 100%);
+        }
+
+        /* --- Particles Canvas (for the Hero background) --- */
+        #particle-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            opacity: 0.5;
+        }
+
+        .content-z {
+            position: relative;
+            z-index: 20;
+        }
+
+        /* Custom Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+            background-color: var(--color-bg-deep);
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--color-accent-cyan);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: var(--color-accent-purple);
+        }
+
+        /* Animation Keyframes for subtle AI data flow */
+        @keyframes dataFlow {
+            0% { transform: translateX(-100%) scale(0.5); opacity: 0; }
+            50% { opacity: 0.8; }
+            100% { transform: translateX(0) scale(1); opacity: 1; }
+        }
+
+        .animate-data-flow {
+            animation: dataFlow 1.5s ease-out forwards;
+        }
+            /* Custom col for 5-cards row */
+    @media (min-width: 992px) {
+        .col-lg-2_4 {
+            width: 20%;
+            flex: 0 0 20%;
+        }
+    }
+
+    /* Card styling like your screenshot */
+    .tool-box {
+        background: rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        color: #d1d5db;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .tool-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.25);
+        border-color: rgba(0, 255, 255, 0.5);
+        color: #00ffff;
+    }
+
+    #tools p {
+        font-size: 14px;
+    }
+
+    .footer {
+  background: linear-gradient(90deg, var(--color-bg-deep), var(--color-bg-mid));
+  padding-top: 60px;
+  padding-bottom: 30px;
+  border-top: 1px solid rgba(0, 255, 255, 0.2); /* cyan glow */
+  box-shadow: 0px -4px 15px rgba(0, 255, 255, 0.2);
+}
+
+/* Icon Box */
+.footer-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  background: rgba(0, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+}
+
+/* Heading */
+.footer-heading {
+  color: var(--color-accent-cyan);
+  font-weight: 700;
+}
+
+/* Section Title */
+.footer-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-accent-purple);
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Paragraph Text */
+.footer-text {
+  color: var(--color-text-light);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Links */
+.footer-links li a {
+  color: var(--color-text-light);
+  text-decoration: none;
+  display: block;
+  margin: 6px 0;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.footer-links li a:hover {
+  color: var(--color-accent-green);
+  text-shadow: 0 0 12px var(--color-accent-green);
+}
+
+/* Courses */
+.footer-courses li {
+  list-style: none;
+}
+
+.footer-courses li a {
+  color: var(--color-text-light);
+  text-decoration: none;
+  margin-bottom: 6px;
+  transition: 0.3s;
+}
+
+.footer-courses li a:hover {
+  cursor: pointer;
+  color: var(--color-accent-green);
+  text-shadow: 0 0 12px var(--color-accent-green);
+}
+
+/* Contact */
+.footer-contact p {
+  color: var(--color-text-light);
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+/* Social Icons */
+.social-icons a {
+  color: var(--color-text-light);
+  font-size: 15px;
+  border: 2px solid var(--color-accent-cyan);
+  border-radius: 10px;
+  padding: 10px;
+  margin-right: 12px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: var(--color-accent-green);
+  border-color: var(--color-accent-green);
+  text-shadow: 0 0 12px var(--color-accent-green);
+}
+
+/* Separator Line */
+.footer-line {
+  border: 0.3px solid rgba(0, 255, 255, 0.25);
+  margin: 25px 0;
+}
+
+/* Copyright */
+.footer-copy {
+  text-align: center;
+  color: var(--color-text-light);
+  opacity: 0.8;
+  font-size: 12px;
+}
+
+
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm Add-navbar ">
+    <div class="container col-lg-11 d-flex align-items-center justify-content-center">
+
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html#home" onclick="setActive(this,'home')">
+          <div class="Add-logo d-flex align-items-center justify-content-center">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+<div class="Add-brand">
+            <strong class="Add-brand-text">TIPS-G</strong>
+            <small class="Add-brand-subtext text-muted">Kotputli</small>
+          </div>
+        </a>
+
+        <!-- Mobile Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Desktop Menu -->
+        <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex">
+          <ul class="navbar-nav align-items-center" id="mainMenu">
+            <li class="nav-item"><a class="nav-link " href="../index.html#home" onclick="setActive(this,'home')"><i
+                  class="fas fa-home me-1"></i> Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#About_us" onclick="setActive(this,'About_us')"><i
+                  class="fas fa-graduation-cap me-1"></i> About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#Courses" onclick="setActive(this,'Courses')"><i
+                  class="fas fa-book-open me-1 active"></i> Courses</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#Placements" onclick="setActive(this,'Placements')"><i
+                  class="fas fa-award me-1"></i> Placements</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#Admissions" onclick="setActive(this,'Admissions')"><i
+                  class="fas fa-user-friends me-1"></i> Admissions</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#Gallery" onclick="setActive(this,'Gallery')"><i
+                  class="far fa-image me-1"></i> Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#Events" onclick="setActive(this,'Events')"><i
+                  class="far fa-calendar-alt me-1"></i> Events</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#Blog" onclick="setActive(this,'Blog')"><i
+                  class="far fa-newspaper me-1"></i> Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#Contact" onclick="setActive(this,'Contact')"><i
+                  class="far fa-envelope me-1"></i> Contact</a></li>
+            <li class="nav-item">
+              <a class="Add-btn-enroll" href="../index.html#Admissions" onclick="setActive(this,'Admissions')">Enroll Now</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+  <!-- Offcanvas (Mobile) -->
+  <div class="offcanvas offcanvas-end w-75" tabindex="-1" id="navMenu">
+    <div class="offcanvas-header">
+      <h5>Menu</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body ">
+      <ul class="navbar-nav" id="offMenu">
+        <li class="nav-item"><a class="nav-link active" href="../index.html#home" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'home')"><i class="fas fa-home me-1"></i> Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#About_us" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'About_us')"><i class="fas fa-graduation-cap me-1"></i> About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#Courses" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Courses')"><i class="fas fa-book-open me-1"></i> Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#Placements" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Placements')"><i class="fas fa-award me-1"></i> Placements</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#Admissions" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Admissions')"><i class="fas fa-user-friends me-1"></i> Admissions</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#Gallery" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Gallery')"><i class="far fa-image me-1"></i> Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#Events" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Events')"><i class="far fa-calendar-alt me-1"></i> Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#Blog" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Blog')"><i class="far fa-newspaper me-1"></i> Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#Contact" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Contact')"><i class="far fa-envelope me-1"></i> Contact</a></li>
+        <li class="nav-item mt-3">
+          <a class="Add-btn-enroll" href="../index.html#Admissions" data-bs-dismiss="offcanvas"
+            onclick="setActive(this,'Admissions')">Enroll Now</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+    <main>
+        <!-- 2. Hero Section -->
+        <section id="hero" class="hero-bg relative h-screen flex items-center justify-center text-center overflow-hidden">
+            <!-- Particle Background Canvas -->
+            <canvas id="particle-canvas"></canvas>
+            <div class="content-z max-w-4xl mx-auto p-4 space-y-8">
+                <!-- Headline -->
+                <h1 class="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black font-['Orbitron'] tracking-tighter leading-tight animate-data-flow"
+    style="animation-delay: 0.1s;">
+
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">Master Data Science</span> & AI
+                </h1>
+                <!-- Subheadline -->
+                <p class="text-xl sm:text-2xl text-gray-300 font-light max-w-3xl mx-auto animate-data-flow" style="animation-delay: 0.5s;">
+                    Learn to build intelligent systems, predict insights, and power the future with Artificial Intelligence.
+                </p>
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 pt-6 animate-data-flow" style="animation-delay: 0.8s;">
+                    <a href="#curriculum" class="neon-pulse-btn">
+                        Get Started
+                    </a>
+                    <a href="#" class="border-2 border-purple-500 text-purple-400 px-8 py-3 rounded-full text-sm font-bold transition-all duration-300 hover:bg-purple-500 hover:text-white hover:shadow-lg hover:shadow-purple-500/50">
+                        Download Syllabus
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Glowing Divider Line -->
+        <div class="h-0.5 bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent shadow-lg shadow-cyan-500/20"></div>
+
+        <!-- 3. About Section -->
+        <section id="about" class="section-bg py-24">
+            <div class="container-fluid">
+                <div class="col-lg-10 mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-extrabold font-['Orbitron'] mb-2">The Power of Data Meets the Intelligence of AI</h2>
+                    <p class="text-purple-400 text-lg">Understanding the core disciplines.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Text & Description -->
+                    <div class="space-y-6">
+                        <p class="text-gray-300 leading-relaxed text-lg">
+                            Data Science blends statistics, computing, and machine learning to analyze complex data sets, extract knowledge, and inform decision-making. It’s the engine that processes the world's information.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed text-lg">
+                            Artificial Intelligence (AI) is the discipline that empowers machines to think, reason, learn, and act like humans. Through powerful algorithms, AI is automating tasks, solving complex problems, and creating entirely new industries.
+                        </p>
+                        <a href="#curriculum" class="inline-block mt-4 text-cyan-400 hover:text-cyan-300 font-semibold border-b border-cyan-400 pb-1 transition-colors">
+                            Explore the methodologies &rarr;
+                        </a>
+                    </div>
+
+                    <!-- Animated Infographic -->
+                    <div class="p-8 bg-gray-900/40 rounded-xl shadow-2xl border border-cyan-400/20">
+                        <h3 class="text-xl font-bold mb-6 text-center neon-text-cyan">The Data-to-Decision Pipeline</h3>
+                        <div class="flex justify-between items-center text-center relative">
+                            <div class="absolute inset-y-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent top-1/2 -translate-y-1/2"></div>
+                            <div class="flex-1 space-y-2 content-z">
+                                <span class="block text-4xl text-purple-400">&#128190;</span>
+                                <p class="text-sm font-bold">Data</p>
+                            </div>
+                            <div class="flex-1 space-y-2 content-z">
+                                <span class="block text-4xl text-cyan-400">&#128080;</span>
+                                <p class="text-sm font-bold">Algorithms</p>
+                            </div>
+                            <div class="flex-1 space-y-2 content-z">
+                                <span class="block text-4xl text-green-400">&#128640;</span>
+                                <p class="text-sm font-bold">Models</p>
+                            </div>
+                            <div class="flex-1 space-y-2 content-z">
+                                <span class="block text-4xl text-yellow-400">&#128200;</span>
+                                <p class="text-sm font-bold">Predictions</p>
+                            </div>
+                            <div class="flex-1 space-y-2 content-z">
+                                <span class="block text-4xl text-pink-400">&#128161;</span>
+                                <p class="text-sm font-bold">Decisions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Glowing Divider Line -->
+        <div class="h-0.5 bg-gradient-to-r from-transparent via-purple-500/50 to-transparent shadow-lg shadow-purple-500/20"></div>
+
+        <!-- 4. Full Course Curriculum / Modules -->
+        <section id="curriculum" class="section-bg py-24">
+            <div class="container-fluid">
+                <div class="col-lg-10 mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-extrabold font-['Orbitron'] mb-2">Next-Gen Curriculum</h2>
+                    <p class="text-cyan-400 text-lg">10 Modules to Mastery - From Code to Cognitive Systems.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Module Cards -->
+                    <div class="p-6 bg-gray-900/50 rounded-xl neon-border-pulse transition duration-300 hover:bg-gray-800/60">
+                        <div class="text-3xl text-cyan-400 mb-3">&#128013;</div>
+                        <h3 class="text-xl font-bold mb-2">Python for Data Science</h3>
+                        <p class="text-gray-400 text-sm">Pandas, NumPy, Matplotlib, Data Cleaning, and fundamental coding practices.</p>
+                    </div>
+                    <div class="p-6 bg-gray-900/50 rounded-xl neon-border-pulse transition duration-300 hover:bg-gray-800/60">
+                        <div class="text-3xl text-purple-400 mb-3">&#128202;</div>
+                        <h3 class="text-xl font-bold mb-2">Statistics & Probability</h3>
+                        <p class="text-gray-400 text-sm">Descriptive, Inferential Statistics, Hypothesis Testing, and probability distributions.</p>
+                    </div>
+                    <div class="p-6 bg-gray-900/50 rounded-xl neon-border-pulse transition duration-300 hover:bg-gray-800/60">
+                        <div class="text-3xl text-green-400 mb-3">&#128481;</div>
+                        <h3 class="text-xl font-bold mb-2">Data Visualization</h3>
+                        <p class="text-gray-400 text-sm">Mastering Power BI, Tableau, and Plotly for compelling data storytelling.</p>
+                    </div>
+                    <div class="p-6 bg-gray-900/50 rounded-xl neon-border-pulse transition duration-300 hover:bg-gray-800/60">
+                        <div class="text-3xl text-yellow-400 mb-3">&#129504;</div>
+                        <h3 class="text-xl font-bold mb-2">Machine Learning</h3>
+                        <p class="text-gray-400 text-sm">Regression, Classification, Clustering, Decision Trees, and model evaluation.</p>
+                    </div>
+                    <div class="p-6 bg-gray-900/50 rounded-xl neon-border-pulse transition duration-300 hover:bg-gray-800/60">
+                        <div class="text-3xl text-red-400 mb-3">&#128170;</div>
+                        <h3 class="text-xl font-bold mb-2">Deep Learning</h3>
+                        <p class="text-gray-400 text-sm">Neural Networks, CNNs (Convolutional), RNNs (Recurrent), and Autoencoders.</p>
+                    </div>
+                    <div class="p-6 bg-gray-900/50 rounded-xl neon-border-pulse transition duration-300 hover:bg-gray-800/60">
+                        <div class="text-3xl text-indigo-400 mb-3">&#128222;</div>
+                        <h3 class="text-xl font-bold mb-2">NLP (Natural Language Processing)</h3>
+                        <p class="text-gray-400 text-sm">Chatbots, Sentiment Analysis, Word Embeddings, and the Transformer architecture.</p>
+                    </div>
+                    <div class="p-6 bg-gray-900/50 rounded-xl neon-border-pulse transition duration-300 hover:bg-gray-800/60">
+                        <div class="text-3xl text-fuchsia-400 mb-3">&#128065;</div>
+                        <h3 class="text-xl font-bold mb-2">Computer Vision</h3>
+                        <p class="text-gray-400 text-sm">Image Recognition, Object Detection (YOLO), and OpenCV implementation.</p>
+                    </div>
+                    <div class="p-6 bg-gray-900/50 rounded-xl neon-border-pulse transition duration-300 hover:bg-gray-800/60">
+                        <div class="text-3xl text-teal-400 mb-3">&#9729;</div>
+                        <h3 class="text-xl font-bold mb-2">Big Data & Cloud AI</h3>
+                        <p class="text-gray-400 text-sm">Hadoop, Spark, and deploying models on AWS and Google Cloud AI services.</p>
+                    </div>
+                    <div class="p-6 bg-gray-900/50 rounded-xl neon-border-pulse transition duration-300 hover:bg-gray-800/60">
+                        <div class="text-3xl text-pink-400 mb-3">&#129506;</div>
+                        <h3 class="text-xl font-bold mb-2">Generative AI & LLMs</h3>
+                        <p class="text-gray-400 text-sm">Deep dive into Generative Models, Prompt Engineering, and building with ChatGPT/BERT.</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Glowing Divider Line -->
+        <div class="h-0.5 bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent shadow-lg shadow-cyan-500/20"></div>
+
+        <!-- 5. Why Choose Us -->
+        <section id="whyus" class="section-bg py-24">
+            <div class="container-fluid">
+                <div class="col-lg-10 mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-extrabold font-['Orbitron'] mb-2">Why The AI Lab?</h2>
+                    <p class="text-purple-400 text-lg">Your trajectory to becoming a world-class AI professional.</p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
+                    <!-- Cards -->
+                    <div class="text-center p-6 bg-gray-900/50 rounded-xl shadow-xl transition-all duration-300 hover:shadow-[0_0_20px_rgba(138,43,226,0.5)] hover:bg-gray-800/70">
+                        <div class="text-4xl neon-text-cyan mb-3">&#128640;</div>
+                        <h3 class="font-bold text-lg">Hands-on Learning</h3>
+                        <p class="text-gray-400 text-sm">90% practical, project-based labs.</p>
+                    </div>
+                    <div class="text-center p-6 bg-gray-900/50 rounded-xl shadow-xl transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,157,0.5)] hover:bg-gray-800/70">
+                        <div class="text-4xl text-green-400 mb-3">&#127974;</div>
+                        <h3 class="font-bold text-lg">Industry Projects</h3>
+                        <p class="text-gray-400 text-sm">Build a portfolio with 5+ real-world case studies.</p>
+                    </div>
+                    <div class="text-center p-6 bg-gray-900/50 rounded-xl shadow-xl transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,255,0.5)] hover:bg-gray-800/70">
+                        <div class="text-4xl text-cyan-400 mb-3">&#128295;</div>
+                        <h3 class="font-bold text-lg">Real Tools</h3>
+                        <p class="text-gray-400 text-sm">Master TensorFlow, PyTorch, Spark, and AWS/GCP.</p>
+                    </div>
+                    <div class="text-center p-6 bg-gray-900/50 rounded-xl shadow-xl transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,0,0.5)] hover:bg-gray-800/70">
+                        <div class="text-4xl text-yellow-400 mb-3">&#127942;</div>
+                        <h3 class="font-bold text-lg">Global Certification</h3>
+                        <p class="text-gray-400 text-sm">Recognized certification to validate your skills.</p>
+                    </div>
+                    <div class="text-center p-6 bg-gray-900/50 rounded-xl shadow-xl transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,100,200,0.5)] hover:bg-gray-800/70">
+                        <div class="text-4xl text-pink-400 mb-3">&#128104;&#8205;&#127891;</div>
+                        <h3 class="font-bold text-lg">24/7 Mentorship</h3>
+                        <p class="text-gray-400 text-sm">Support from active AI Engineers and Data Scientists.</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Tools & Technologies -->
+<section id="tools" class="section-bg py-5">
+    <div class="container-fluid">
+        <div class="col-lg-10 mx-auto">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold display-6" style="font-family:'Orbitron',sans-serif;">Core Technologies</h2>
+            <p class="text-cyan-400 fs-5" style="color:#00ffff;">The ecosystem of the modern data scientist.</p>
+        </div>
+
+        <div class="row g-4">
+
+            <!-- Python -->
+            <div class="col-6 col-md-4 col-lg-2_4">
+                <div class="tool-box text-center p-4">
+                    <div class="fs-1 mb-2">🐍</div>
+                    <p class="mb-0">Python</p>
+                </div>
+            </div>
+
+            <!-- R -->
+            <div class="col-6 col-md-4 col-lg-2_4">
+                <div class="tool-box text-center p-4">
+                    <div class="fs-1 mb-2">📊</div>
+                    <p class="mb-0">R</p>
+                </div>
+            </div>
+
+            <!-- SQL -->
+            <div class="col-6 col-md-4 col-lg-2_4">
+                <div class="tool-box text-center p-4">
+                    <div class="fs-1 mb-2">💾</div>
+                    <p class="mb-0">SQL</p>
+                </div>
+            </div>
+
+            <!-- TensorFlow -->
+            <div class="col-6 col-md-4 col-lg-2_4">
+                <div class="tool-box text-center p-4">
+                    <div class="fs-1 mb-2">⚙️</div>
+                    <p class="mb-0">TensorFlow</p>
+                </div>
+            </div>
+
+            <!-- PyTorch -->
+            <div class="col-6 col-md-4 col-lg-2_4">
+                <div class="tool-box text-center p-4">
+                    <div class="fs-1 mb-2">🔥</div>
+                    <p class="mb-0">PyTorch</p>
+                </div>
+            </div>
+
+            <!-- Tableau -->
+            <div class="col-6 col-md-4 col-lg-2_4">
+                <div class="tool-box text-center p-4">
+                    <div class="fs-1 mb-2">📈</div>
+                    <p class="mb-0">Tableau</p>
+                </div>
+            </div>
+
+            <!-- Power BI -->
+            <div class="col-6 col-md-4 col-lg-2_4">
+                <div class="tool-box text-center p-4">
+                    <div class="fs-1 mb-2">📉</div>
+                    <p class="mb-0">Power BI</p>
+                </div>
+            </div>
+
+            <!-- AWS -->
+            <div class="col-6 col-md-4 col-lg-2_4">
+                <div class="tool-box text-center p-4">
+                    <div class="fs-1 mb-2">☁️</div>
+                    <p class="mb-0">AWS</p>
+                </div>
+            </div>
+
+            <!-- OpenAI -->
+            <div class="col-6 col-md-4 col-lg-2_4">
+                <div class="tool-box text-center p-4">
+                    <div class="fs-1 mb-2">🧠</div>
+                    <p class="mb-0">OpenAI</p>
+                </div>
+            </div>
+
+            <!-- GCP -->
+            <div class="col-6 col-md-4 col-lg-2_4">
+                <div class="tool-box text-center p-4">
+                    <div class="fs-1 mb-2">💻</div>
+                    <p class="mb-0">GCP</p>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+        <!-- 7. AI & Data Science Career Path -->
+        <section id="career" class="section-bg py-24">
+            <div class="container-fluid">
+                <div class="col-lg-10 mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-extrabold font-['Orbitron'] mb-2">The Career Trajectory</h2>
+                    <p class="text-purple-400 text-lg">Your path from novice to AI Engineer is visualized.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-3 sm:grid-cols-1 gap-12 items-center">
+
+                    <!-- Timeline Steps -->
+                    <div class="lg:col-span-2 space-y-10">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-cyan-500 flex items-center justify-center text-gray-900 font-bold border-2 border-white/50 shadow-lg shadow-cyan-500/50">1</div>
+                            <div>
+                                <h3 class="text-xl font-bold neon-text-cyan">Foundations of Data</h3>
+                                <p class="text-gray-400">Master Python, SQL, and the core statistical principles.</p>
+                            </div>
+                        </div>
+                        <div class="h-8 w-0.5 ml-5 bg-gradient-to-b from-cyan-500 to-purple-500"></div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-500 flex items-center justify-center text-gray-900 font-bold border-2 border-white/50 shadow-lg shadow-purple-500/50">2</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-purple-400">Machine Learning Projects</h3>
+                                <p class="text-gray-400">Implement classic ML models (Regression, Classification) on real datasets.</p>
+                            </div>
+                        </div>
+                        <div class="h-8 w-0.5 ml-5 bg-gradient-to-b from-purple-500 to-green-500"></div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-green-500 flex items-center justify-center text-gray-900 font-bold border-2 border-white/50 shadow-lg shadow-green-500/50">3</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-green-400">AI Specialization</h3>
+                                <p class="text-gray-400">Deep dive into Deep Learning, NLP, and Computer Vision architectures.</p>
+                            </div>
+                        </div>
+                        <div class="h-8 w-0.5 ml-5 bg-gradient-to-b from-green-500 to-cyan-500"></div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-cyan-500 flex items-center justify-center text-gray-900 font-bold border-2 border-white/50 shadow-lg shadow-cyan-500/50">4</div>
+                            <div>
+                                <h3 class="text-xl font-bold neon-text-cyan">Real Deployment & MLOps</h3>
+                                <p class="text-gray-400">Learn to deploy models, scale services, and manage the full lifecycle on the Cloud.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chart Animation (Job Growth) -->
+                    <div class="lg:col-span-1 p-6 bg-gray-900/40 rounded-xl neon-border-pulse border-purple-400/30">
+                        <h3 class="text-xl font-bold mb-4 text-center text-purple-400">AI/DS Job Market Growth (Projected)</h3>
+                        <canvas id="jobGrowthChart" class="max-h-72"></canvas>
+                        <p class="text-xs text-gray-500 text-center mt-4">Source: Simulated market data based on industry reports.</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Real-World Projects Showcase -->
+        <section id="projects" class="section-bg py-24">
+            <div class="container-fluid">
+                <div class="col-lg-10 mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-extrabold font-['Orbitron'] mb-2">Real-World Projects Showcase</h2>
+                    <p class="text-cyan-400 text-lg">Build the portfolio that gets you hired.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Project Card 1 -->
+                    <div class="bg-gray-900/50 rounded-xl overflow-hidden shadow-2xl transition-all duration-300 hover:scale-[1.03] neon-border-pulse border-cyan-400/30 hover:border-cyan-400">
+                        <img src="https://placehold.co/400x200/0f172a/00ffff?text=PREDICTIVE+ANALYTICS" alt="Predictive Analytics" class="w-full h-36 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x200/0f172a/00ffff?text=PREDICTIVE+ANALYTICS';">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2 text-cyan-400">Predictive Analytics</h3>
+                            <p class="text-gray-400 text-sm">Forecasting stock prices and market trends using time series data.</p>
+                            <span class="inline-block mt-2 text-xs font-['Roboto Mono'] text-purple-400">Tools: Python, ARIMA, Prophet</span>
+                        </div>
+                    </div>
+                    <!-- Project Card 2 -->
+                    <div class="bg-gray-900/50 rounded-xl overflow-hidden shadow-2xl transition-all duration-300 hover:scale-[1.03] neon-border-pulse border-purple-400/30 hover:border-purple-400">
+                        <img src="https://placehold.co/400x200/0f172a/8a2be2?text=AI+CHATBOT" alt="AI Chatbot" class="w-full h-36 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x200/0f172a/8a2be2?text=AI+CHATBOT';">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2 text-purple-400">AI Chatbot</h3>
+                            <p class="text-gray-400 text-sm">Building a conversational agent with Natural Language Understanding (NLU).</p>
+                            <span class="inline-block mt-2 text-xs font-['Roboto Mono'] text-cyan-400">Tools: BERT, Hugging Face, Flask</span>
+                        </div>
+                    </div>
+                    <!-- Project Card 3 -->
+                    <div class="bg-gray-900/50 rounded-xl overflow-hidden shadow-2xl transition-all duration-300 hover:scale-[1.03] neon-border-pulse border-green-400/30 hover:border-green-400">
+                        <img src="https://placehold.co/400x200/0f172a/00ff9d?text=FRAUD+DETECTION" alt="Fraud Detection" class="w-full h-36 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x200/0f172a/00ff9d?text=FRAUD+DETECTION';">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2 text-green-400">Fraud Detection</h3>
+                            <p class="text-gray-400 text-sm">Identifying anomalous transactions using advanced clustering and classification.</p>
+                            <span class="inline-block mt-2 text-xs font-['Roboto Mono'] text-purple-400">Tools: Scikit-learn, K-Means, XGBoost</span>
+                        </div>
+                    </div>
+                    <!-- Project Card 4 -->
+                    <div class="bg-gray-900/50 rounded-xl overflow-hidden shadow-2xl transition-all duration-300 hover:scale-[1.03] neon-border-pulse border-yellow-400/30 hover:border-yellow-400">
+                        <img src="https://placehold.co/400x200/0f172a/fff000?text=FACE+RECOGNITION" alt="Face Recognition" class="w-full h-36 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x200/0f172a/fff000?text=FACE+RECOGNITION';">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2 text-yellow-400">Face Recognition</h3>
+                            <p class="text-gray-400 text-sm">Building a real-time system for identity verification using deep learning.</p>
+                            <span class="inline-block mt-2 text-xs font-['Roboto Mono'] text-cyan-400">Tools: OpenCV, CNN, TensorFlow</span>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Testimonials Section (Placeholder Content) -->
+        <section id="testimonials" class="section-bg py-24">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-extrabold font-['Orbitron'] mb-2">What Our Students Say</h2>
+                    <p class="text-purple-400 text-lg">Validated by the next generation of AI Innovators.</p>
+                </div>
+
+                <!-- Testimonial Carousel (Simplified to a static 3-up grid) -->
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-6 bg-gray-900/50 rounded-xl neon-border-pulse border-purple-400/30">
+                        <p class="italic text-gray-300 mb-4 text-sm">"The Capstone Project was a game-changer. I landed my first Data Scientist role thanks to the deep practical experience."</p>
+                        <div class="flex items-center space-x-3">
+                            <img class="h-10 w-10 rounded-full" src="https://placehold.co/40x40/8a2be2/ffffff?text=JM" alt="Student Photo">
+                            <div>
+                                <p class="font-bold text-cyan-400">Jane Miller</p>
+                                <p class="text-xs text-gray-500">AI Engineer, Startup XYZ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-gray-900/50 rounded-xl neon-border-pulse border-cyan-400/30">
+                        <p class="italic text-gray-300 mb-4 text-sm">"The Deep Learning module is world-class. The mentorship helped me transition from a software dev to a machine learning specialist."</p>
+                        <div class="flex items-center space-x-3">
+                            <img class="h-10 w-10 rounded-full" src="https://placehold.co/40x40/00ffff/000000?text=SK" alt="Student Photo">
+                            <div>
+                                <p class="font-bold text-purple-400">Samir Khan</p>
+                                <p class="text-xs text-gray-500">Machine Learning Researcher</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-gray-900/50 rounded-xl neon-border-pulse border-green-400/30">
+                        <p class="italic text-gray-300 mb-4 text-sm">"I appreciated the focus on Generative AI. I felt prepared for the newest technology immediately after graduating."</p>
+                        <div class="flex items-center space-x-3">
+                            <img class="h-10 w-10 rounded-full" src="https://placehold.co/40x40/00ff9d/000000?text=LV" alt="Student Photo">
+                            <div>
+                                <p class="font-bold text-green-400">Lina Vasquez</p>
+                                <p class="text-xs text-gray-500">Data Analyst, Fortune 500</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. Call-to-Action (CTA) -->
+        <section id="cta" class="py-20 bg-gradient-to-r from-blue-900/50 to-purple-900/50 border-t border-b border-cyan-500/30 shadow-2xl shadow-purple-500/20">
+            <div class="max-w-4xl mx-auto text-center px-4">
+                <h2 class="text-5xl font-black font-['Orbitron'] mb-6 leading-snug">
+                    <span class="neon-text-cyan">Ready to Become an AI Innovator?</span>
+                </h2>
+                <p class="text-xl text-gray-300 mb-10">
+                    The future is powered by intelligent systems. Take the first step toward building it.
+                </p>
+                <a href="#hero" class="neon-pulse-btn text-lg">
+                    Enroll in the Program
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+  <div class="container pt-5">
+    <div class="col-lg-10 mx-auto">
+
+    <div class="row justify-content-between">
+
+      <!-- Left -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <div class="d-flex mb-2 align-items-center">
+          <div class="footer-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h5 class="m-0 footer-heading">TIPSG Kotputli</h5>
+        </div>
+
+        <p class="footer-text">
+          District's First IT Training & Placement Center, empowering
+          students with world-class skills and guaranteed career opportunities.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-2 col-sm-6 mb-4">
+        <h6 class="footer-title">Quick Links</h6>
+        <ul class="footer-links">
+          <li><a href="../index.html#home">Home</a></li>
+          <li><a href="../index.html#About_us">About Us</a></li>
+          <li><a href="../index.html#Courses">Courses</a></li>
+          <li><a href="../index.html#Placements">Placements</a></li>
+          <li><a href="../index.html#Admissions">Admissions</a></li>
+        </ul>
+      </div>
+
+      <!-- Courses -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <h6 class="footer-title">Popular Courses</h6>
+        <ul class="footer-courses">
+          <li> <a href="/Blog/Fullstack.html"> Full Stack Development </a> </li>
+          <li> <a href="/Blog/cybercourses.html"> Cyber Security </a></li>
+          <li> <a href="/Blog/data.html"> Data Science & AI</a></li>
+          <li> <a href="/Blog/Digital.html"> Digital Marketing</a></li>
+          <li> <a href="/Blog/Graphic.html"> Graphic Designing</a></li>
+          <li> <a href="/Blog/App.html"> App Development</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <h6 class="footer-title">Contact Us</h6>
+        <p><i class="fas fa-envelope me-2 text-white"></i> info@tipsgkotputli.com</p>
+        <p><i class="fas fa-phone me-2 text-white mb-3"></i> +91 9251639675 </p>
+
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+    </div>
+    </div>
+
+    <hr class="footer-line">
+
+    <p class="footer-copy">© 2025 TIPSG Kotputli. All rights reserved.</p>
+
+  </div>
+</footer>
+
+
+
+    <script>
+        // --- 1. Navbar Scroll Logic ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbar = document.getElementById('navbar');
+            const navLinks = navbar.querySelectorAll('a');
+            const heroHeight = window.innerHeight * 0.9; // Trigger point 90% down the viewport
+
+            const updateNavbar = () => {
+                if (window.scrollY > heroHeight) {
+                    navbar.classList.add('bg-gray-900', 'shadow-xl', 'shadow-cyan-500/10');
+                    navLinks.forEach(link => link.classList.add('text-white'));
+                } else {
+                    navbar.classList.remove('bg-gray-900', 'shadow-xl', 'shadow-cyan-500/10');
+                    navLinks.forEach(link => link.classList.remove('text-white'));
+                }
+            };
+
+            window.addEventListener('scroll', updateNavbar);
+            updateNavbar(); // Initial check
+        });
+
+        // --- 2. Chart.js Implementation for Career Path (Section 7) ---
+        window.onload = function() {
+            const ctx = document.getElementById('jobGrowthChart').getContext('2d');
+            const jobGrowthChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['2023', '2024', '2025', '2026', '2027', '2028'],
+                    datasets: [{
+                        label: 'AI & DS Job Growth (%)',
+                        data: [15, 22, 35, 48, 60, 75],
+                        borderColor: '#00ffff', // Cyan
+                        backgroundColor: 'rgba(0, 255, 255, 0.1)',
+                        borderWidth: 3,
+                        tension: 0.4,
+                        pointRadius: 5,
+                        pointBackgroundColor: '#8a2be2', // Purple
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            labels: {
+                                color: '#e0f2fe',
+                                font: { size: 14 }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': +' + context.parsed.y + '%';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Growth Rate (%)',
+                                color: '#e0f2fe'
+                            },
+                            grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                            ticks: { color: '#e0f2fe' }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Year',
+                                color: '#e0f2fe'
+                            },
+                            grid: { display: false },
+                            ticks: { color: '#e0f2fe' }
+                        }
+                    }
+                }
+            });
+
+            // Start the particle animation loop (defined below)
+            animateParticles();
+        };
+
+        // --- 3. Custom Particle Background Effect (Section 2) ---
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let width, height;
+
+        const resizeCanvas = () => {
+            width = canvas.width = canvas.offsetWidth;
+            height = canvas.height = canvas.offsetHeight;
+        };
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor(x, y) {
+                this.x = x || Math.random() * width;
+                this.y = y || Math.random() * height;
+                this.radius = Math.random() * 2 + 1;
+                this.velocity = {
+                    x: (Math.random() - 0.5) * 0.5,
+                    y: (Math.random() - 0.5) * 0.5
+                };
+                this.color = Math.random() > 0.5 ? 'rgba(0, 255, 255, 0.7)' : 'rgba(138, 43, 226, 0.7)';
+            }
+
+            update() {
+                this.x += this.velocity.x;
+                this.y += this.velocity.y;
+
+                if (this.x < 0 || this.x > width) this.velocity.x *= -1;
+                if (this.y < 0 || this.y > height) this.velocity.y *= -1;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.shadowColor = this.color;
+                ctx.shadowBlur = this.radius * 3;
+                ctx.fill();
+            }
+        }
+
+        const createParticles = (count) => {
+            particles = [];
+            for (let i = 0; i < count; i++) {
+                particles.push(new Particle());
+            }
+        };
+
+        const connectParticles = () => {
+            const maxDistance = 120;
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < maxDistance) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(0, 255, 255, ${1 - distance / maxDistance})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        };
+
+        const animateParticles = () => {
+            requestAnimationFrame(animateParticles);
+            ctx.clearRect(0, 0, width, height);
+
+            connectParticles();
+
+            for (const particle of particles) {
+                particle.update();
+                particle.draw();
+            }
+        };
+
+        // Initialize particles
+        createParticles(100);
+        // The animation loop is started in window.onload above to ensure Chart.js runs first.
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</body>
+</html>
